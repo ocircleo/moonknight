@@ -1,0 +1,16 @@
+.active {
+    background-color: black;
+    font-weight: 600;
+    color: white;
+}
+
+.pending {
+    background-color: aqua;
+    font-weight: 600;
+    color: white;
+}
+.deafult{
+    background-color: white;
+    font-weight: 400;
+    color: black;
+}

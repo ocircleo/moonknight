@@ -1,0 +1,444 @@
+'use strict';
+
+(function(exports) {
+
+  function access_token_expired(access_token) {
+    var decoded = JSON.parse(window.atob(access_token.split(/\./g)[1]));
+    var now = Math.floor(Date.now() / 1000);
+    return now >= decoded.exp;
+  }
+
+  function loginWithFacebook() {
+    var deferred = $.Deferred();
+
+    FB.getLoginStatus(function(response) {
+      console.log('FB.getLoginStatus response', response);
+      if (response.status === 'connected') {
+        return deferred.resolve(response.authResponse);
+      }
+
+      FB.login(function(response) {
+        console.log('FB.login response', response);
+        if (response.authResponse) {
+          return deferred.resolve(response.authResponse);
+        }
+      }, {
+        scope: 'email,public_profile'
+      });
+    });
+
+    return deferred.promise();
+  }
+
+  function SC() {
+    this.queue = [];
+  }
+
+  SC.prototype.isLoggedIn = function() {
+    return this.getAccessToken()
+
+    .then(function(v) {
+      return !!v;
+    });
+  };
+
+  SC.prototype.getAccessToken = function getAccessToken(triggerChange) {
+    var deferred = $.Deferred();
+
+    var resolve = function(v) {
+      var i;
+
+      for (i = 0; i < this.queue.length; i++)
+        this.queue[i].resolve(v);
+
+      this.queue = [];
+    }.bind(this);
+
+    this.queue.push(deferred);
+
+    if (this.queue.length === 1)
+      execute();
+
+    function execute() {
+      var accessToken =
+        localStorage['access_token'] ||
+        sessionStorage['access_token'];
+
+      var refreshToken =
+        localStorage['refresh_token'] ||
+        sessionStorage['refresh_token'];
+
+      var persist =
+        localStorage['access_token'] ||
+        localStorage['refresh_token'];
+
+      /* we have an access token and it's not expired */
+      if (accessToken && !access_token_expired(accessToken)) {
+        console.log('access token and not expired');
+        setTimeout(function() {
+          resolve(accessToken);
+        }, 1);
+      /* we have a refresh token and it's not expired  */
+      } else if (refreshToken && !access_token_expired(refreshToken)) {
+        console.log('refresh token and not expired');
+        refresh(refreshToken, function(err, data) {
+          if (err) {
+            /* refresh token did not work => remove */
+            localStorage.removeItem('refresh_token');
+            sessionStorage.removeItem('refresh_token');
+
+            if (triggerChange)
+              $(document).trigger('sc:change');
+
+            return resolve();
+          }
+
+          if (persist) {
+            localStorage['access_token'] = data['access_token'];
+            localStorage['refresh_token'] = data['refresh_token'];
+          } else {
+            sessionStorage['access_token'] = data['access_token'];
+            sessionStorage['refresh_token'] = data['refresh_token'];
+          }
+
+          if (triggerChange)
+            $(document).trigger('sc:change');
+
+          resolve(data['access_token']);
+        });
+      /* we neither have a valid access token nor a valid refresh token */
+      } else {
+        console.log('neither access token nor refresh token');
+        setTimeout(function() {
+          resolve();
+        }, 1);
+      }
+    }
+
+    function refresh(refreshToken, callback) {
+      $.ajax({
+        type: 'POST',
+        url: '/api/auth/token',
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: 'json',
+        data: {
+          grant_type: 'refresh_token',
+          refresh_token: refreshToken
+        },
+        success: function(data) {
+          callback(null, data);
+        },
+        error: function() {
+          callback(true);
+        }
+      });
+    }
+
+    return deferred.promise();
+  };
+
+  SC.prototype.xhr = function(options, data, callback) {
+
+    if (typeof options === 'string') {
+      options = {url: options};
+    }
+    options = options || {};
+
+    options.contentType = options.contentType ||
+      'application/json; charset=UTF-8';
+
+    if (typeof data === 'function') {
+      callback = data;
+      data = null;
+    } else if (typeof data === 'object') {
+      options.data = data;
+    }
+
+    options.dataType = options.dataType || 'json';
+
+    if (options.data) {
+      options.type = options.type || 'POST';
+    }
+
+    if (options.contentType.indexOf('application/json;') === 0) {
+      options.data = JSON.stringify(options.data);
+    }
+
+    options.headers = options.headers || {};
+
+    options.success = function(data/*, textStatus, jqXHR*/) {
+      callback(null, data);
+    };
+
+    options.error = function(jqXHR/*, textStatus, errorThrown*/) {
+
+      var err = jqXHR.responseJSON || jqXHR;
+      if (!options.hideError) {
+        $(document).trigger('sc:error', err);
+      }
+
+      callback(err);
+    };
+
+    this.getAccessToken(true)
+
+    .then(function(accessToken) {
+      if (accessToken) {
+        options.headers['Authorization'] = 'Bearer ' + accessToken;
+      }
+
+      $.ajax(options);
+    });
+  };
+
+  /**
+   * This will upgrade from sessionStorage to localStorage so a login
+   * session is persisted after closing and reopening the browser window
+   * or tab.
+   */
+  SC.prototype.persistLogin = function() {
+    localStorage['access_token'] = sessionStorage['access_token'];
+    sessionStorage.removeItem('access_token');
+
+    localStorage['refresh_token'] = sessionStorage['refresh_token'];
+    sessionStorage.removeItem('refresh_token');
+  };
+
+  SC.prototype.login = function(username, password) {
+    var deferred = $.Deferred();
+
+    this.xhr({
+      url: '/api/auth/token',
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+    }, {
+      grant_type: 'password',
+      username: username,
+      password: password
+    }, function(err, result) {
+
+      if (err) {
+        return deferred.reject(err);
+      }
+
+      sessionStorage['access_token'] = result['access_token'];
+      sessionStorage['refresh_token'] = result['refresh_token'];
+
+      $(document).trigger('sc:change');
+
+      return deferred.resolve(result);
+    }.bind(this));
+
+    return deferred.promise();
+  };
+
+  SC.prototype.loginFacebook = function() {
+    return loginWithFacebook().then(function(response) {
+      return this.login(
+        'facebook:' + response.userID,
+        response.accessToken
+      );
+    }.bind(this));
+  };
+
+  SC.prototype.logout = function() {
+    var deferred = $.Deferred();
+
+    localStorage.removeItem('access_token');
+    sessionStorage.removeItem('access_token');
+
+    localStorage.removeItem('refresh_token');
+    sessionStorage.removeItem('refresh_token');
+
+    $(document).trigger('sc:change');
+
+    setTimeout(function() {
+      deferred.resolve();
+    }, 1);
+
+    return deferred.promise();
+  };
+
+  SC.prototype.me = function() {
+    var deferred = $.Deferred();
+
+    this.xhr({
+      url: '/api/me'
+    }, function(err, result) {
+      if (err) {
+        return deferred.reject(err);
+      }
+
+      return deferred.resolve(result);
+    });
+
+    return deferred.promise();
+  };
+
+  SC.prototype.getDetails = function() {
+    var deferred = $.Deferred();
+
+    this.xhr({
+      url: '/api/me/details'
+    }, function(err, result) {
+      if (err) {
+        return deferred.reject(err);
+      }
+
+      return deferred.resolve(result);
+    });
+
+    return deferred.promise();
+  };
+
+  SC.prototype.putDetails = function(data) {
+    var deferred = $.Deferred();
+
+    this.xhr({
+      url: '/api/me/details',
+      method: 'PUT'
+    }, data, function(err, result) {
+      if (err) {
+        return deferred.reject(err);
+      }
+
+      return deferred.resolve(result);
+    });
+
+    return deferred.promise();
+  };
+
+  SC.prototype.getCredentials = function() {
+    var deferred = $.Deferred();
+
+    this.xhr({
+      url: '/api/me/credentials'
+    }, function(err, result) {
+      if (err) {
+        return deferred.reject(err);
+      }
+
+      return deferred.resolve(result);
+    });
+
+    return deferred.promise();
+  };
+
+  SC.prototype.putCredentials = function(data) {
+    var deferred = $.Deferred();
+
+    this.xhr({
+      url: '/api/me/credentials',
+      method: 'PUT'
+    }, data, function(err, result) {
+      if (err) {
+        return deferred.reject(err);
+      }
+
+      return deferred.resolve(result);
+    });
+
+    return deferred.promise();
+  };
+
+  SC.prototype.useFacebook = function() {
+    return loginWithFacebook().then(function(response) {
+      return this.putCredentials({
+        'type': 'facebook',
+        'username': 'facebook:' + response.userID,
+        'password': 'facebook'
+      });
+    }.bind(this));
+  };
+
+  SC.prototype.useCredentials = function(username, password, flags) {
+    return this.putCredentials({
+      'type': 'password',
+      'username': username,
+      'password': password,
+      'flags':flags
+    });
+  };
+
+  SC.prototype.register = function(data) {
+    var deferred = $.Deferred();
+
+    this.xhr({
+      url: '/api/register'
+    }, data, function(err, result) {
+      if (err) {
+        return deferred.reject(err);
+      }
+
+      return deferred.resolve(result);
+    });
+
+    return deferred.promise();
+  };
+
+  SC.prototype.delete = function(data) {
+    var deferred = $.Deferred();
+
+    this.xhr({
+      url: '/api/me',
+      method: 'DELETE'
+    }, data, function(err) {
+      if (err) {
+        return deferred.reject(err);
+      }
+
+      this.logout().then(function() {
+        return deferred.resolve();
+      });
+    }.bind(this));
+
+    return deferred.promise();
+  };
+
+  SC.prototype.forgotpassword = function(data) {
+    var deferred = $.Deferred();
+
+    this.xhr({
+      url: '/api/forgotpassword',
+    }, data, function(err) {
+      if (err) {
+        return deferred.reject(err);
+      }
+
+      return deferred.resolve();
+    }.bind(this));
+
+    return deferred.promise();
+  };
+
+  SC.prototype.topup = function(data) {
+    var deferred = $.Deferred();
+
+    this.xhr({
+      url: '/api/topup'
+    }, data, function(err, result) {
+      if (err) {
+        return deferred.reject(err);
+      }
+
+      return deferred.resolve(result);
+    }.bind(this));
+
+    return deferred.promise();
+  };
+
+  exports.sc = new SC();
+
+  $(function() {
+    $(document).on('sc:change', function() {
+      console.log('Login status changed?');
+      sc.getAccessToken().then(function(v) {
+        console.log('access_token', v);
+      });
+    }.bind(this));
+
+    setTimeout(function() {
+      $(document).trigger('sc:change');
+    }, 1);
+  });
+
+})(window);
