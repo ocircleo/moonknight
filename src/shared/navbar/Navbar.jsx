@@ -25,8 +25,8 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar shadow p-2 md:px-12 bg-[#6A94FF] text-white font-semibold h-[70px]">
-      <div className="navbar-start font-normal">
+    <div className="navbar shadow p-2 md:px-12 bg-[#6A94FF] text-white font-semibold h-[70px] justify-between">
+      <div className="justify-start font-normal">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -46,7 +46,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="z-30 menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="z-30 menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black"
           >
             {navlinks}
           </ul>
@@ -120,7 +120,7 @@ const Navbar = () => {
         </>
       ) : (
         <>
-          <div className="navbar-end gap-4 ">
+          <div className="justify-end gap-4 ">
             <ul className="hidden lg:flex menu menu-horizontal px-1">
               {navlinks}
             </ul>
