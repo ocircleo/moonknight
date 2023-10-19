@@ -5,6 +5,8 @@ import "./index.css";
 import Provider from "./private/provider/Provider.jsx";
 import { RouterProvider } from "react-router-dom";
 import Data_Provider from "./private/provider/Data_Provider.jsx";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = routes;
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -14,5 +16,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <RouterProvider router={router} />
       </Data_Provider>
     </Provider>
+    <ToastContainer />
   </React.StrictMode>
 );
