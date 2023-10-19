@@ -10,17 +10,23 @@ const Navbar = () => {
         <Link to={"/"}> Home</Link>
       </li>
       <li>
-        <Link to={"/search"}>search places</Link>
+        <Link to={"/"}>Find Places</Link>
       </li>
       <li>
-        <Link to={"/"}>contact</Link>
+        <Link to={"/"}>Be a Host</Link>
+      </li>
+      <li>
+        <Link to={"/"}>About</Link>
+      </li>
+      <li>
+        <Link to={"/"}>Contact</Link>
       </li>
     </>
   );
 
   return (
-    <div className="navbar shadow p-2 md:px-12">
-      <div className="navbar-start">
+    <div className="navbar shadow p-2 md:px-12 bg-[#6A94FF] text-white font-semibold h-[70px]">
+      <div className="navbar-start font-normal">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -64,7 +70,7 @@ const Navbar = () => {
                 <img
                   src={user.photoURL}
                   alt=""
-                  className=" h-[40px] w-[40px] md:h-[60px] md:w-[60px] bg-red-100 border-[2px] md:border-[4px] border-red-300 rounded-full"
+                  className=" h-[40px] w-[40px] md:h-[55px] md:w-[55px] bg-white border-[2px] md:border-[4px]  rounded-full"
                 />
               </label>
               <div
@@ -77,7 +83,7 @@ const Navbar = () => {
                 {userDB?.role == "admin" ? (
                   <>
                     <Link
-                      className="bg-red-500 p-2 rounded text-white capitalize font-semibold text-center"
+                      className="bg-[#6A94FF] p-2 rounded text-white capitalize font-semibold text-center"
                       to={"/admin/home"}
                     >
                       Dashboard
@@ -86,7 +92,7 @@ const Navbar = () => {
                 ) : userDB?.role == "isntaractor" ? (
                   <>
                     <Link
-                      className="bg-red-500 p-2 rounded text-white capitalize font-semibold text-center"
+                      className="bg-[#6A94FF] p-2 rounded text-white capitalize font-semibold text-center"
                       to={"/moderator/modhome"}
                     >
                       Dashboard
@@ -95,7 +101,7 @@ const Navbar = () => {
                 ) : (
                   <>
                     <Link
-                      className="bg-red-500 p-2 rounded text-white capitalize font-semibold text-center"
+                      className="bg-[#6A94FF] p-2 rounded text-white capitalize font-semibold text-center"
                       to={"/user-dash-board"}
                     >
                       Dashboard
@@ -104,7 +110,7 @@ const Navbar = () => {
                 )}
                 <button
                   onClick={signout}
-                  className="bg-red-500 p-2 rounded text-white capitalize font-semibold text-center"
+                  className="bg-[#6A94FF] p-2 rounded text-white capitalize font-semibold text-center"
                 >
                   Sign out
                 </button>
@@ -128,13 +134,13 @@ const Navbar = () => {
                 className="z-30 menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 right-2 flex flex-col gap-3"
               >
                 <Link
-                  className="bg-red-500 p-2 rounded text-white capitalize font-semibold text-center"
+                  className="bg-[#6A94FF] p-2 rounded text-white capitalize font-semibold text-center"
                   to={"/register"}
                 >
                   register
                 </Link>
                 <Link
-                  className="bg-red-500 p-2 rounded text-white capitalize font-semibold text-center"
+                  className="bg-[#6A94FF] p-2 rounded text-white capitalize font-semibold text-center"
                   to={"/login"}
                 >
                   login
