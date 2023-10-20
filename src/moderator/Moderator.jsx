@@ -2,8 +2,6 @@
 import { BsThreeDotsVertical } from "react-icons/bs";
 import ActiveLink from "../shared/Activelink/ActiveLink";
 import { Outlet } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 
 const Moderator = () => {
     return (
@@ -32,7 +30,6 @@ const Moderator = () => {
                 </ul>
 
             </div>
-            <ToastContainer />
         </div >
     );
 };
