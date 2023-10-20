@@ -38,7 +38,7 @@ const Home = () => {
       <h2 className="text-2xl underline decoration-[#6A94FF] decoration-4 underline-offset-8 text-center font-semibold">
         Top Rent House Around Bangladesh
       </h2>
-      <div className="container mx-auto grid grid-cols-1 min-[420px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 items-center justify-items-center gap-5 my-10 flex-wrap">
+      <div className="container mx-auto grid grid-cols-1 min-[440px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 items-center justify-items-center gap-5 my-10 flex-wrap">
         {data.map((ele) => (
           <BaseCard key={ele.location} data={ele}></BaseCard>
         ))}
