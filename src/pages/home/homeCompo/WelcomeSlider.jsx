@@ -66,23 +66,40 @@ const WelcomeSlider = () => {
   return (
     <swiper-container init="false" ref={trendingRef}>
       <swiper-slide>
-        <div className="h-72 md:h-80 lg:h-96 w-full bg-gray-200 rounded flex items-center justify-center capitalize cursor-pointer text-3xl font-semibold">
-          slide 1
+        <div className="h-72 md:h-80 lg:h-96 w-full bg-gray-200 rounded flex items-center justify-center capitalize cursor-pointer text-3xl font-semibold relative">
+          <p className="absolute z-0">loading...</p>
+          <img
+            src="https://source.unsplash.com/random/624x120/?room"
+            alt=""
+            className="h-72 md:h-80 lg:h-96 w-full rounded z-10"
+          />
         </div>
       </swiper-slide>
       <swiper-slide>
         <div className="h-72 md:h-80 lg:h-96 w-full bg-gray-200 rounded flex items-center justify-center capitalize cursor-pointer text-3xl font-semibold">
-          slide 2
+          <img
+            src="https://source.unsplash.com/random/624x120/?airbnb"
+            alt=""
+            className="h-72 md:h-80 lg:h-96 w-full rounded"
+          />
         </div>
       </swiper-slide>
       <swiper-slide>
         <div className="h-72 md:h-80 lg:h-96 w-full bg-gray-200 rounded flex items-center justify-center capitalize cursor-pointer text-3xl font-semibold">
-          slide 3
+          <img
+            src="https://source.unsplash.com/random/624x120/?house"
+            alt=""
+            className="h-72 md:h-80 lg:h-96 w-full rounded"
+          />
         </div>
       </swiper-slide>
       <swiper-slide>
         <div className="h-72 md:h-80 lg:h-96 w-full bg-gray-200 rounded flex items-center justify-center capitalize cursor-pointer text-3xl font-semibold">
-          Slide 4
+          <img
+            src="https://source.unsplash.com/random/624x120/?bangladesh"
+            alt=""
+            className="h-72 md:h-80 lg:h-96 w-full rounded"
+          />
         </div>
       </swiper-slide>
     </swiper-container>

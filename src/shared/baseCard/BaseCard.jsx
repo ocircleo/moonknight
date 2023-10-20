@@ -6,7 +6,7 @@ const BaseCard = ({ data }) => {
     <div className="w-full min-[320px]:w-80 min-[440px]:w-56  flex flex-col p-3 items-start rounded shadow">
       <div className="h-36 min-[320px]:h-48 min-[420px]:h-36 w-full bg-gray-500 rounded mb-3">
         <img
-          src="/"
+          src="https://source.unsplash.com/random/140x150/?house"
           alt=""
           className="w-full h-36 min-[320px]:h-48 min-[420px]:h-36 bg-gray-500 rounded"
         />

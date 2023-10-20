@@ -11,7 +11,7 @@ const Reviews = () => {
 
     const swiperParams = {
       slidesPerView: 1,
-      pagination:{
+      pagination: {
         clickable: true,
       },
       autoplay: {
@@ -19,7 +19,7 @@ const Reviews = () => {
         disableOnInteraction: false,
       },
       navigation: true,
-      
+
       injectStyles: [
         `     
             .swiper-button-next,
@@ -83,7 +83,7 @@ const Reviews = () => {
         <div className="h-72  w-full bg-gray-200 rounded flex flex-col item-start justify-center capitalize cursor-pointer text-xl font-semibold p-6 gap-4">
           <div className="flex gap-2 items-center">
             <img
-              src="./"
+              src="https://source.unsplash.com/random/24x24/?face"
               alt=""
               className="h-12 w-12 rounded-full  border-2 border-blue-500"
             />
@@ -99,7 +99,7 @@ const Reviews = () => {
         <div className="h-72  w-full bg-gray-200 rounded flex flex-col item-start justify-center capitalize cursor-pointer text-xl font-semibold p-6 gap-4">
           <div className="flex gap-2 items-center">
             <img
-              src="./"
+              src="https://source.unsplash.com/random/24x24/?face"
               alt=""
               className="h-12 w-12 rounded-full  border-2 border-blue-500"
             />
@@ -115,7 +115,7 @@ const Reviews = () => {
         <div className="h-72  w-full bg-gray-200 rounded flex flex-col item-start justify-center capitalize cursor-pointer text-xl font-semibold p-6 gap-4">
           <div className="flex gap-2 items-center">
             <img
-              src="./"
+              src="https://source.unsplash.com/random/24x24/?face"
               alt=""
               className="h-12 w-12 rounded-full  border-2 border-blue-500"
             />
@@ -131,7 +131,7 @@ const Reviews = () => {
         <div className="h-72  w-full bg-gray-200 rounded flex flex-col item-start justify-center capitalize cursor-pointer text-xl font-semibold p-6 gap-4">
           <div className="flex gap-2 items-center">
             <img
-              src="./"
+              src="https://source.unsplash.com/random/24x24/?face"
               alt=""
               className="h-12 w-12 rounded-full  border-2 border-blue-500"
             />
@@ -143,7 +143,6 @@ const Reviews = () => {
           </p>
         </div>
       </swiper-slide>
-   
     </swiper-container>
   );
 };
