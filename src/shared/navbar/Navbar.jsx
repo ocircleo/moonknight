@@ -46,7 +46,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="z-30 menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black"
+            className="z-30 menu menu-sm dropdown-content mt-3 p-2 shadow rounded-box w-52 text-black bg-white"
           >
             {navlinks}
           </ul>
@@ -121,7 +121,7 @@ const Navbar = () => {
       ) : (
         <>
           <div className="justify-end gap-4 ">
-            <ul className="hidden lg:flex menu menu-horizontal px-1">
+            <ul className="hidden lg:flex menu menu-horizontal px-1 ">
               {navlinks}
             </ul>
             <div className="dropdown">
