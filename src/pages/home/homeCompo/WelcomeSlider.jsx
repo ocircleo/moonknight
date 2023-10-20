@@ -18,9 +18,9 @@ const WelcomeSlider = () => {
           .swiper-button-prev {
             opacity:.7;
             background-position: center;
-            background-size: 40px;
+            background-size: 30px;
             background-repeat: no-repeat;
-            padding: 8px 16px;
+            padding: 0px 8px;
             border-radius: 5px;
             background-color:gray;
           }
@@ -42,6 +42,7 @@ const WelcomeSlider = () => {
             width: 40px;
             height: 40px;
             background-color: red;
+            display:none;
           }
           .swiper-button-next > *{
             display:none;
@@ -65,23 +66,23 @@ const WelcomeSlider = () => {
   return (
     <swiper-container init="false" ref={trendingRef}>
       <swiper-slide>
-        <div className="h-72 md:h-80 lg:h-96 w-full bg-gray-200 rounded flex items-center justify-center capitalize cursor-pointer">
-          slide-1
+        <div className="h-72 md:h-80 lg:h-96 w-full bg-gray-200 rounded flex items-center justify-center capitalize cursor-pointer text-3xl font-semibold">
+          slide 1
         </div>
       </swiper-slide>
       <swiper-slide>
-        <div className="h-72 md:h-80 lg:h-96 w-full bg-gray-200 rounded flex items-center justify-center capitalize cursor-pointer">
-          slide-2
+        <div className="h-72 md:h-80 lg:h-96 w-full bg-gray-200 rounded flex items-center justify-center capitalize cursor-pointer text-3xl font-semibold">
+          slide 2
         </div>
       </swiper-slide>
       <swiper-slide>
-        <div className="h-72 md:h-80 lg:h-96 w-full bg-gray-200 rounded flex items-center justify-center capitalize cursor-pointer">
-          slide-3
+        <div className="h-72 md:h-80 lg:h-96 w-full bg-gray-200 rounded flex items-center justify-center capitalize cursor-pointer text-3xl font-semibold">
+          slide 3
         </div>
       </swiper-slide>
       <swiper-slide>
-        <div className="h-72 md:h-80 lg:h-96 w-full bg-gray-200 rounded flex items-center justify-center capitalize cursor-pointer">
-          slide-4
+        <div className="h-72 md:h-80 lg:h-96 w-full bg-gray-200 rounded flex items-center justify-center capitalize cursor-pointer text-3xl font-semibold">
+          Slide 4
         </div>
       </swiper-slide>
     </swiper-container>
