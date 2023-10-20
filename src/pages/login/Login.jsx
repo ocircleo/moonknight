@@ -3,12 +3,37 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import reader from "../../../public/login.json";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { useContext } from "react";
+import { Authcontext } from "../../private/provider/Provider";
+import { toast } from "react-toastify";
 
 
 const Login = () => {
+    const {signInEmailusers} = useContext(Authcontext);
+
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from || "/";
+  const from = location.state?.from?.pathname || "/";
+
+  const handleSignIn = event => {
+    event.preventDefault()
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    if (email, password)
+    signInEmailusers(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                toast.success('successfully login')
+                form.reset()
+                navigate(from, {replace:true})
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
+}
 
   return (
     <div>
@@ -18,7 +43,7 @@ const Login = () => {
                         <Lottie animationData={reader} loop={true} />
                     </div>
                     <div className="card md:w-1/2 flex-shrink-0 max-w-sm shadow-2xl bg-base-100">
-                        <form className="card-body">
+                        <form onSubmit={handleSignIn} className="card-body">
                             <h1 className="text-3xl ">Sign In</h1>
                             <div className="form-control">
                                 <label className="label">
