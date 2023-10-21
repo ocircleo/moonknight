@@ -29,11 +29,10 @@ const Provider = ({ children }) => {
   const signInEmailusers = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
-  // ==== update user info like name and phot url using this function below =====
-  const updateUser = (name, photo) => {
+  // ==== update user info like name using this function below =====
+  const updateUser = (name) => {
     return updateProfile(auth.currentUser, {
       displayName: name,
-      photoURL: photo,
     });
   };
   // ===== google popup sign in using this function below =====
