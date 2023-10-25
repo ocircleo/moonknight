@@ -41,7 +41,7 @@ const Provider = ({ children }) => {
   };
   // ===== sign out user using this function =====
   const signout = () => {
-    return signOut(auth).then((data) => {
+    return signOut(auth).then(() => {
       console.log('signed out')
       localStorage.removeItem("acces_token")
     });
