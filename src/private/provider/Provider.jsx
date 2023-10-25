@@ -41,11 +41,14 @@ const Provider = ({ children }) => {
   };
   // ===== sign out user using this function =====
   const signout = () => {
-    return signOut(auth).then(() => localStorage.removeItem("acces_token"));
+    return signOut(auth).then((data) => {
+      console.log('signed out')
+      localStorage.removeItem("acces_token")
+    });
   };
   // ===== jwt sign =====
   const signJwt = (email) => {
-    return fetch("http://localhost:3000/jwt", {
+    return fetch("https://moonknight-backend.vercel.app/jwt", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ user: email }),
