@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
-  const { createEmailusers, updateUser } = useContext(Authcontext);
+  const { createEmailusers, updateUser, signJwt } = useContext(Authcontext);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
@@ -34,6 +34,7 @@ const Register = () => {
     if ((name, email, password)) {
       createEmailusers(email, password)
         .then((result) => {
+          signJwt(email);
           const createdUser = result.user;
           updateUser(name)
             .then(() => {

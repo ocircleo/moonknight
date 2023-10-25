@@ -41,7 +41,19 @@ const Provider = ({ children }) => {
   };
   // ===== sign out user using this function =====
   const signout = () => {
-    return signOut(auth);
+    return signOut(auth).then(() => localStorage.removeItem("acces_token"));
+  };
+  // ===== jwt sign =====
+  const signJwt = (email) => {
+    return fetch("http://localhost:3000/jwt", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ user: email }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        localStorage.setItem("acces_token", data.token);
+      });
   };
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (newUser) => {
@@ -62,6 +74,7 @@ const Provider = ({ children }) => {
     signInEmailusers,
     googleSignIn,
     updateUser,
+    signJwt,
     signout,
   };
   return (

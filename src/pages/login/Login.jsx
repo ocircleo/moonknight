@@ -7,7 +7,7 @@ import { Authcontext } from "../../private/provider/Provider";
 import { toast } from "react-toastify";
 
 const Login = () => {
-  const { signInEmailusers } = useContext(Authcontext);
+  const { signInEmailusers, signJwt } = useContext(Authcontext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -24,10 +24,12 @@ const Login = () => {
     if ((email, password))
       signInEmailusers(email, password)
         .then((result) => {
-          const loggedUser = result.user;
+          const loggedUser = result.user.email;
+          signJwt(loggedUser);
           toast.success("successfully login");
           form.reset();
-          navigate(from, { replace: true });
+
+          // navigate(from, { replace: true });
         })
         .catch((error) => {
           toast.error(error.message);
