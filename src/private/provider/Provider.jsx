@@ -58,6 +58,9 @@ const Provider = ({ children }) => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (newUser) => {
       setUser(newUser);
+      if (newUser) {
+        signJwt(newUser.email);
+      }
       setLoading(false);
       return () => unSubscribe();
     });

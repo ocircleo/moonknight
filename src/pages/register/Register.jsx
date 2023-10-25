@@ -7,7 +7,8 @@ import { toast } from "react-toastify";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
-  const { createEmailusers, updateUser, signJwt } = useContext(Authcontext);
+  const { createEmailusers, updateUser, signJwt, setUser } =
+    useContext(Authcontext);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
@@ -38,6 +39,7 @@ const Register = () => {
           const createdUser = result.user;
           updateUser(name)
             .then(() => {
+              setUser(createdUser);
               form.reset();
             })
             .catch((error) => {

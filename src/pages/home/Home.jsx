@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { dataContext } from "../../private/provider/Data_Provider";
 import WelcomeSlider from "./homeCompo/welcomeSlider";
 import Catagories from "./homeCompo/Catagories";
@@ -10,23 +10,33 @@ const Home = () => {
   const { name } = useContext(dataContext);
   let newArray = [
     {
-    id:0,
-    category:'students',
-  },
+      id: 0,
+      category: "students",
+    },
     {
-    id:2,
-    category:'singles',
-  },
+      id: 2,
+      category: "singles",
+    },
     {
-    id:3,
-    category:'couples',
-  },
+      id: 3,
+      category: "couples",
+    },
     {
-    id:4,
-    category:'family',
-  },
+      id: 4,
+      category: "family",
+    },
+  ];
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/test", {
+  //     method: "GET",
+  //     headers: {
+  //       authorization: `Bearer ${localStorage.getItem("acces_token")}`,
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => console.log(data));
+  // }, []);
 
-];
   return (
     <div className="container mx-auto mt-8">
       <WelcomeSlider></WelcomeSlider>
@@ -46,12 +56,9 @@ const Home = () => {
       <Link className="w-full bg-[#6A94FF] block text-center py-2 rounded font-semibold capitalize text-white mb-5">
         explore more →{" "}
       </Link>
-      <h2 className="text-2xl ps-2 font-semibold my-3">
-       Our Top Reviews
-      </h2>
+      <h2 className="text-2xl ps-2 font-semibold my-3">Our Top Reviews</h2>
       <div className="mb-5">
-
-      <Reviews></Reviews>
+        <Reviews></Reviews>
       </div>
     </div>
   );

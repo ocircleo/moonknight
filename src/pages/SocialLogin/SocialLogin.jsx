@@ -15,7 +15,7 @@ const SocialLogin = ({ from }) => {
         const user = result.user.email;
         signJwt(user);
         toast.success("logged in");
-        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
