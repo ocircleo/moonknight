@@ -46,9 +46,11 @@ const Provider = ({ children }) => {
       localStorage.removeItem("acces_token")
     });
   };
+  
+  // https://moonknight-backend.vercel.app/
   // ===== jwt sign =====
   const signJwt = (email) => {
-    return fetch("https://moonknight-backend.vercel.app/jwt", {
+    return fetch("http://localhost:3000/jwt", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ user: email }),

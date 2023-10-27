@@ -1,9 +1,9 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { dataContext } from "../../private/provider/Data_Provider";
 
 import Reviews from "./homeCompo/Reviews";
 const Home = () => {
-  const { name } = useContext(dataContext);
+  const { name} = useContext(dataContext);
 
   return (
     <div className="container mx-auto mt-8">

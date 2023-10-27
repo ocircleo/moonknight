@@ -13,6 +13,7 @@ import Private_Admin from "./src/private/Private/Private_Admin";
 import Admin from "./src/Admin/Admin";
 import Adminhome from "./src/Admin/adminpage/Adminhome";
 import Users from "./src/Admin/adminpage/Users";
+import Test from "./src/pages/test/Test";
 
 export const routes = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ export const routes = createBrowserRouter([
       {
         path: "loader",
         element: <Loading></Loading>,
+      },
+      {
+        path: "test",
+        element: <Test></Test>,
       },
     ],
   },
