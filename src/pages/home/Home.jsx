@@ -11,6 +11,7 @@ const Home = () => {
   
       <h2 className="text-2xl ps-2 font-semibold my-3">Our Top Reviews</h2>
       <div className="mb-5">
+        
         <Reviews></Reviews>
       </div>
       
