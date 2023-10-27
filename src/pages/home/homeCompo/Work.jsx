@@ -8,7 +8,7 @@ const Work = () => {
                 <span className="w-4 h-1.5 bg-red-600 inline-block rounded-2xl mr-1.5"></span>
                 <span className="w-12 h-1.5 bg-red-600 inline-block rounded-2xl"></span>
                 <span></span>
-                <p className="text-lg text-slate-400">Follow these 3 steps to book your place</p>
+                <p className="text-lg text-slate-400 pt-4">Follow these 3 steps to book your place</p>
             </div> 
         </div>
     );
