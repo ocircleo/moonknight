@@ -50,7 +50,7 @@ const Provider = ({ children }) => {
   // https://moonknight-backend.vercel.app/
   // ===== jwt sign =====
   const signJwt = (email) => {
-    return fetch("http://localhost:3000/jwt", {
+    return fetch("https://moonknight-backend.vercel.app/jwt", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ user: email }),
