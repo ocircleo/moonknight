@@ -41,7 +41,7 @@ const Property = () => {
                 <div className="p-10">
                     <div className="card h-[300px] max:w-[250px] bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10">
-                            <img src="/src/assets/images/Property1 (2).svg" alt="Shoes" className="rounded-xl" />
+                            <img src="/src/assets/images/Property2 (3).svg" alt="Shoes" className="rounded-xl" />
                         </figure>
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">Houses</h2>
@@ -53,7 +53,7 @@ const Property = () => {
                 <div className="p-10">
                     <div className="card h-[300px] max:w-[250px] bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10">
-                            <img src="/src/assets/images/Property1 (2).svg" alt="Shoes" className="rounded-xl" />
+                            <img src="/src/assets/images/Property3 (4).svg" alt="Shoes" className="rounded-xl" />
                         </figure>
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">Houses</h2>
@@ -77,7 +77,7 @@ const Property = () => {
                 <div className="p-10">
                     <div className="card h-[300px] max:max:w-[250px] bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10">
-                            <img src="/src/assets/images/Property1 (2).svg" alt="Shoes" className="rounded-xl" />
+                            <img src="/src/assets/images/Property2 (3).svg" alt="Shoes" className="rounded-xl" />
                         </figure>
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">Houses</h2>
@@ -89,7 +89,7 @@ const Property = () => {
                 <div className="p-10">
                     <div className="card h-[300px] max:w-[250px] bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10">
-                            <img src="/src/assets/images/Property1 (2).svg" alt="Shoes" className="rounded-xl" />
+                            <img src="/src/assets/images/Property2 (3).svg" alt="Shoes" className="rounded-xl" />
                         </figure>
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">Houses</h2>
@@ -101,7 +101,7 @@ const Property = () => {
                 <div className="p-10">
                     <div className="card h-[300px] max:w-[250px] bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10">
-                            <img src="/src/assets/images/Property1 (2).svg" alt="Shoes" className="rounded-xl" />
+                            <img src="/src/assets/images/Property3 (4).svg" alt="Shoes" className="rounded-xl" />
                         </figure>
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">Houses</h2>
