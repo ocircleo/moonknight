@@ -12,7 +12,7 @@ const Home = () => {
     <div className="container mx-auto mt-8">
 
       <div className="mb-5">
-        {/* <WorkSection></WorkSection> */}
+        <WorkSection></WorkSection>
       </div>
       <div className="mb-5">
         {/* <Banner></Banner> */}
