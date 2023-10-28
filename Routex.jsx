@@ -46,13 +46,13 @@ export const routes = createBrowserRouter([
   {
     path: "moderator",
     element: (
-      <Private_Mode>
-        <Moderator></Moderator>
-      </Private_Mode>
+      // <Private_Mode>
+      <Moderator></Moderator>
+      //  </Private_Mode>
     ),
     children: [
       {
-        path: "modhome",
+        path: "home",
         element: <ModeHome></ModeHome>,
       },
     ],
@@ -60,9 +60,9 @@ export const routes = createBrowserRouter([
   {
     path: "admin",
     element: (
-      <Private_Admin>
-        <Admin></Admin>
-      </Private_Admin>
+      // <Private_Admin>
+      <Admin></Admin>
+      // </Private_Admin>
     ),
     errorElement: <ErrorPage></ErrorPage>,
     children: [
