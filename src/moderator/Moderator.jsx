@@ -21,10 +21,11 @@ const Moderator = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-base-200 flex gap-2 text-base-content">
                     {/* Sidebar content here */}
-                    <li className="  rounded-lg"><ActiveLink to={'/moderator/modhome'}>Instractor Home</ActiveLink></li>
-                    <li className="  rounded-lg"><ActiveLink to={'/moderator/classes'}>courses</ActiveLink></li>
+                    <li className="  rounded-lg"><ActiveLink to={'/moderator/home'}>Moderator Home</ActiveLink></li>
+                    <li className="  rounded-lg"><ActiveLink to={'/moderator/pending'}>pending </ActiveLink></li>
                     <li className="  rounded-lg"><ActiveLink to={'/moderator/addClasses'}>Add courses</ActiveLink></li>
-                    <li className="  rounded-lg"><ActiveLink to={'/moderator/appliedStudemts'}>Applied Students</ActiveLink></li>
+                    <li className="  rounded-lg"><ActiveLink to={'/moderator/Reports'}>Reports</ActiveLink></li>
+                    
                     <hr className="h-1 bg-gray-200" />
                     <li className="  rounded-lg"><ActiveLink to={'/'}>Home</ActiveLink></li>
                 </ul>

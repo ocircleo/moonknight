@@ -14,6 +14,8 @@ import Admin from "./src/Admin/Admin";
 import Adminhome from "./src/Admin/adminpage/Adminhome";
 import Users from "./src/Admin/adminpage/Users";
 import Test from "./src/pages/test/Test";
+import HostDashBoard from "./src/host-dash-board/HostDashBoard";
+import UserDashBoard from "./src/user-dash-board/UserDashBoard";
 
 export const routes = createBrowserRouter([
   {
@@ -41,33 +43,41 @@ export const routes = createBrowserRouter([
         path: "test",
         element: <Test></Test>,
       },
+      {
+        path: "host-dash-board",
+        element: <HostDashBoard></HostDashBoard>,
+      },
+      {
+        path: "user-dash-board",
+        element: <UserDashBoard></UserDashBoard>,
+      },
     ],
   },
   {
-    path: "moderator",
+    path: "/",
     element: (
-      <Private_Mode>
-        <Moderator></Moderator>
-      </Private_Mode>
+      // <Private_Mode>
+      <Moderator></Moderator>
+      //  </Private_Mode>
     ),
     children: [
       {
-        path: "modhome",
+        path: "moderator",
         element: <ModeHome></ModeHome>,
       },
     ],
   },
   {
-    path: "admin",
+    path: "/",
     element: (
-      <Private_Admin>
-        <Admin></Admin>
-      </Private_Admin>
+      // <Private_Admin>
+      <Admin></Admin>
+      // </Private_Admin>
     ),
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path: "home",
+        path: "admin",
         element: <Adminhome></Adminhome>,
       },
       {

@@ -10,7 +10,7 @@ const Navbar = () => {
         <Link to={"/"}> Home</Link>
       </li>
       <li>
-        <Link to={"/"}>Find Places</Link>
+        <Link to={"/"}>Search Places</Link>
       </li>
       <li>
         <Link to={"/"}>Be a Host</Link>
@@ -89,11 +89,11 @@ const Navbar = () => {
                       Dashboard
                     </Link>
                   </>
-                ) : userDB?.role == "isntaractor" ? (
+                ) : userDB?.role == "host" ? (
                   <>
                     <Link
                       className="bg-[#6A94FF] p-2 rounded text-white capitalize font-semibold text-center"
-                      to={"/moderator/modhome"}
+                      to={"/host-dash-board"}
                     >
                       Dashboard
                     </Link>

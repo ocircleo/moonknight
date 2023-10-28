@@ -22,12 +22,8 @@
     "react-countup": "^6.4.2",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.44.3",
-<<<<<<< HEAD
     "react-icons": "^4.9.0",
     "react-multi-carousel": "^2.8.4",
-=======
-    "react-icons": "^4.11.0",
->>>>>>> 5e4b38f46b27cfb5c891e3471140810e60ffd34a
     "react-router-dom": "^6.12.0",
     "react-scroll-trigger": "^0.6.14",
     "react-tabs": "^6.0.2",
