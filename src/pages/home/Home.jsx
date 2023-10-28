@@ -3,8 +3,9 @@ import { dataContext } from "../../private/provider/Data_Provider";
 
 import Reviews from "./homeCompo/Reviews";
 import Statistics from "./homeCompo/Statistics";
-// import Banner from "./homeCompo/Banner";
+
 import WorkSection from "./homeCompo/WorkSection";
+import Banner from "./homeCompo/Banner";
 const Home = () => {
   const { name } = useContext(dataContext);
 
@@ -12,10 +13,11 @@ const Home = () => {
     <div className="container mx-auto mt-8">
 
       <div className="mb-5">
-        <WorkSection></WorkSection>
+        <Banner></Banner>
       </div>
       <div className="mb-5">
-        {/* <Banner></Banner> */}
+       
+      <WorkSection></WorkSection>
       </div>
 
       <div className="mb-5">
