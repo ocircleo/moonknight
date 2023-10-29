@@ -27,7 +27,7 @@ const Banner = () => {
  
 
     
-   <div className='pl-8 pt-6 md:pl-12 md:pt-8 lg:pl-24 '>
+   <div className='pl-8 pt-6 md:pl-12 md:pt-8 lg:pt-20 lg:pl-24 '>
     <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
       <div className="relative">
         <TabList className="flex   justify-start mb-4">
