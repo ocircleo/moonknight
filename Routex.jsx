@@ -16,6 +16,7 @@ import Users from "./src/Admin/adminpage/Users";
 import Test from "./src/pages/test/Test";
 import HostDashBoard from "./src/host-dash-board/HostDashBoard";
 import UserDashBoard from "./src/user-dash-board/UserDashBoard";
+import Contacts from "./src/pages/Contact/Contacts";
 
 export const routes = createBrowserRouter([
   {
@@ -26,6 +27,9 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },{
+        path:'contact',
+        element:<Contacts></Contacts>
       },
       {
         path: "register",
