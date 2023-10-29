@@ -27,7 +27,7 @@ const WorkSection = () => {
                     </span>
                 </div>
                 <div className='text-center p-3'>
-                    <h1 className='text-slate-700 text-xl font-mono pt-2'>01. Search for Location</h1>
+                    <h1 className='text-slate-700 text-xl font-mono pt-2'>02. Select Property Type</h1>
                     <p className='text-slate-500 text-base font-mono pt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio…</p>
                 </div>
             </div>
@@ -39,7 +39,7 @@ const WorkSection = () => {
                     </span>
                 </div>
                 <div className='text-center p-3'>
-                    <h1 className='text-slate-700 text-xl font-mono pt-2'>01. Search for Location</h1>
+                    <h1 className='text-slate-700 text-xl font-mono pt-2'>03. Book Your Property</h1>
                     <p className='text-slate-500 text-base font-mono pt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio…</p>
                 </div>
             </div>
