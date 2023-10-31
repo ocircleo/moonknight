@@ -18,8 +18,12 @@ import Blog from "./src/pages/blog/Blog";
 import HostDashBoard from "./src/host-dash-board/HostDashBoard";
 import UserDashBoard from "./src/user-dash-board/UserDashBoard";
 import Contacts from "./src/pages/Contact/Contacts";
+<<<<<<< HEAD
 import BeAHost from "./src/pages/beAhost/BeAHost";
 import Search from "./src/pages/search/Search";
+=======
+import Question from "./src/pages/Contact/Question";
+>>>>>>> 61e24227d3490a11546cb610d9f960fd93712ab5
 
 export const routes = createBrowserRouter([
   {
@@ -34,6 +38,10 @@ export const routes = createBrowserRouter([
       {
         path: "contact",
         element: <Contacts></Contacts>,
+      },
+      {
+       path:"question",
+       element: <Question></Question>
       },
       {
         path: "register",
