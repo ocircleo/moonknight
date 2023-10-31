@@ -3,15 +3,15 @@ import { dataContext } from "../../private/provider/Data_Provider";
 
 import Reviews from "./homeCompo/Reviews";
 import Statistics from "./homeCompo/Statistics";
-<<<<<<< HEAD
+{/*<<<<<<< HEAD */}
 
 import WorkSection from "./homeCompo/WorkSection";
 import Banner from "./homeCompo/Banner";
-=======
-import Banner from "./homeCompo/Banner";
-import WorkSection from "./homeCompo/WorkSection";
+//=======
+//import Banner from "./homeCompo/Banner";
+//import WorkSection from "./homeCompo/WorkSection";
 import Property from "./homeCompo/Property";
->>>>>>> e4326f253d0d7eaead89ed975b828ce38145b554
+//>>>>>>> e4326f253d0d7eaead89ed975b828ce38145b554
 const Home = () => {
   const { name } = useContext(dataContext);
 
@@ -24,12 +24,12 @@ const Home = () => {
         <Banner></Banner>
       </div>
       <div className="mb-5">
-<<<<<<< HEAD
+  {/*  <<<<<<< HEAD     */}
        
       <WorkSection></WorkSection>
-=======
+    {/* ======= */}
         <Property></Property>
->>>>>>> e4326f253d0d7eaead89ed975b828ce38145b554
+   {/* >>>>>>> e4326f253d0d7eaead89ed975b828ce38145b554 */}
       </div>
 
       <div className="mb-5">
