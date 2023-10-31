@@ -31,7 +31,7 @@ const Question = () => {
                         Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                     </div>
                 </details>
-                <details className='pt-12'>
+                <details className='pt-6 '>
                     <summary className=''>2. What are the steps to sell a house?</summary>
                     <div>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -39,7 +39,7 @@ const Question = () => {
                         Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                     </div>
                 </details>
-                <details className='pt-12'>
+                <details className='pt-6'>
                     <summary>3. Do you have loan consultants?</summary>
                     <div>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -47,7 +47,7 @@ const Question = () => {
                         Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                     </div>
                 </details>
-                <details className='pt-12'>
+                <details className='pt-6'>
                     <summary>4. When will the project be completed?</summary>
                     <div>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -55,7 +55,7 @@ const Question = () => {
                         Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                     </div>
                 </details>
-                <details className='pt-12'>
+                <details className='pt-6'>
                     <summary>5. When will the project be completed?</summary>
                     <div>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -63,7 +63,7 @@ const Question = () => {
                         Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                     </div>
                 </details>
-                <details className='pt-12'>
+                <details className='pt-6'>
                     <summary>6. Lorem ipsum dolor sit amet, elit?</summary>
                     <div>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -71,7 +71,7 @@ const Question = () => {
                         Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                     </div>
                 </details>
-                <details className='pt-12'>
+                <details className='pt-6'>
                     <summary>7. Lorem ipsum dolor sit amet, elit?</summary>
                     <div>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -79,7 +79,7 @@ const Question = () => {
                         Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                     </div>
                 </details>
-                <details className='pt-12'>
+                <details className='pt-6'>
                     <summary>8. Lorem ipsum dolor sit amet, elit?</summary>
                     <div>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -87,7 +87,7 @@ const Question = () => {
                         Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                     </div>
                 </details>
-                <details className='pt-12'>
+                <details className='pt-6'>
                     <summary>9. Lorem ipsum dolor sit amet, elit?</summary>
                     <div>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -95,7 +95,7 @@ const Question = () => {
                         Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                     </div>
                 </details>
-                <details className='pt-12'>
+                <details className='pt-6'>
                     <summary>10. Lorem ipsum dolor sit amet, elit?</summary>
                     <div>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

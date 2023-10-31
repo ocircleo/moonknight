@@ -13,7 +13,7 @@
 details {
     background-color: #fff;
     color: #303030;
-    font-size: 1.5rem;
+    font-size: 18px;
 }
 
 summary {
@@ -23,6 +23,7 @@ summary {
     justify-content: space-between;
     transition: height 1s ease;
     border: 1px solid #aaa;
+    box-shadow: 2px 4px 2px 2px #888888;
 }
 
 summary::-webkit-details-marker {
