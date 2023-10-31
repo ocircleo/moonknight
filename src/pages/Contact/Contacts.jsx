@@ -3,7 +3,6 @@ import "../Contact/Contact.css";
 import line from "../../assets/images/ContactPage/line-bg.png";
 import ContactAbout from "./ContactAbout";
 import ContactDetails from "./ContactDetails";
-import Question from "./Question";
 
 const Contacts = () => {
     return (
@@ -26,7 +25,7 @@ const Contacts = () => {
             </div>
             <ContactAbout/>
             <ContactDetails/>
-            <Question/>
+            
         </div>
     );
 };
