@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,41 +18,53 @@ const Property = () => {
         speed: 500,
         slidesToShow: 3,
         arrows: false,
-        slidesToScroll: 1
-        }
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+
+    }
+
+
+
     return (
-        <div className="bg-[#1E1D85] overflow-hidden md:px-12">
-            <div className="grid cols-1 md:grid-cols-3 gap-4">
-                <div className=" md:w-full md:m-auto ">
-                    <div className="text-white ">
-                        <h2 className="text-4xl my-2 font-bold">
-                            Explore by <br /> Property Type
+        <div className="bg-[#1E1D85] overflow-hidden md:px-12 md:py-12">
+            <div className="md:grid cols-1 md:grid-cols-3 gap-4">
+                <div className=" md:w-9/12 md:m-auto text-center md:text-left">
+                    <div className="text-white my-8">
+                        <h2 className="text-2xl  md:text-4xl  font-bold">
+                            Explore by Property Type
                         </h2>
-                        <span className="w-4 h-1.5 bg-[#FD3358] inline-block rounded-2xl mr-1.5"></span>
-                        <span className="w-12 h-1.5 bg-[#FD3358] inline-block rounded-2xl"></span>
-                        <span></span>
+                        <div className="my-2">
+                            <span className="w-4 h-1.5 bg-[#FD3358] inline-block rounded-2xl mr-1.5"></span>
+                            <span className="w-12 h-1.5 bg-[#FD3358] inline-block rounded-2xl"></span>
+                            <span></span>
+                        </div>
                         <p className="text-smal">
                             OUR PURPOSE IS TO HELP PEOPLE REACH THEIR POTENTIAL IN REAL ESTATE.
                         </p>
-
-
-                        <div className="">
-
-
-
-                            <FontAwesomeIcon  onClick={() => slider?.current?.slickPrev()}  className="m-4 text-4xl" icon={faCircleArrowLeft} />
-
-
-
-
-                            <FontAwesomeIcon  onClick={() => slider?.current?.slickNext()} className="m-4 text-4xl" icon={faCircleArrowRight} />
+                        <div className="mt-4">
+                            <FontAwesomeIcon onClick={() => slider?.current?.slickPrev()} className="m-2 text-4xl" icon={faCircleArrowLeft} />
+                            <FontAwesomeIcon onClick={() => slider?.current?.slickNext()} className="m-2 text-4xl" icon={faCircleArrowRight} />
                         </div>
                     </div>
                 </div>
                 <div className="col-span-2">
                     <Slider ref={slider} {...settings}>
-                        <div className="p-10">
-                            <div className="card h-[300px] max:w-[250px] bg-base-100 shadow-xl">
+
+                        <div className="p-5">
+                            <div className="card h-[300px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
                                         src="/src/assets/images/Property1 (2).svg"
@@ -66,8 +78,8 @@ const Property = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-10">
-                            <div className="card h-[300px] max:w-[250px] bg-base-100 shadow-xl">
+                        <div className="p-5">
+                            <div className="card h-[300px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
                                         src="/src/assets/images/Property1 (2).svg"
@@ -81,8 +93,8 @@ const Property = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-10">
-                            <div className="card h-[300px] max:w-[250px] bg-base-100 shadow-xl">
+                        <div className="p-5">
+                            <div className="card h-[300px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
                                         src="/src/assets/images/Property1 (2).svg"
@@ -96,7 +108,7 @@ const Property = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-10">
+                        <div className="p-5">
                             <div className="card h-[300px] max:max:w-[250px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
@@ -111,8 +123,8 @@ const Property = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-10">
-                            <div className="card h-[300px] max:w-[250px] bg-base-100 shadow-xl">
+                        <div className="p-5">
+                            <div className="card h-[300px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
                                         src="/src/assets/images/Property1 (2).svg"
@@ -126,8 +138,8 @@ const Property = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-10">
-                            <div className="card h-[300px] max:w-[250px] bg-base-100 shadow-xl">
+                        <div className="p-5">
+                            <div className="card h-[300px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
                                         src="/src/assets/images/Property1 (2).svg"
