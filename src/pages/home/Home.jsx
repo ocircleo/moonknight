@@ -3,6 +3,7 @@ import { dataContext } from "../../private/provider/Data_Provider";
 
 import Reviews from "./homeCompo/Reviews";
 import Statistics from "./homeCompo/Statistics";
+<<<<<<< HEAD
 // <<<<<<< HEAD
 
 import WorkSection from "./homeCompo/WorkSection";
@@ -12,6 +13,11 @@ import Banner from "./homeCompo/Banner";
 // import WorkSection from "./homeCompo/WorkSection";
 import Property from "./homeCompo/Property";
 // >>>>>>> e4326f253d0d7eaead89ed975b828ce38145b554
+=======
+import Banner from "./homeCompo/Banner";
+import WorkSection from "./homeCompo/WorkSection";
+import Property from "./homeCompo/Property";
+>>>>>>> f212567304bb130eda8ae5f4357b1da060daf321
 const Home = () => {
   const { name } = useContext(dataContext);
 
@@ -21,6 +27,7 @@ const Home = () => {
         <Banner></Banner>
       </div>
       <div className="mb-5">
+<<<<<<< HEAD
         <Banner></Banner>
       </div>
       <div className="mb-5">
@@ -30,6 +37,9 @@ const Home = () => {
 =======
         <Property></Property>
 {/* >>>>>>> e4326f253d0d7eaead89ed975b828ce38145b554 */}
+=======
+        <Property></Property>
+>>>>>>> f212567304bb130eda8ae5f4357b1da060daf321
       </div>
 
       <div className="mb-5">
