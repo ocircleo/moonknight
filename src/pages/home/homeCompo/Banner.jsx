@@ -12,22 +12,20 @@ const Banner = () => {
 
   return (
     <div>
-      <div className="bg-center bg-cover  lg:h-screen bg-no-repeat "
-
-        style={{ backgroundImage: 'url("../../../../public/banner/banner.jpg")' }}>
+      <div className="bg-center bg-cover lg:h-screen min-h-[600px] bg-no-repeat"
+      style={{ backgroundImage: 'url("/banner/banner.jpg")' }}>
         <div className='pl-8 pt-6 md:pl-12 md:pt-8 lg:pl-24 lg:pt-20'>
           <h2 className='text-xl md:text-3xl lg:text-5xl font-bold   font-serif  leading-snug text-blue-950'>Find Your Best Dream House <br />  for
             <span className=' text-[#6C60FE]'> Rental, Buy & Sell...</span></h2>
           <p className=' text-blue-950 pt-6 md:text-xl'>Properties for buy / rent in in your location.
             We have more <br /> than 3000+ listings for you to choose</p>
-
         </div>
 
 
 
 
 
-        <div className='pl-8 pt-6 md:pl-12 md:pt-8 lg:pt-20 lg:pl-24 '>
+        <div className='px-8 pt-6 md:px-12 md:pt-8 lg:pt-20 lg:px-24 '>
           <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
             <div className="relative">
               <TabList className="flex   justify-start mb-4">
@@ -60,7 +58,7 @@ const Banner = () => {
               </TabList>
             </div>
             <TabPanel>
-              <div className="  lg:bg-white  rounded-2xl lg:mr-12  ">
+              <div className="  lg:bg-white  rounded-2xl  ">
                 <form className=" grid   grid-cols-1 md:grid-cols-2 lg:grid-cols-6 p-5    gap-2 mr-8 md:mr-0 rounded-xl lg:opacity-100     lg:bg-white lg:py-8 shadow-white   md:py-8 md:px-4 ">
 
                   <input type="text" placeholder="Write Keyword" className="my-1 md:mx-1  border-y-blue-600 lg:border-none input w-full bg-black opacity-30 lg:opacity-100  lg:bg-slate-100  font-semibold   text-white lg:text-blue-950    shadow-lg  text-lg  max-w-xs" />
@@ -96,7 +94,7 @@ const Banner = () => {
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="   lg:mr-12 rounded-2xl  ">
+              <div className="  rounded-2xl  ">
                 <form className=" grid   grid-cols-1 md:grid-cols-2 lg:grid-cols-6 p-5    gap-2 mr-8 md:mr-0 rounded-xl lg:opacity-100     lg:bg-slate-200 lg:p-8 shadow-white   md:py-8 md:px-4 ">
 
                   <input type="text" placeholder="Write Keyword" className="my-1 md:mx-1  border-y-blue-600 lg:border-none input w-full bg-black opacity-30 lg:opacity-100  lg:bg-slate-100  font-semibold   text-white lg:text-blue-950    shadow-lg  text-lg  max-w-xs" />

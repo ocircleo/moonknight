@@ -40,8 +40,8 @@ const Property = () => {
 
     return (
         <div className="bg-[#1E1D85] overflow-hidden md:px-12 md:py-12">
-            <div className="md:grid cols-1 md:grid-cols-3 gap-4">
-                <div className=" md:w-9/12 md:m-auto text-center md:text-left">
+            <div className="md:grid md:p-5 cols-1 md:grid-cols-3 gap-4">
+                <div className=" md:w-9/12  text-center md:text-left">
                     <div className="text-white my-8">
                         <h2 className="text-2xl  md:text-4xl  font-bold">
                             Explore by Property Type
@@ -51,11 +51,11 @@ const Property = () => {
                             <span className="w-12 h-1.5 bg-[#FD3358] inline-block rounded-2xl"></span>
                             <span></span>
                         </div>
-                        <p className="text-smal">
+                        <p className="text-small">
                             OUR PURPOSE IS TO HELP PEOPLE REACH THEIR POTENTIAL IN REAL ESTATE.
                         </p>
                         <div className="mt-4">
-                            <FontAwesomeIcon onClick={() => slider?.current?.slickPrev()} className="m-2 text-4xl" icon={faCircleArrowLeft} />
+                            <FontAwesomeIcon onClick={() => slider?.current?.slickPrev()} className="m-2 ms-0 text-4xl" icon={faCircleArrowLeft} />
                             <FontAwesomeIcon onClick={() => slider?.current?.slickNext()} className="m-2 text-4xl" icon={faCircleArrowRight} />
                         </div>
                     </div>
