@@ -14,10 +14,12 @@ import Admin from "./src/Admin/Admin";
 import Adminhome from "./src/Admin/adminpage/Adminhome";
 import Users from "./src/Admin/adminpage/Users";
 import Test from "./src/pages/test/Test";
-import Blog from './src/pages/blog/Blog'
+import Blog from "./src/pages/blog/Blog";
 import HostDashBoard from "./src/host-dash-board/HostDashBoard";
 import UserDashBoard from "./src/user-dash-board/UserDashBoard";
 import Contacts from "./src/pages/Contact/Contacts";
+import BeAHost from "./src/pages/beAhost/BeAHost";
+import Search from "./src/pages/search/Search";
 
 export const routes = createBrowserRouter([
   {
@@ -28,9 +30,10 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-      },{
-        path:'contact',
-        element:<Contacts></Contacts>
+      },
+      {
+        path: "contact",
+        element: <Contacts></Contacts>,
       },
       {
         path: "register",
@@ -46,20 +49,28 @@ export const routes = createBrowserRouter([
       },
       {
         path: "test",
-        element: <Test></Test>
+        element: <Test></Test>,
       },
       {
         path: "host-dash-board",
         element: <HostDashBoard></HostDashBoard>,
       },
       {
+        path: "be-a-host",
+        element: <BeAHost></BeAHost>,
+      },
+      {
         path: "user-dash-board",
         element: <UserDashBoard></UserDashBoard>,
       },
       {
-        path: 'blog',
-        element: <Blog></Blog>
-      }
+        path: "blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "search",
+        element: <Search></Search>,
+      },
     ],
   },
   {

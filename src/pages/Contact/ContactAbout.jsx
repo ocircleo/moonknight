@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import img from "../../assets/images/ContactPage/contact.jpg"
 import "../Contact/Contact.css";
 
@@ -21,7 +22,7 @@ const ContactAbout = () => {
             <p className="pt-6 text-lg text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis
               ligula eu lectus vulputate porttitor sed feugiat nunc. Mauris ac consectetur ante,</p>
             <div className="pt-4">
-              <button className="btn btn-primary hover:bg-transparent hover:text-black">Go to FAQ</button>
+              <Link to="/question"><button className="btn btn-primary hover:bg-transparent hover:text-black">Go to FAQ</button></Link>
             </div>
           </div>
          </div>

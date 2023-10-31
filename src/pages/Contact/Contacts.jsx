@@ -25,6 +25,7 @@ const Contacts = () => {
             </div>
             <ContactAbout/>
             <ContactDetails/>
+            
         </div>
     );
 };
