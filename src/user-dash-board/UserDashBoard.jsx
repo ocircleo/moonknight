@@ -1,13 +1,16 @@
+import { useContext } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { Authcontext } from '../private/provider/Provider';
 const UserDashBoard = () => {
+    const { user } = useContext(Authcontext);
+    console.log(user)
     return (
 
         <div className="grid grid-cols-6 max-w-screen-xl mx-auto mt-[8%] sm:px-6 md:px-8 md:py-8 shadow-2xl shadow-teal-100 bg-[#F7F6FF] ">
             <div className="md:col-span-2 col-span-6 bg-[#6A94FF] md:rounded-s-xl ">
                 <div className="flex flex-col justify-center items-center text-center h-96 gap-y-3 text-white font-serif">
-                    <img className="rounded-full h-28 w-28 items-center justify-center" src="/src/assets/images/blog image/man2.jpg" alt="" />
-                    <h2 className="pt-2">Md.Mosarof </h2>
-                    <h2>Web Developer</h2>
+                    <img className="rounded-full h-28 w-28 items-center justify-center object-cover" src={user.photoURL} alt="" />
+                    <h2 className="pt-2">{user.displayName} </h2>
                     <div className='text-white fill-slate-50 '>
                         <a href="#_" className="px-5 py-2.5 relative rounded group font-medium text-white font-medium inline-block">
                             <span className="absolute top-0 left-0 w-full h-full rounded opacity-50 filter blur-sm bg-gradient-to-br from-purple-600 to-blue-500"></span>
@@ -25,11 +28,12 @@ const UserDashBoard = () => {
                 <div className="flex justify-between my-7  font-serif">
                     <div>
                         <h2>Email</h2>
-                        <p>mosarof@gmail.com</p>
+                        <p>{user.email
+                        }</p>
                     </div>
                     <div>
                         <h2>Phone</h2>
-                        <p>01946875729</p>
+                        <p>{user.phoneNumber?user.phoneNumber:'No Phone number added'}</p>
                     </div>
                 </div>
 
