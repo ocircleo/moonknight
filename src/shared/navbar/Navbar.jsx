@@ -133,11 +133,11 @@ const Navbar = () => {
 
           <div
             onClick={() => setNavState(!navState)}
-            className={`h-9 w-8 cursor-pointer rounded  flex gap-[3px] items-center justify-center flex-col lg:hidden`}
+            className={`h-9 w-8 cursor-pointer rounded  flex gap-[3px] items-center justify-center flex-col lg:hidden duration-100`}
           >
             <div className={`h-[6px] bg-black w-full rounded-[2px] ${navState?"rotate-45 translate-x-2":"rotate-0 translate-x-0"}`}></div>
-            <div className={`h-[6px] bg-black w-full rounded-[2px]`}></div>
-            <div className={`h-[6px] bg-black w-full rounded-[2px]`}></div>
+            <div className={`h-[6px] bg-black w-full rounded-[2px] ${navState?"translate-x-10":" translate-x-0"}`}></div>
+            <div className={`h-[6px] bg-black w-full rounded-[2px] ${navState?"-rotate-45 translate-x-2":"rotate-0 translate-x-0"}`}></div>
           
           </div>
         </div>
