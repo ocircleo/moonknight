@@ -17,17 +17,9 @@ const Home = () => {
       <div className="mb-5">
         <Banner></Banner>
       </div>
-      <div className="mb-5">
 
-        <Banner></Banner>
-      </div>
       <div className="mb-5">
-
         <WorkSection></WorkSection>
-
-        <Property></Property>
-
-        <Property></Property>
       </div>
 
       <div className="mb-5">

@@ -5,6 +5,7 @@ import { MdAccountBox } from "react-icons/md";
 import ActiveNavLInk from "../Activelink/ActiveNavLInk";
 import { dataContext } from "../../private/provider/Data_Provider";
 import ActiveLink from "../Activelink/ActiveLink";
+import nav from './nav.module.css'
 const Navbar = () => {
   const { user, signout, userDB } = useContext(Authcontext);
   const { navState, setNavState } = useContext(dataContext);
@@ -133,12 +134,12 @@ const Navbar = () => {
 
           <div
             onClick={() => setNavState(!navState)}
-            className={`h-9 w-8 cursor-pointer rounded  flex gap-[3px] items-center justify-center flex-col lg:hidden duration-100`}
+            className={`h-9 w-7 cursor-pointer rounded  flex gap-[3px] items-center justify-center flex-col lg:hidden`}
           >
-            <div className={`h-[6px] bg-black w-full rounded-[2px] ${navState?"rotate-45 translate-x-2":"rotate-0 translate-x-0"}`}></div>
-            <div className={`h-[6px] bg-black w-full rounded-[2px] ${navState?"translate-x-10":" translate-x-0"}`}></div>
-            <div className={`h-[6px] bg-black w-full rounded-[2px] ${navState?"-rotate-45 translate-x-2":"rotate-0 translate-x-0"}`}></div>
-          
+            <div className={`h-[6px] bg-black w-full duration-200 rounded-[2px] ${navState ? nav.active : nav.default}`}></div>
+            <div className={`h-[6px] bg-black w-full duration-200 rounded-[2px] ${navState ? nav.base : nav.baseDefault}`}></div>
+            <div className={`h-[6px] bg-black w-full duration-200 rounded-[2px] ${navState ? nav.active2 : nav.default2}`}></div>
+
           </div>
         </div>
       </nav>
@@ -146,15 +147,13 @@ const Navbar = () => {
       <div
         onClick={() => setNavState(!navState)}
         title="nav-links"
-        className={`h-screen w-full bg-gray-400/50 fixed top-20 z-[110] ${
-          navState ? "block" : "invisible pointer-events-none"
-        }`}
+        className={`h-screen w-full bg-gray-400/50 fixed top-20 z-[110] ${navState ? "block" : "invisible pointer-events-none"
+          }`}
       >
         <div
           onClick={(e) => e.preventDefault()}
-          className={`fixed top-20 duration-200 w-80 bg-white h-screen flex flex-col gap-3 p-3 text-center ${
-            navState ? "right-0" : "-right-80"
-          }`}
+          className={`fixed top-20 duration-200 w-80 bg-white h-screen flex flex-col gap-3 p-3 text-center ${navState ? "right-0" : "-right-80"
+            }`}
         >
           {navLinks.map((ele) => (
             <ActiveLink to={ele.to} key={ele.id}>
@@ -162,9 +161,8 @@ const Navbar = () => {
             </ActiveLink>
           ))}
           <div
-            className={`${
-              user ? "hidden" : "block"
-            } flex gap-2 flex-col`}
+            className={`${user ? "hidden" : "block"
+              } flex gap-2 flex-col`}
           >
             <ActiveLink to={"/login"}>Login</ActiveLink>
             <ActiveLink to={"/register"}>Register</ActiveLink>
