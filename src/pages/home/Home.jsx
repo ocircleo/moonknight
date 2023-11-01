@@ -8,6 +8,7 @@ import Card from "../../shared/Card";
 import Sales from "./homeCompo/Sales";
 import Cities from "./homeCompo/Cities";
 import WorkSection from "./homeCompo/WorkSection";
+import Rent from "./homeCompo/Rent";
 
 const Home = () => {
   const { name } = useContext(dataContext);
@@ -28,6 +29,9 @@ const Home = () => {
       </div>
       <div className="mb-5">
         <Cities></Cities>
+      </div>
+      <div className="mb-5">
+        <Rent></Rent>
       </div>
 
       <div className="mb-5">
