@@ -1,6 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import reader from "../../../public/login.json";
+// import reader from "../../../src/login.json";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { useContext, useState } from "react";
 import { Authcontext } from "../../private/provider/Provider";
