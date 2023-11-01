@@ -14,9 +14,16 @@ import Admin from "./src/Admin/Admin";
 import Adminhome from "./src/Admin/adminpage/Adminhome";
 import Users from "./src/Admin/adminpage/Users";
 import Test from "./src/pages/test/Test";
+import Blog from "./src/pages/blog/Blog";
 import HostDashBoard from "./src/host-dash-board/HostDashBoard";
 import UserDashBoard from "./src/user-dash-board/UserDashBoard";
 import Contacts from "./src/pages/Contact/Contacts";
+import About from "./src/pages/about/About";
+import BeAHost from "./src/pages/beAhost/BeAHost";
+import Search from "./src/pages/search/Search";
+import Question from "./src/pages/Contact/Question";
+import Dashboard from "./src/pages/dashboard/Dashboard";
+import Mintainence from "./src/pages/maintainence/Mintainence";
 
 export const routes = createBrowserRouter([
   {
@@ -27,9 +34,18 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-      },{
-        path:'contact',
-        element:<Contacts></Contacts>
+      },
+      {
+        path: "contact",
+        element: <Contacts></Contacts>,
+      },
+      {
+        path: "question",
+        element: <Question></Question>,
+      },
+      {
+        path:'about',
+        element:<About></About>
       },
       {
         path: "register",
@@ -52,8 +68,28 @@ export const routes = createBrowserRouter([
         element: <HostDashBoard></HostDashBoard>,
       },
       {
+        path: "be-a-host",
+        element: <BeAHost></BeAHost>,
+      },
+      {
         path: "user-dash-board",
         element: <UserDashBoard></UserDashBoard>,
+      },
+      {
+        path: "blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "search",
+        element: <Search></Search>,
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "Mintainence",
+        element: <Mintainence></Mintainence>,
       },
     ],
   },

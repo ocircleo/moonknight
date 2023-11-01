@@ -33,6 +33,7 @@
     "slick-carousel": "^1.8.1",
     "sort-by": "^0.0.2",
     "swiper": "^9.4.1",
+    "toastify": "^2.0.1",
     "tostify": "^0.0.1"
   },
   "devDependencies": {

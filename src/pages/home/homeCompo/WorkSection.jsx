@@ -19,7 +19,6 @@ const WorkSection = () => {
                     <p className='text-slate-500 text-base font-mono pt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio…</p>
                 </div>
             </div>
-
             <div className="shadow-2xl card bg-base-100  pt-8 w-11/12">
                 <div className='flex justify-center items-center'>
                     <span className='h-24 w-24 rounded-full bg-[#FD3358]'>

@@ -4,6 +4,7 @@ import line from "../../assets/images/ContactPage/line-bg.png";
 import ContactAbout from "./ContactAbout";
 import ContactDetails from "./ContactDetails";
 
+
 const Contacts = () => {
     return (
         <div>
@@ -25,6 +26,9 @@ const Contacts = () => {
             </div>
             <ContactAbout/>
             <ContactDetails/>
+            <div>
+              <img src={line} alt="" />
+            </div>
         </div>
     );
 };
