@@ -1,25 +1,33 @@
 import { useContext } from "react";
 import { dataContext } from "../../private/provider/Data_Provider";
-
 import Reviews from "./homeCompo/Reviews";
 import Statistics from "./homeCompo/Statistics";
 import Banner from "./homeCompo/Banner";
 import Property from "./homeCompo/Property";
+import Card from "../../shared/Card";
+import Sales from "./homeCompo/Sales";
+import Cities from "./homeCompo/Cities";
 import WorkSection from "./homeCompo/WorkSection";
-
-
 
 const Home = () => {
   const { name } = useContext(dataContext);
 
   return (
-    <div className="container mx-auto mt-8">
+    <div className=" mx-auto">
       <div className="mb-5">
         <Banner></Banner>
       </div>
 
       <div className="mb-5">
         <WorkSection></WorkSection>
+        <Property></Property>
+      </div>
+
+      <div className="mb-5">
+        <Sales></Sales>
+      </div>
+      <div className="mb-5">
+        <Cities></Cities>
       </div>
 
       <div className="mb-5">

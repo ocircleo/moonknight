@@ -6,7 +6,7 @@ const Statistics = () => {
     const [counterOn, setCounterOn] = useState(false);
     return (
         <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
-            <div className='grid lg:grid-cols-4 text-center bg-[#1E1D85]'>
+            <div className='grid lg:grid-cols-4 text-center bg-[#1E1D85] md:px-12 md:py-12'>
                 <div className='items-center rounded-lg my-4 lg:my-12 py-10 mx-5  hover:bg-[#653cef] ease-in-out duration-1000 '>
 
                     <img className='w-4/12 mx-auto' src="statistics/counter-icon-1 (1).svg" alt="" />
