@@ -18,7 +18,7 @@ const Cities = () => {
                 </div>
 
 
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:px-12 p-5'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:px-12 p-5' data-aos="fade-down" data-aos-anchor-placement="top-center">
 
                         
 
@@ -177,7 +177,7 @@ const Cities = () => {
 
 
                     </div>
-                    <div className="card w-auto  bg-base-100 shadow-xl">
+                    <div className="card w-auto  bg-base-100 shadow-xl" >
                         <div className='relative rounded-lg'>
                             <figure className='rounded-lg'>
                                 <img className='transition duration-300 ease-in-out hover:scale-110' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/city/city-3.jpg" alt="Shoes" />
