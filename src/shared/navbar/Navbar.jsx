@@ -3,39 +3,71 @@ import { Link } from "react-router-dom";
 import { Authcontext } from "../../private/provider/Provider";
 import { MdAccountBox } from "react-icons/md";
 import ActiveNavLInk from "../Activelink/ActiveNavLInk";
+import { dataContext } from "../../private/provider/Data_Provider";
+import ActiveLink from "../Activelink/ActiveLink";
 const Navbar = () => {
   const { user, signout, userDB } = useContext(Authcontext);
-  const navlinks = (
-    <>
-      <ActiveNavLInk to={"/"}> Home</ActiveNavLInk>
-      <ActiveNavLInk to={"/search"}>Search Places</ActiveNavLInk>
-      <ActiveNavLInk to={"/be-a-host"}>Be a Host</ActiveNavLInk>
-      <ActiveNavLInk to={"/about"}>About</ActiveNavLInk>
-      <ActiveNavLInk to={"/contact"}>Contact</ActiveNavLInk>
-      <ActiveNavLInk to={"/blog"}>Blog</ActiveNavLInk>
-    </>
-  );
+  const { navState, setNavState } = useContext(dataContext);
+  const navLinks = [
+    {
+      to: "/",
+      title: "Home",
+      id: 1,
+    },
+    {
+      to: "/search",
+      title: "Search Places",
+      id: 2,
+    },
+    {
+      to: "/be-a-host",
+      title: "Be a Host",
+      id: 3,
+    },
+    {
+      to: "/about",
+      title: "About",
+      id: 4,
+    },
+    {
+      to: "/contact",
+      title: "Contact",
+      id: 5,
+    },
+    {
+      to: "/blog",
+      title: "Blog",
+      id: 6,
+    },
+  ];
+
   return (
     <>
       <nav className="h-20 w-full bg-white fixed top-0 flex justify-between items-center px-4 md:px-10 shadow z-[111]">
         <div className="flex gap-10 h-80 w-auto items-center justify-center">
           <span className="font-bold text-black text-2xl md:text-3xl select-none cursor-pointer">
-            <Link to={'/'}>
+            <Link to={"/"}>
               TOO<span className="text-indigo-400 ">LATE</span>
             </Link>
           </span>
-          <span className="font-semibold lg:flex gap-4 hidden">{navlinks}</span>
+          <span className="font-semibold lg:flex gap-4 hidden">
+            {navLinks.map((ele) => (
+              <ActiveNavLInk to={ele.to} key={ele.id}>
+                {ele.title}
+              </ActiveNavLInk>
+            ))}
+          </span>
         </div>
-        <div className={`flex ${user ? "gap-0" : "gap-4"} items-center`}>
+        <div className={`flex  gap-4 items-center`}>
           {/* //user logo */}
           {user ? (
             <>
-              <div className="dropdown">
-                <label tabIndex={1} className="btn btn-ghost">
+              <div className="dropdown cursor-pointer">
+                <label tabIndex={1} className=" cursor-pointe">
                   <img
                     src={user.photoURL}
                     alt=""
-                    className=" h-[40px] w-[40px] md:h-[55px] md:w-[55px] bg-white border-[2px] md:border-[4px]  rounded-full"
+                    className="cursor-pointer h-[40px] w-[40px] md:h-[55px] md:w-[55px] bg-white  rounded-full"
                   />
                 </label>
                 <div
@@ -100,15 +132,45 @@ const Navbar = () => {
           )}
 
           <div
+            onClick={() => setNavState(!navState)}
             className={`h-9 w-8 cursor-pointer rounded  flex gap-[3px] items-center justify-center flex-col lg:hidden`}
           >
-            <div className="h-[6px] bg-black w-full rounded-[2px]"></div>
-            <div className="h-[6px] bg-black w-full rounded-[2px]"></div>
-            <div className="h-[6px] bg-black w-full rounded-[2px]"></div>
+            <div className={`h-[6px] bg-black w-full rounded-[2px] ${navState?"rotate-45 translate-x-2":"rotate-0 translate-x-0"}`}></div>
+            <div className={`h-[6px] bg-black w-full rounded-[2px]`}></div>
+            <div className={`h-[6px] bg-black w-full rounded-[2px]`}></div>
+          
           </div>
         </div>
       </nav>
       <div className="h-20 w-full bg-white"></div>
+      <div
+        onClick={() => setNavState(!navState)}
+        title="nav-links"
+        className={`h-screen w-full bg-gray-400/50 fixed top-20 z-[110] ${
+          navState ? "block" : "invisible pointer-events-none"
+        }`}
+      >
+        <div
+          onClick={(e) => e.preventDefault()}
+          className={`fixed top-20 duration-200 w-80 bg-white h-screen flex flex-col gap-3 p-3 text-center ${
+            navState ? "right-0" : "-right-80"
+          }`}
+        >
+          {navLinks.map((ele) => (
+            <ActiveLink to={ele.to} key={ele.id}>
+              {ele.title}
+            </ActiveLink>
+          ))}
+          <div
+            className={`${
+              user ? "hidden" : "block"
+            } flex gap-2 flex-col`}
+          >
+            <ActiveLink to={"/login"}>Login</ActiveLink>
+            <ActiveLink to={"/register"}>Register</ActiveLink>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
