@@ -1,4 +1,14 @@
 import { FaArrowLeft, FaArrowRight, FaCalendarAlt } from 'react-icons/fa';
+import img1 from '../../assets/images/blogImage/blog1.jpg'
+import img2 from '../../assets/images/blogImage/blog2.jpg'
+import img3 from '../../assets/images/blogImage/blog3.jpg'
+import man1 from '../../assets/images/blogImage/man.jpg'
+import man2 from '../../assets/images/blogImage/man2.jpg'
+import man3 from '../../assets/images/blogImage/man3.jpg'
+import article1 from '../../assets/images/blogImage/article1.jpg'
+import article2 from '../../assets/images/blogImage/article2.jpg'
+import article3 from '../../assets/images/blogImage/article3.jpg'
+
 
 const blog = () => {
     return (
@@ -13,7 +23,7 @@ const blog = () => {
                 {/* ...........Left side start........... */}
                 <div className="lg:col-span-4 col-span-6 grid gap-5">
                     <div className="card card-compact w-[100%] bg-base-100 shadow-xl">
-                        <figure><img className="img-fluid hover:scale-125 transition duration-500 cursor-pointer" src="/src/assets/images/blog image/blog1.jpg" alt="Shoes" /></figure>
+                        <figure><img className="img-fluid hover:scale-125 transition duration-500 cursor-pointer" src={img1} alt="Shoes" /></figure>
                         <div className="card-body">
                             <div className="flex justify-between items-center">
                                 <div>
@@ -28,7 +38,7 @@ const blog = () => {
                                 </div>
                                 <div className="flex gap-6 items-center">
                                     <div className="flex justify-center items-center gap-2">
-                                        <img className="h-6 w-6 rounded-full" src="/src/assets/images/blog image/man.jpg" alt="" />
+                                        <img className="h-6 w-6 rounded-full" src={img2} alt="" />
                                         <h2 className="font-size: 14px;font-weight: 500;color: #8A909A;">Alphonsa Daniel</h2>
                                     </div>
                                     <div className='flex items-center gap-1'>
@@ -46,7 +56,7 @@ const blog = () => {
                         </div>
                     </div>
                     <div className="card card-compact w-[100%] bg-base-100 shadow-xl">
-                        <figure><img className="img-fluid hover:scale-125 transition duration-500 cursor-pointer" src="/src/assets/images/blog image/blog2.jpg" alt="Shoes" /></figure>
+                        <figure><img className="img-fluid hover:scale-125 transition duration-500 cursor-pointer" src={img3} alt="Shoes" /></figure>
                         <div className="card-body">
                             <div className="flex justify-between items-center">
                                 <div>
@@ -61,7 +71,7 @@ const blog = () => {
                                 </div>
                                 <div className="flex gap-6 items-center">
                                     <div className="flex justify-center items-center gap-2">
-                                        <img className="h-6 w-6 rounded-full" src="/src/assets/images/blog image/man3.jpg" alt="" />
+                                        <img className="h-6 w-6 rounded-full" src={man3} alt="" />
                                         <h2 className="font-size: 14px;font-weight: 500;color: #8A909A;">Francis</h2>
                                     </div>
                                     <div className='flex items-center gap-1'>
@@ -79,7 +89,7 @@ const blog = () => {
                         </div>
                     </div>
                     <div className="card card-compact w-[100%] bg-base-100 shadow-xl">
-                        <figure><img className="img-fluid hover:scale-125 transition duration-500 cursor-pointer" src="/src/assets/images/blog image/blog3.jpg" alt="Shoes" /></figure>
+                        <figure><img className="img-fluid hover:scale-125 transition duration-500 cursor-pointer" src={img3} alt="Shoes" /></figure>
                         <div className="card-body">
                             <div className="flex justify-between items-center">
                                 <div>
@@ -94,7 +104,7 @@ const blog = () => {
                                 </div>
                                 <div className="flex gap-6 items-center">
                                     <div className="flex justify-center items-center gap-2">
-                                        <img className="h-6 w-6 rounded-full" src="/src/assets/images/blog image/man2.jpg" alt="" />
+                                        <img className="h-6 w-6 rounded-full" src={man2} alt="" />
                                         <h2 className="font-size: 14px;font-weight: 500;color: #8A909A;">Eric Krock</h2>
                                     </div>
                                     <div className='flex items-center gap-1'>
@@ -191,7 +201,7 @@ const blog = () => {
                             <div className='grid gap-6 '>
 
                                 <div className="relative w-full h-80 transform scale-100 overflow-hidden duration-700 hover:scale-105  rounded-lg">
-                                    <div className="bg-cover bg-center h-full relative" style={{ backgroundImage: 'url("/src/assets/images/blog image/article1.jpg")' }}>
+                                    <div className="bg-cover bg-center h-full relative" style={{ backgroundImage: `url(${article1})` }}>
                                         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                                         <div className="absolute bottom-7 left-5 text-white text-center text-white hover:text-violet-600 ease-in duration-300">
                                             <h2 className=" font-bold">Amazing Tricks About Build Dream..</h2>
@@ -203,7 +213,7 @@ const blog = () => {
                                     </div>
                                 </div>
                                 <div className="relative w-full h-80 transform scale-100 overflow-hidden duration-700 hover:scale-105  rounded-lg">
-                                    <div className="bg-cover bg-center h-full relative" style={{ backgroundImage: 'url("/src/assets/images/blog image/article2.jpg")' }}>
+                                    <div className="bg-cover bg-center h-full relative" style={{ backgroundImage: `url(${article2}) `}}>
                                         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                                         <div className="absolute bottom-7 left-5 text-white text-center text-white hover:text-violet-600 ease-in duration-300">
                                             <h2 className=" font-bold">Excited News About Buildings.</h2>
@@ -215,7 +225,7 @@ const blog = () => {
                                     </div>
                                 </div>
                                 <div className="relative w-full h-80 transform scale-100 overflow-hidden duration-700 hover:scale-105  rounded-lg">
-                                    <div className="bg-cover bg-center h-full relative" style={{ backgroundImage: 'url("/src/assets/images/blog image/article3.jpg")' }}>
+                                    <div className="bg-cover bg-center h-full relative" style={{ backgroundImage: `url(${article3})` }}>
                                         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                                         <div className="absolute bottom-7 left-5 text-white text-center text-white hover:text-violet-600 ease-in duration-300">
                                             <h2 className=" md:pl-0 font-bold">8 Amazing Tricks About Build Dream..</h2>
