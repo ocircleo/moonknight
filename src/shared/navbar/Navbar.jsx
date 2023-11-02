@@ -45,7 +45,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="h-20 w-full bg-white fixed top-0 flex justify-between items-center px-4 md:px-10 shadow z-[111]">
-        <div className="flex gap-10 h-80 w-auto items-center justify-center">
+        <div className="flex gap-10  w-auto items-center justify-center">
           <span className="font-bold text-black text-2xl md:text-3xl select-none cursor-pointer">
             <Link to={"/"}>
               TOO<span className="text-indigo-400 ">LATE</span>

@@ -2,23 +2,6 @@ import { useContext } from "react";
 import { dataContext } from "../../private/provider/Data_Provider";
 import Reviews from "./homeCompo/Reviews";
 import Statistics from "./homeCompo/Statistics";
-<<<<<<< HEAD
-//<<<<<<< HEAD
-// <<<<<<< HEAD
-
-import WorkSection from "./homeCompo/WorkSection";
-import Banner from "./homeCompo/Banner";
-// =======
-// import Banner from "./homeCompo/Banner";
-// import WorkSection from "./homeCompo/WorkSection";
-import Property from "./homeCompo/Property";
-// >>>>>>> e4326f253d0d7eaead89ed975b828ce38145b554
-//=======
-//import Banner from "./homeCompo/Banner";
-//import WorkSection from "./homeCompo/WorkSection";
-//import Property from "./homeCompo/Property";
-//>>>>>>> f212567304bb130eda8ae5f4357b1da060daf321
-=======
 import Banner from "./homeCompo/Banner";
 import Property from "./homeCompo/Property";
 import Card from "../../shared/Card";
@@ -30,7 +13,6 @@ import Faq from "./homeCompo/Faq";
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 
->>>>>>> efcdbf84bd7bce6a2c5def729c77108d7d44eb5c
 const Home = () => {
 
   Aos.init({
@@ -48,25 +30,9 @@ const Home = () => {
       <div className="mb-5">
         <Banner></Banner>
       </div>
-<<<<<<< HEAD
-      <div className="mb-5">
-{/*<<<<<<< HEAD*/}
-        <Banner></Banner>
-      </div>
-      <div className="mb-5">
-{/* <<<<<<< HEAD */}
-       
-      <WorkSection></WorkSection>
-{/*=======*/}
-        <Property></Property>
-{/* >>>>>>> e4326f253d0d7eaead89ed975b828ce38145b554 */}
-{/*=======*/}
-        <Property></Property>
-{/*>>>>>>> f212567304bb130eda8ae5f4357b1da060daf321*/}
-=======
 
       <div className="mb-5" data-aos="fade-down" data-aos-anchor-placement="top-center">
-      <WorkSection></WorkSection>
+        <WorkSection></WorkSection>
       </div>
 
       <div className="mb-5">
@@ -81,7 +47,6 @@ const Home = () => {
       </div>
       <div className="mb-5">
         <Rent></Rent>
->>>>>>> efcdbf84bd7bce6a2c5def729c77108d7d44eb5c
       </div>
 
       <div className="mb-5">
