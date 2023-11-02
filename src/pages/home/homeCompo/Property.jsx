@@ -7,6 +7,8 @@ import {
     faCircleArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from "react";
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const Property = () => {
     const slider = useRef(null);
@@ -36,6 +38,13 @@ const Property = () => {
 
     }
 
+    Aos.init({
+        offset: 200,
+        duration: 1000,
+        easing: 'ease-in-sine',
+        delay: 100,
+      });
+
 
 
     return (
@@ -60,7 +69,7 @@ const Property = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-2">
+                <div className="col-span-2" data-aos="fade-down" data-aos-anchor-placement="top-center">
                     <Slider ref={slider} {...settings}>
 
                         <div className="p-5">

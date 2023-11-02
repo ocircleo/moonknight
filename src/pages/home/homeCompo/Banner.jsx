@@ -57,7 +57,7 @@ const Banner = () => {
                 </Tab>
               </TabList>
             </div>
-            <TabPanel>
+            <TabPanel data-aos="fade-down" data-aos-anchor-placement="top-center">
               <div className="  lg:bg-white  rounded-2xl  ">
                 <form className=" grid   grid-cols-1 md:grid-cols-2 lg:grid-cols-6 p-5    gap-2 mr-8 md:mr-0 rounded-xl lg:opacity-100     lg:bg-white lg:py-8 shadow-white   md:py-8 md:px-4 ">
 
