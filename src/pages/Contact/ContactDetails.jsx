@@ -3,9 +3,9 @@ import { MdOutlineAttachEmail, MdOutlineLocationOn } from "react-icons/md";
 
 const ContactDetails = () => {
     return (
-        <div className="md:pl-24 lg:pl-24 md:pe-24 lg:pe-24 p-6">
-            <div className="md:flex lg:flex gap-6">
-                <div className="lg:w-6/12 md:w-6/12 shadow overflow-hidden sm:rounded-md">
+        <div className="md:pl-24 lg:pl-24 md:pe-24 lg:pe-24 p-6 overflow-x-hidden">
+            <div className="flex flex-col md:flex-row gap-6">
+                <div className="w-full md:w-6/12 shadow sm:rounded-md">
                     <h1 className="text-black text-2xl font-bold  p-6">Get In Touch</h1>
                     <hr className="pl-6 pe-6" />
                     <div>
@@ -66,7 +66,7 @@ const ContactDetails = () => {
                     </div>
                 </div>
 
-                <div className="">
+                <div className="w-full md:w-6/12">
                     <h1 className="text-black text-2xl font-bold pb-6">Contact Details</h1>
                     <section>
                         <div className="flex gap-8">
