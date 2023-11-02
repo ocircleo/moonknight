@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import gif from "../../assets/images/BeHost/Welcome.gif"
 import '../beAhost/beHost.css'
+=======
+
+
+>>>>>>> efcdbf84bd7bce6a2c5def729c77108d7d44eb5c
 
 const BeAHost = () => {
     return (

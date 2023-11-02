@@ -1,0 +1,10 @@
+.active {
+    color: rgb(129 140 248);
+}
+
+.pending {
+    color: rgb(183, 191, 255);
+}
+.deafult{
+    color: black;
+}

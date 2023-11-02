@@ -5,6 +5,7 @@ import ContactAbout from "./ContactAbout";
 import ContactDetails from "./ContactDetails";
 
 
+
 const Contacts = () => {
     return (
         <div>
@@ -22,12 +23,12 @@ const Contacts = () => {
                 </div>
             </div>
             <div>
-              <img src={line} alt="" />
+                <img src={line} alt="" />
             </div>
-            <ContactAbout/>
-            <ContactDetails/>
+            <ContactAbout />
+            <ContactDetails />
             <div>
-              <img src={line} alt="" />
+                <img src={line} alt="" />
             </div>
         </div>
     );
