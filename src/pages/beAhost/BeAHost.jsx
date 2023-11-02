@@ -16,7 +16,7 @@ const BeAHost = () => {
                 </fieldset>
                 <fieldset className='flex flex-col gap-3'>
                     <label htmlFor="city" className='font-semibold text-xl'>Enter City Name</label>
-                    <input type="file" placeholder="Enter city name" multiple className="input input-bordered input-info w-full max-w-xs" />
+                    <input type="file" placeholder="Enter city name" multiple className="file-input w-full max-w-xs" />
                     <p className='text-sm text-red-500'></p>
                 </fieldset>
             </form>
