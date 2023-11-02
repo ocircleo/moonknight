@@ -5,10 +5,10 @@ import { FaMapMarkerAlt, FaRegStar, FaStar } from 'react-icons/fa';
 const Card = () => {
     return (
 
-        <div className="card w-auto  bg-base-100 shadow-xl">
+        <div className="card w-auto  bg-white shadow-xl h-auto">
             <div className='relative rounded-lg'>
                 <figure className=''>
-                    <img className='transition duration-300 ease-in-out hover:scale-110' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/product/product-3.jpg" alt="Shoes" />
+                    <img className='transition duration-300 ease-in-out hover:scale-110 h-[350px] bg-gray-400 w-full' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/product/product-3.jpg" alt="Shoes" />
                 </figure>
 
                 <div>
