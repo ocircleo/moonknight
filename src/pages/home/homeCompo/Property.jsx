@@ -1,7 +1,8 @@
-//import Slider from "react-slick";
-//import "slick-carousel/slick/slick.css";
-//import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import img from '../../../assets/images/Property1 (2).svg'
 import {
     faCircleArrowLeft,
     faCircleArrowRight,
@@ -38,7 +39,7 @@ const Property = () => {
 
     }
 
-   {/* Aos.init({
+    {/* Aos.init({
         offset: 200,
         duration: 1000,
         easing: 'ease-in-sine',
@@ -76,7 +77,7 @@ const Property = () => {
                             <div className="card h-[300px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
-                                        src="/src/assets/images/Property1 (2).svg"
+                                        src={img}
                                         alt="Shoes"
                                         className="rounded-xl"
                                     />
@@ -91,7 +92,7 @@ const Property = () => {
                             <div className="card h-[300px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
-                                        src="/src/assets/images/Property1 (2).svg"
+                                        src={img}
                                         alt="Shoes"
                                         className="rounded-xl"
                                     />
@@ -106,7 +107,7 @@ const Property = () => {
                             <div className="card h-[300px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
-                                        src="/src/assets/images/Property1 (2).svg"
+                                        src={img}
                                         alt="Shoes"
                                         className="rounded-xl"
                                     />
@@ -121,7 +122,7 @@ const Property = () => {
                             <div className="card h-[300px] max:max:w-[250px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
-                                        src="/src/assets/images/Property1 (2).svg"
+                                        src={img}
                                         alt="Shoes"
                                         className="rounded-xl"
                                     />
@@ -136,7 +137,7 @@ const Property = () => {
                             <div className="card h-[300px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
-                                        src="/src/assets/images/Property1 (2).svg"
+                                        src={img}
                                         alt="Shoes"
                                         className="rounded-xl"
                                     />
@@ -151,7 +152,7 @@ const Property = () => {
                             <div className="card h-[300px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
-                                        src="/src/assets/images/Property1 (2).svg"
+                                        src={img}
                                         alt="Shoes"
                                         className="rounded-xl"
                                     />

@@ -7,11 +7,9 @@ const BeAHost = () => {
     }
     return (
         <div className='w-full lg:w-5/6 mx-auto p-2 mt-10'>
-            <div className='lg:flex md:flex lg:gap-36'>
-                <section className='lg:pt-28'>
-                    <img src={wellcome} alt="" />
-                </section>
-                <section className='bg-white  rounded px-8 pt-6 pb-8 mb-4 lg:w-[550px] border-4 border-indigo-500' style={{ boxShadow: "6px 10px 6px 10px #888888" }}>
+          
+               
+                <section className='bg-white  rounded px-8 pt-6 pb-8 mb-4 lg:w-[550px] '>
 
                     <div className='pb-5'>
                         <h1 className='text-indigo-500 font-semibold text-xl pb-2 lg:text-3xl  capitalize'> Rent House Add</h1>
@@ -73,7 +71,6 @@ const BeAHost = () => {
                     </form>
                 </section>
             </div>
-        </div>
     );
 };
 
