@@ -57,7 +57,7 @@ const Banner = () => {
                 </Tab>
               </TabList>
             </div>
-            <TabPanel data-aos="fade-down" data-aos-anchor-placement="top-center">
+            <TabPanel>
               <div className="  lg:bg-white  rounded-2xl  ">
                 <form className=" grid   grid-cols-1 md:grid-cols-2 lg:grid-cols-6 p-5    gap-2 mr-8 md:mr-0 rounded-xl lg:opacity-100     lg:bg-white lg:py-8 shadow-white   md:py-8 md:px-4 ">
 
@@ -73,9 +73,9 @@ const Banner = () => {
                     </select>
 
                   </div>
-                  <input type="text" placeholder="Write Address" className="my-1 md:mx-1 border-y-blue-600  bg-black opacity-30 lg:opacity-100 lg:border-none input w-full bg-black  lg:bg-slate-100  font-semibold text-white  lg:text-blue-950    shadow-lg  text-lg  max-w-xs" />
-                  <input type="text" placeholder="Min Price" className="my-1 md:mx-1 border-y-blue-600 input  bg-black opacity-30 lg:opacity-100 lg:border-none w-full bg-black  lg:bg-slate-100  font-semibold text-white  lg:text-blue-950    shadow-lg  text-lg  max-w-xs" />
-                  <input type="text" placeholder="Max price" className="my-1 md:mx-1 border-y-blue-600 input  bg-black opacity-30 lg:opacity-100 lg:border-none w-full bg-black  lg:bg-slate-100  font-semibold text-white  lg:text-blue-950    shadow-lg  text-lg  max-w-xs" />
+                  <input type="text" placeholder="Write Address" className="my-1 md:mx-1 border-y-blue-600   opacity-30 lg:opacity-100 lg:border-none input w-full lg:bg-slate-100  font-semibold text-white  lg:text-blue-950    shadow-lg  text-lg  max-w-xs" />
+                  <input type="text" placeholder="Min Price" className="my-1 md:mx-1 border-y-blue-600 input  opacity-30 lg:opacity-100 lg:border-none w-full bg-black  lg:bg-slate-100  font-semibold text-white  lg:text-blue-950    shadow-lg  text-lg  max-w-xs" />
+                  <input type="text" placeholder="Max price" className="my-1 md:mx-1 border-y-blue-600 input  opacity-30 lg:opacity-100 lg:border-none w-full bg-black  lg:bg-slate-100  font-semibold text-white  lg:text-blue-950    shadow-lg  text-lg  max-w-xs" />
                   <div className=' flex justify-center  '>
 
 

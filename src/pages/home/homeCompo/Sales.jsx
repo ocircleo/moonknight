@@ -12,7 +12,7 @@ const Sales = () => {
                 <p className="text-lg text-slate-400 pt-4">Hand-Picked selection of quality places</p>
             </div> 
 
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:px-10 p-5 py-5'data-aos="fade-down" data-aos-anchor-placement="top-center">
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:px-10 p-5 py-5'>
                 <Card></Card>
                 <Card></Card>
                 <Card></Card>

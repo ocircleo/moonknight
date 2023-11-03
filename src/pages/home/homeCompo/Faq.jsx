@@ -2,7 +2,7 @@ import React from 'react';
 
 const Faq = () => {
     return (
-        <div className="bg-[#F7F6FF] overflow-hidden md:px-12 md:py-12" data-aos="fade-down" data-aos-anchor-placement="top-center">
+        <div className="bg-[#F7F6FF] overflow-hidden md:px-12 md:py-12">
             <div className="md:grid md:p-5 cols-1 md:grid-cols-3 gap-4 justify-items-center items-center p-5">
                 <div className=" md:w-full text-center md:text-left">
                     <img className='rounded-xl' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/faq-img.jpg" alt="" />

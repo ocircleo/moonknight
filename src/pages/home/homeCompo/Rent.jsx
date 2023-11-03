@@ -2,6 +2,10 @@ import React from 'react';
 import Card from '../../../shared/Card';
 
 const Rent = () => {
+
+
+    
+
     return (
         <div className='my-16 md:px-12 md:py-12 bg-[#F7F6FF]'>
             <div className="text-center md:px-12 mb-10 p-5 ">
@@ -12,7 +16,7 @@ const Rent = () => {
                 <p className="text-lg text-slate-400 pt-4">Hand-Picked selection of quality places</p>
             </div> 
 
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:px-10 p-5 ' data-aos="fade-down" data-aos-anchor-placement="top-center">
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:px-10 p-5 '>
                 <Card></Card>
                 <Card></Card>
                 <Card></Card>
