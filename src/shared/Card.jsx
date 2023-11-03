@@ -8,7 +8,7 @@ const Card = () => {
         <div className="card w-auto  bg-white shadow-xl h-auto">
             <div className='relative rounded-lg'>
                 <figure className=''>
-                    <img className='transition duration-300 ease-in-out hover:scale-110 h-[350px] bg-gray-400 w-full' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/product/product-3.jpg" alt="Shoes" />
+                    <img className= 'object-cover transition duration-300 ease-in-out hover:scale-110 h-[350px] md:h-[250px] xl:h-[350px] bg-gray-400 w-full' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/product/product-3.jpg" alt="Shoes" />
                 </figure>
 
                 <div>
@@ -43,7 +43,7 @@ const Card = () => {
                     <span className='pe-1'><FaMapMarkerAlt></FaMapMarkerAlt></span>
                     <span className='text-gray-500'>Mirpur Dhaka </span>
                 </div>
-                <div className='flex items-center justify-between text-center p-2 my-2 bg-slate-100 '>
+                <div className='flex items-center flex-wrap justify-between text-center p-2 my-2 bg-slate-100 '>
 
                     <li className='list-none flex items-center'>
                         <img src="../../public/images/icon/bed-icon.svg" alt="" />
