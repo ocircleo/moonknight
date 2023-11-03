@@ -5,18 +5,18 @@ import CountUp from 'react-countup';
 
 
 
-<<<<<<< HEAD
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+// <<<<<<< HEAD
+// import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-=======
->>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24
+// =======
+// >>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24
 
 const About = () => {
 
@@ -24,11 +24,11 @@ const About = () => {
 
   const [counterOn, setCounterOn] = useState(false);
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
     return (
         <div>
 
-<Swiper
+{/* <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
@@ -43,13 +43,13 @@ const About = () => {
       <SwiperSlide>Slide 2</SwiperSlide>
       <SwiperSlide>Slide 3</SwiperSlide>
       <SwiperSlide>Slide 4</SwiperSlide>
-      ...
-    </Swiper>
+      
+    </Swiper> */}
 
 
 
 
-            <div className=' bg-blue-950 flex justify-center items-center h-56 '>
+            {/* <div className=' bg-blue-950 flex justify-center items-center h-56 '>
               <div className=''>
               <h2 className='text-4xl font-bold text-center text-white pb-2'>About Us</h2>
              <ul className='flex justify-center align-middle text-lg text-white'>
@@ -61,10 +61,10 @@ const About = () => {
                 <Link to={"/about"}> About</Link>
               </li>
              </ul>
-              </div>
-=======
-  return (
-    <div>
+              </div> */}
+{/* ======= */}
+  {/* return ( */}
+  
       <div className=' bg-blue-950 flex justify-center items-center h-56 '>
         <div className=''>
           <h2 className='text-4xl font-bold text-center text-white pb-2'>About Us</h2>
@@ -78,6 +78,7 @@ const About = () => {
             </li>
           </ul>
         </div>
+      
       </div>
       <div className=' grid  grid-cols-3'>
         <span className='border-2 border-[#4F46E5]'></span>
@@ -143,7 +144,7 @@ const About = () => {
                 K
               </h1>
               <p className='text-[#8a99ad]  group-hover:text-white text-xl  font-semibold'>Listings Added</p>
->>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24
+{/* >>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24 */}
             </div>
           </div>
           <div className='items-center rounded-lg  w-64 h-64  pt-10  bg-[#FFFFFF] hover:bg-[#653cef] group hover:text-white ease-in-out duration-100 '>
@@ -223,8 +224,8 @@ const About = () => {
 
 
 
-
-    </div>
+</div>
+   
   );
 };
 

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { dataContext } from "../../private/provider/Data_Provider";
 import Reviews from "./homeCompo/Reviews";
 import Statistics from "./homeCompo/Statistics";
-<<<<<<< HEAD
+// <<<<<<< HEAD
 // <<<<<<< HEAD
 // <<<<<<< HEAD
 
@@ -18,19 +18,19 @@ import Property from "./homeCompo/Property";
 // import WorkSection from "./homeCompo/WorkSection";
 // import Property from "./homeCompo/Property";
 // >>>>>>> f212567304bb130eda8ae5f4357b1da060daf321
-=======
-import Banner from "./homeCompo/Banner";
-import Property from "./homeCompo/Property";
+// =======
+// import Banner from "./homeCompo/Banner";
+// import Property from "./homeCompo/Property";
 import Card from "../../shared/Card";
 import Sales from "./homeCompo/Sales";
 import Cities from "./homeCompo/Cities";
-import WorkSection from "./homeCompo/WorkSection";
+// import WorkSection from "./homeCompo/WorkSection";
 import Rent from "./homeCompo/Rent";
 import Faq from "./homeCompo/Faq";
 //import Aos from 'aos';
 //import 'aos/dist/aos.css'
 
->>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24
+// >>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24
 const Home = () => {
 
  {/* Aos.init({
@@ -54,7 +54,7 @@ const Home = () => {
       </div>
 
       <div className="mb-5">
-<<<<<<< HEAD
+{/* <<<<<<< HEAD */}
 {/* <<<<<<< HEAD */}
         <Banner></Banner>
       </div>
@@ -62,13 +62,13 @@ const Home = () => {
 {/* <<<<<<< HEAD */}
        
       <WorkSection></WorkSection>
-=======
+{/* ======= */}
         <Property></Property>
 {/* >>>>>>> e4326f253d0d7eaead89ed975b828ce38145b554 */}
-=======
+{/* ======= */}
         <Property></Property>
 {/* >>>>>>> f212567304bb130eda8ae5f4357b1da060daf321 */}
-=======
+{/* ======= */}
         <Property></Property>
       </div>
 
@@ -79,8 +79,8 @@ const Home = () => {
         <Cities></Cities>
       </div>
       <div className="mb-5">
-        <Rent></Rent>
->>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24
+        {/* <Rent></Rent>
+>>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24 */}
       </div>
 
       <div className="mb-5">

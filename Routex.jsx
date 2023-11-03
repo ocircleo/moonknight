@@ -18,23 +18,23 @@ import Blog from "./src/pages/blog/Blog";
 import HostDashBoard from "./src/host-dash-board/HostDashBoard";
 import UserDashBoard from "./src/user-dash-board/UserDashBoard";
 import Contacts from "./src/pages/Contact/Contacts";
-<<<<<<< HEAD
 // <<<<<<< HEAD
+// // <<<<<<< HEAD
 import About from "./src/pages/about/About";
 // =======
-=======
-import About from "./src/pages/about/About";
->>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24
+// =======
+// import About from "./src/pages/about/About";
+// >>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24
 import BeAHost from "./src/pages/beAhost/BeAHost";
 import Search from "./src/pages/search/Search";
 import Question from "./src/pages/Contact/Question";
 import Dashboard from "./src/pages/dashboard/Dashboard";
 import Mintainence from "./src/pages/maintainence/Mintainence";
-<<<<<<< HEAD
-// >>>>>>> f212567304bb130eda8ae5f4357b1da060daf321
-=======
+// <<<<<<< HEAD
+// // >>>>>>> f212567304bb130eda8ae5f4357b1da060daf321
+// =======
 import AddBlog from "./src/pages/addBlog/AddBlog";
->>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24
+// >>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24
 
 export const routes = createBrowserRouter([
   {
