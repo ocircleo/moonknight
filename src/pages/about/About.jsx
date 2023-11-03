@@ -3,12 +3,48 @@ import { Link } from 'react-router-dom';
 import ScrollTrigger from 'react-scroll-trigger';
 import CountUp from 'react-countup';
 
+
+
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 const About = () => {
+
+
 
   const [counterOn, setCounterOn] = useState(false);
 
     return (
         <div>
+
+<Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      spaceBetween={50}
+      slidesPerView={3}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+      <SwiperSlide>Slide 4</SwiperSlide>
+      ...
+    </Swiper>
+
+
+
+
             <div className=' bg-blue-950 flex justify-center items-center h-56 '>
               <div className=''>
               <h2 className='text-4xl font-bold text-center text-white pb-2'>About Us</h2>
