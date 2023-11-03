@@ -33,7 +33,7 @@ const UserDashBoard = () => {
                     </div>
                     <div>
                         <h2>Phone</h2>
-                        <p>{user.phoneNumber?user.phoneNumber:'No Phone number added'}</p>
+                        <p>{user.phoneNumber ? user.phoneNumber : 'No Phone number added'}</p>
                     </div>
                 </div>
 

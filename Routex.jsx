@@ -25,6 +25,7 @@ import Question from "./src/pages/Contact/Question";
 import Dashboard from "./src/pages/dashboard/Dashboard";
 import Mintainence from "./src/pages/maintainence/Mintainence";
 import AddBlog from "./src/pages/addBlog/AddBlog";
+import PendingApproval from "./src/Admin/adminpage/PendingApproval";
 
 export const routes = createBrowserRouter([
   {
@@ -124,9 +125,14 @@ export const routes = createBrowserRouter([
       {
         path: "users",
         element: <Users></Users>,
-      }, {
+      },
+      {
         path: "addblog",
         element: <AddBlog></AddBlog>
+      },
+      {
+        path: "PendingApproval",
+        element: <PendingApproval></PendingApproval>
       }
     ],
   },
