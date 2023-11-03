@@ -10,17 +10,17 @@ import Cities from "./homeCompo/Cities";
 import WorkSection from "./homeCompo/WorkSection";
 import Rent from "./homeCompo/Rent";
 import Faq from "./homeCompo/Faq";
-import Aos from 'aos';
-import 'aos/dist/aos.css'
+//import Aos from 'aos';
+//import 'aos/dist/aos.css'
 
 const Home = () => {
 
-  Aos.init({
+ {/* Aos.init({
     offset: 200,
     duration: 900,
     easing: 'ease-in-sine',
     delay: 100,
-  });
+  });*/}
 
 
   const { name } = useContext(dataContext);

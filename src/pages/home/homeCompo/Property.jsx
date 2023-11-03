@@ -1,14 +1,14 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+//import Slider from "react-slick";
+//import "slick-carousel/slick/slick.css";
+//import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faCircleArrowLeft,
     faCircleArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from "react";
-import Aos from 'aos';
-import 'aos/dist/aos.css'
+//import Aos from 'aos';
+//import 'aos/dist/aos.css'
 
 const Property = () => {
     const slider = useRef(null);
@@ -38,12 +38,12 @@ const Property = () => {
 
     }
 
-    Aos.init({
+   {/* Aos.init({
         offset: 200,
         duration: 1000,
         easing: 'ease-in-sine',
         delay: 100,
-      });
+      });*/}
 
 
 
