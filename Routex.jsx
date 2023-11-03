@@ -24,6 +24,7 @@ import Search from "./src/pages/search/Search";
 import Question from "./src/pages/Contact/Question";
 import Dashboard from "./src/pages/dashboard/Dashboard";
 import Mintainence from "./src/pages/maintainence/Mintainence";
+import AddBlog from "./src/pages/addBlog/AddBlog";
 
 export const routes = createBrowserRouter([
   {
@@ -44,8 +45,8 @@ export const routes = createBrowserRouter([
         element: <Question></Question>,
       },
       {
-        path:'about',
-        element:<About></About>
+        path: 'about',
+        element: <About></About>
       },
       {
         path: "register",
@@ -123,7 +124,10 @@ export const routes = createBrowserRouter([
       {
         path: "users",
         element: <Users></Users>,
-      },
+      }, {
+        path: "addblog",
+        element: <AddBlog></AddBlog>
+      }
     ],
   },
 ]);
