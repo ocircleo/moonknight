@@ -4,7 +4,7 @@ import { element } from 'prop-types';
 import React from 'react';
 
 const Cities = () => {
-
+    let cities = [{ city: "Dhaka", properties: '700' }, { city: "Barishal", properties: '200' }, { city: "Jessore", properties: '220' }, { city: "Kummila", properties: '170' }, { city: "Bogura", properties: '70' }, { city: "Rongpur", properties: "40" }]
 
     return (
         <div>
@@ -20,199 +20,28 @@ const Cities = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:px-12 p-5' data-aos="fade-down" data-aos-anchor-placement="top-center">
 
-                        
-
-                    <div className="card w-auto  bg-base-100 shadow-xl">
-                        <div className='relative rounded-lg'>
-                            <figure className='rounded-lg'>
-                                <img className='transition duration-300 ease-in-out hover:scale-110' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/city/city-3.jpg" alt="Shoes" />
-                            </figure>
-
-                            <div>
-                                <div className='absolute top-5 left-8'>
-                                    <h1 className='text-white text-5xl font-bold'>Dhaka</h1>
+                    {
+                        cities.map(ele => {
+                            return (
+                                <div key={ele.properties} className="w-auto shadow-xl h-60 bg-gray-300 relative overflow-hidden">
+                                    <div className='hover:scale-110 h-full w-full duration-200'>
+                                        <img src="https://dreamsestate.dreamstechnologies.com/html/assets/img/city/city-3.jpg" alt="" className='duration-100 absolute hover:scale-105 h-full w-full object-cover rounded z-10 to' />
+                                        <div className='h-full w-full rounded bg-gray-900/50 absolute z-20'></div>
+                                    </div>
+                                    <div className='absolute bottom-5 left-8 z-30'>
+                                        <h1 className='text-white text-2xl font-bold'>{ele.city}</h1>
+                                        <p className='text-white text-md font-bold'>{ele.properties} properties</p>
+                                    </div>
+                                    <div className='absolute  right-8 bottom-5 z-30'>
+                                        <button className="btn btn-circle bg-[#6C60FE] border-none">
+                                            <FontAwesomeIcon className=" text-black text-lg" icon={faArrowRight} />
+                                        </button>
+                                    </div>
                                 </div>
-
-                                <div className='absolute  right-8 bottom-5 '>
-
-                                    <button className="btn btn-circle bg-[#6C60FE] border-none">
-                                    <FontAwesomeIcon className=" text-black text-lg" icon={faArrowRight} />
-                                    </button>
-
-                                    {/* <p className=" bg-[#6C60FE]  rounded-full p-3 ">
-                                        <FontAwesomeIcon className=" text-white" icon={faArrowRight} />
-                                    </p> */}
-                                </div>
-
-
-                            </div>
-                        </div>
-
-
-
-
-
-                    </div>
-                    <div className="card w-auto  bg-base-100 shadow-xl">
-                        <div className='relative rounded-lg'>
-                            <figure className='rounded-lg'>
-                                <img className='transition duration-300 ease-in-out hover:scale-110' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/city/city-3.jpg" alt="Shoes" />
-                            </figure>
-
-                            <div>
-                                <div className='absolute top-5 left-8'>
-                                    <h1 className='text-white text-5xl font-bold'>Dhaka</h1>
-                                </div>
-
-                                <div className='absolute  right-8 bottom-5 '>
-
-                                    <button className="btn btn-circle bg-[#6C60FE] border-none">
-                                    <FontAwesomeIcon className=" text-black text-lg" icon={faArrowRight} />
-                                    </button>
-
-                                    {/* <p className=" bg-[#6C60FE]  rounded-full p-3 ">
-                                        <FontAwesomeIcon className=" text-white" icon={faArrowRight} />
-                                    </p> */}
-                                </div>
-
-
-                            </div>
-                        </div>
-
-
-
-
-
-                    </div>
-                    <div className="card w-auto  bg-base-100 shadow-xl">
-                        <div className='relative rounded-lg'>
-                            <figure className='rounded-lg'>
-                                <img className='transition duration-300 ease-in-out hover:scale-110' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/city/city-3.jpg" alt="Shoes" />
-                            </figure>
-
-                            <div>
-                                <div className='absolute top-5 left-8'>
-                                    <h1 className='text-white text-5xl font-bold'>Dhaka</h1>
-                                </div>
-
-                                <div className='absolute  right-8 bottom-5 '>
-
-                                    <button className="btn btn-circle bg-[#6C60FE] border-none">
-                                    <FontAwesomeIcon className=" text-black text-lg" icon={faArrowRight} />
-                                    </button>
-
-                                    {/* <p className=" bg-[#6C60FE]  rounded-full p-3 ">
-                                        <FontAwesomeIcon className=" text-white" icon={faArrowRight} />
-                                    </p> */}
-                                </div>
-
-
-                            </div>
-                        </div>
-
-
-
-
-
-                    </div>
-                    <div className="card w-auto  bg-base-100 shadow-xl">
-                        <div className='relative rounded-lg'>
-                            <figure className='rounded-lg'>
-                                <img className='transition duration-300 ease-in-out hover:scale-110' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/city/city-3.jpg" alt="Shoes" />
-                            </figure>
-
-                            <div>
-                                <div className='absolute top-5 left-8'>
-                                    <h1 className='text-white text-5xl font-bold'>Dhaka</h1>
-                                </div>
-
-                                <div className='absolute  right-8 bottom-5 '>
-
-                                    <button className="btn btn-circle bg-[#6C60FE] border-none">
-                                    <FontAwesomeIcon className=" text-black text-lg" icon={faArrowRight} />
-                                    </button>
-
-                                    {/* <p className=" bg-[#6C60FE]  rounded-full p-3 ">
-                                        <FontAwesomeIcon className=" text-white" icon={faArrowRight} />
-                                    </p> */}
-                                </div>
-
-
-                            </div>
-                        </div>
-
-
-
-
-
-                    </div>
-                    <div className="card w-auto  bg-base-100 shadow-xl">
-                        <div className='relative rounded-lg'>
-                            <figure className='rounded-lg'>
-                                <img className='transition duration-300 ease-in-out hover:scale-110' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/city/city-3.jpg" alt="Shoes" />
-                            </figure>
-
-                            <div>
-                                <div className='absolute top-5 left-8'>
-                                    <h1 className='text-white text-5xl font-bold'>Dhaka</h1>
-                                </div>
-
-                                <div className='absolute  right-8 bottom-5 '>
-
-                                    <button className="btn btn-circle bg-[#6C60FE] border-none">
-                                    <FontAwesomeIcon className=" text-black text-lg" icon={faArrowRight} />
-                                    </button>
-
-                                    {/* <p className=" bg-[#6C60FE]  rounded-full p-3 ">
-                                        <FontAwesomeIcon className=" text-white" icon={faArrowRight} />
-                                    </p> */}
-                                </div>
-
-
-                            </div>
-                        </div>
-
-
-
-
-
-                    </div>
-                    <div className="card w-auto  bg-base-100 shadow-xl" >
-                        <div className='relative rounded-lg'>
-                            <figure className='rounded-lg'>
-                                <img className='transition duration-300 ease-in-out hover:scale-110' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/city/city-3.jpg" alt="Shoes" />
-                            </figure>
-
-                            <div>
-                                <div className='absolute top-5 left-8'>
-                                    <h1 className='text-white text-5xl font-bold'>Dhaka</h1>
-                                </div>
-
-                                <div className='absolute  right-8 bottom-5 '>
-
-                                    <button className="btn btn-circle bg-[#6C60FE] border-none">
-                                    <FontAwesomeIcon className=" text-black text-lg" icon={faArrowRight} />
-                                    </button>
-
-                                    {/* <p className=" bg-[#6C60FE]  rounded-full p-3 ">
-                                        <FontAwesomeIcon className=" text-white" icon={faArrowRight} />
-                                    </p> */}
-                                </div>
-
-
-                            </div>
-                        </div>
-
-
-
-
-
-                    </div>
-
-
-
+                            )
+                        })
+                    }
                 </div>
-
             </div>
         </div>
     );
