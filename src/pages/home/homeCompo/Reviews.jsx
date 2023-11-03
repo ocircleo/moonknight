@@ -77,69 +77,38 @@ const Reviews = () => {
     // and now initialize it
     swiperEl.initialize();
   }, []);
+  let users = ["slman","Rahim","Mossarof","Mehidy"]
   return (
     <swiper-container init="false" ref={trendingRef}>
-      <swiper-slide>
-        <div className="h-72  w-full bg-white rounded flex flex-col item-start justify-center capitalize cursor-pointer text-xl font-semibold p-6 gap-4 border">
+      {
+        users.map(ele=>{
+          return(
+              <swiper-slide key={ele}>
+        <div className="relative h-auto  w-full mx-auto md:w-4/6 bg-white rounded flex flex-col item-start justify-center capitalize cursor-pointer text-xl font-semibold p-6 gap-4 border">
           <div className="flex flex-col gap-2 items-center">
             <img
               src="https://source.unsplash.com/random/24x24/?face"
               alt=""
               className="h-12 w-12 rounded-full  border-2 border-blue-500"
             />
-            <p>Md.Salman Hossain</p>
+            <p>{ele}</p>
           </div>
-          <p className="text-xl text-center md:px-16 px-6 text-gray-500">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, velit libero? Explicabo, dolores, aperiam doloribus similique et suscipit quidem laborum iste dicta quia accusantium nobis eius assumenda saepe commodi magnam.
-          </p>
+          <div className="text-xl text-center md:px-16 px-6 text-gray-500 w-full md:w-4/6 mx-auto">
+            <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, velit libero? Explicabo, dolores, aperiam doloribus similique et suscipit quidem laborum iste dicta quia accusantium nobis eius assumenda saepe commodi magnam.
+            </p>
+       
+          </div>
+          <div className="absolute bottom-0 h-12 w-full  bg-indigo-200 left-0">
+
+          </div>
         </div>
       </swiper-slide>
-      <swiper-slide>
-        <div className="h-72  w-full bg-white rounded flex flex-col item-start justify-center capitalize cursor-pointer text-xl font-semibold p-6 gap-4 border">
-          <div className="flex flex-col gap-2 items-center">
-            <img
-              src="https://source.unsplash.com/random/24x24/?face"
-              alt=""
-              className="h-12 w-12 rounded-full  border-2 border-blue-500"
-            />
-            <p>Md.Abdur Rahim</p>
-          </div>
-          <p className="text-xl text-center md:px-16 px-6 text-gray-500">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, velit libero? Explicabo, dolores, aperiam doloribus similique et suscipit quidem laborum iste dicta quia accusantium nobis eius assumenda saepe commodi magnam.
-          </p>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div className="h-72  w-full bg-white rounded flex flex-col item-start justify-center capitalize cursor-pointer text-xl font-semibold p-6 gap-4 border">
-          <div className="flex flex-col gap-2 items-center">
-            <img
-              src="https://source.unsplash.com/random/24x24/?face"
-              alt=""
-              className="h-12 w-12 rounded-full  border-2 border-blue-500"
-            />
-            <p>Md.Mossarof Hossain</p>
-          </div>
-          <p className="text-xl text-center md:px-16 px-6 text-gray-500">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, velit libero? Explicabo, dolores, aperiam doloribus similique et suscipit quidem laborum iste dicta quia accusantium nobis eius assumenda saepe commodi magnam.
-          </p>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div className="h-72  w-full bg-white rounded flex flex-col item-start justify-center capitalize cursor-pointer text-xl font-semibold p-6 gap-4 border">
-          <div className="flex flex-col gap-2 items-center">
-            <img
-              src="https://source.unsplash.com/random/24x24/?face"
-              alt=""
-              className="h-12 w-12 rounded-full  border-2 border-blue-500"
-            />
-            <p>Iqbal</p>
-          </div>
-          <p className="text-xl text-center md:px-16 px-6 text-gray-500">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, velit libero? Explicabo, dolores, aperiam doloribus similique et suscipit quidem laborum iste dicta quia accusantium nobis eius assumenda saepe commodi magnam.
-          </p>
-        </div>
-      </swiper-slide>
-     
+          )
+        })
+      }
+    
+      
     </swiper-container>
   );
 };

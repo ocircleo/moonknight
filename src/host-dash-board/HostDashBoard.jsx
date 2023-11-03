@@ -1,7 +1,15 @@
-import React from "react";
+
+
+
+
+
 
 const HostDashBoard = () => {
-  return <div>Welcome to host dashboard</div>;
+  return (
+    <div>
+      <h2>Host dashboard </h2>
+    </div>
+  );
 };
 
 export default HostDashBoard;

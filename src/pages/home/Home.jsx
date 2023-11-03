@@ -86,7 +86,7 @@ const Home = () => {
       <div className="mb-5">
         <Statistics></Statistics>
       </div>
-      <h2 className="text-2xl ps-2 font-semibold my-3">What people says about us</h2>
+      <h2 className="text-3xl ps-2 font-semibold my-3 text-center py-7 capitalize ">What people says about us</h2>
       <div className="mb-5">
         <Reviews></Reviews>
       </div>
