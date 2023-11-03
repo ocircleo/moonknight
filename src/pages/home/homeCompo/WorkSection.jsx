@@ -5,10 +5,10 @@ import card3 from "./../../../assets/images/WorkSectionImg/icons8-shop-location-
 
 const WorkSection = () => {
     return (
-       <div>
+       <div className="my-16">
          <Work/>
-         <div className="grid p-8 pt-8 lg:grid-cols-3 md:grid-cols-3 xl:grid-cols-3 gap-4">
-            <div className="shadow-2xl card bg-base-100 h-72 pt-8 w-11/12">
+         <div className="grid p-5 justify-items-center  md:px-16 lg:grid-cols-3 md:grid-cols-3 xl:grid-cols-3 gap-4">
+            <div className="shadow-2xl card bg-base-100  pt-8 w-11/12">
                 <div className='flex justify-center items-center'>
                     <span className='h-24 w-24 rounded-full bg-indigo-500'>
                     <img className='h-20 w-20 pt-6 pl-4 text-white' src={card1} alt="" />
@@ -19,10 +19,9 @@ const WorkSection = () => {
                     <p className='text-slate-500 text-base font-mono pt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio…</p>
                 </div>
             </div>
-
-            <div className="shadow-2xl card bg-base-100 h-72 pt-8 w-11/12">
+            <div className="shadow-2xl card bg-base-100  pt-8 w-11/12">
                 <div className='flex justify-center items-center'>
-                    <span className='h-24 w-24 rounded-full bg-red-500'>
+                    <span className='h-24 w-24 rounded-full bg-[#FD3358]'>
                     <img className='h-20 w-20 pt-6 pl-4 text-white' src={card2} alt="" />
                     </span>
                 </div>
@@ -32,7 +31,7 @@ const WorkSection = () => {
                 </div>
             </div>
 
-            <div className="shadow-2xl card bg-base-100 h-72 pt-8 w-11/12">
+            <div className="shadow-2xl card bg-base-100  pt-8 w-11/12">
                 <div className='flex justify-center items-center'>
                     <span className='h-24 w-24 rounded-full bg-sky-500'>
                     <img className='h-20 w-20 pt-6 pl-4 text-white' src={card3} alt="" />

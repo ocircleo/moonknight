@@ -1,5 +1,7 @@
 .active {
-    background-color: black;
+    background-color: rgb(99 102 241);
+    padding: 5px;
+    border-radius: 5px;
     font-weight: 600;
     color: white;
 }
@@ -10,7 +12,9 @@
     color: white;
 }
 .deafult{
-    background-color: white;
+    background-color: rgb(213, 213, 213);
     font-weight: 400;
     color: black;
+    padding: 5px;
+    border-radius: 5px;
 }

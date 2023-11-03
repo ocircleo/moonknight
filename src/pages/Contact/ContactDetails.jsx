@@ -3,9 +3,9 @@ import { MdOutlineAttachEmail, MdOutlineLocationOn } from "react-icons/md";
 
 const ContactDetails = () => {
     return (
-        <div className="md:pl-24 lg:pl-24 md:pe-24 lg:pe-24 p-6">
-            <div className="md:flex lg:flex gap-6">
-                <div className="lg:w-6/12 md:w-6/12 shadow overflow-hidden sm:rounded-md">
+        <div className="md:pl-24 lg:pl-24 md:pe-24 lg:pe-24 p-6 overflow-x-hidden">
+            <div className="flex flex-col md:flex-row gap-6">
+                <div className="w-full md:w-6/12 shadow sm:rounded-md">
                     <h1 className="text-black text-2xl font-bold  p-6">Get In Touch</h1>
                     <hr className="pl-6 pe-6" />
                     <div>
@@ -50,7 +50,7 @@ const ContactDetails = () => {
                                                     placeholder="Comments"
                                                 ></textarea>
                                             </div>
-
+                                          
                                         </div>
                                     </div>
 
@@ -66,7 +66,7 @@ const ContactDetails = () => {
                     </div>
                 </div>
 
-                <div className="">
+                <div className="w-full md:w-6/12">
                     <h1 className="text-black text-2xl font-bold pb-6">Contact Details</h1>
                     <section>
                         <div className="flex gap-8">
@@ -97,7 +97,7 @@ const ContactDetails = () => {
                     <div className="pt-14">
                         <h1 className="text-black text-3xl font-bold pb-12">Find Us On</h1>
                         <span><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14607.604248453179!2d90.38425380000001!3d23.750907299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1698685739444!5m2!1sen!2sbd" 
-                        className="w-[700px] h-[500px]"  allowfullscreen="" loading="lazy"></iframe></span>
+                        className="lg:w-[700px] md:w-[700px] lg:h-[500px] md:h-[500px] w-full"  allowfullscreen="" loading="lazy"></iframe></span>
                     </div>
                 </div>
             </div>
