@@ -15,7 +15,18 @@ const SocialLogin = ({ from }) => {
         const user = result.user.email;
         signJwt(user);
         toast.success("logged in");
-        navigate(from, { replace: true });
+        const newUser = {
+          name: result.user.displayName,
+          email: result.user.email,
+          imageUrl: result.user.photoURL,
+          phone: result.user.phoneNumber
+        };
+        fetch(`http://localhost:3000/user/createUser`, {
+          method: 'POST',
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(newUser)
+        }).then(res => res.json()).then(data => console.log(data))
+        // navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);

@@ -10,7 +10,7 @@ const Adminhome = () => {
             <div className=" col-span-6 bg-[#6A94FF] md:rounded-s-xl ">
                 <div className="flex flex-col justify-center items-center text-center h-96 gap-y-3 text-white font-serif">
                     <img className="rounded-full h-28 w-28 items-center justify-center" src={user.photoURL} alt="" />
-                    <h2 className="pt-2">Md.Mosarof </h2>
+                    <h2 className="pt-2">{user.displayName}</h2>
                     <h2>Status : user (verified)</h2>
                     <div className='text-white fill-slate-50 '>
                         <a href="#_" className="px-5 py-2.5 relative rounded group font-medium text-white font-medium inline-block">
@@ -29,7 +29,7 @@ const Adminhome = () => {
                 <div className="flex justify-between my-7  font-serif">
                     <div>
                         <h2>Email</h2>
-                        <p>mosarof@gmail.com</p>
+                        <p>{user.email}</p>
                     </div>
                     <div>
                         <h2>Phone</h2>

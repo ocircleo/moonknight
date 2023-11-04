@@ -27,6 +27,7 @@ const Login = () => {
         .then((result) => {
           const loggedUser = result.user.email;
           signJwt(loggedUser);
+          fetch(`http://localhost:3000/user/${logged}`)
           toast.success("successfully login");
           form.reset();
 

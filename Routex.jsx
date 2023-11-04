@@ -34,11 +34,7 @@ import Mintainence from "./src/pages/maintainence/Mintainence";
 // // >>>>>>> f212567304bb130eda8ae5f4357b1da060daf321
 // =======
 import AddBlog from "./src/pages/addBlog/AddBlog";
-<<<<<<< HEAD
-// >>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24
-=======
 import PendingApproval from "./src/Admin/adminpage/PendingApproval";
->>>>>>> bdead7bd3ae0c17f176f28641332dce6bf29094e
 
 export const routes = createBrowserRouter([
   {

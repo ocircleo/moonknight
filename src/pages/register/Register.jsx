@@ -34,6 +34,10 @@ const Register = () => {
     }
 
     if ((name, email, password)) {
+      const user = {
+        name: name,
+        email: email
+      }
       createEmailusers(email, password)
         .then((result) => {
           signJwt(email);
@@ -41,13 +45,18 @@ const Register = () => {
           updateUser(name)
             .then(() => {
               setUser(createdUser);
+              fetch(`http://localhost:3000/user/createUser`, {
+                method: 'POST',
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify(user)
+              }).then(res => res.json()).then(data => console.log(data))
               form.reset();
             })
             .catch((error) => {
               toast.error(error.message);
             });
           toast.success("Successfully Registerd");
-          navigate(from, { replace: true });
+          // navigate(from, { replace: true });
         })
         .catch((error) => {
           toast.error(error.message);
