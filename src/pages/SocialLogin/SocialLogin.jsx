@@ -33,8 +33,9 @@ const SocialLogin = ({ from }) => {
       });
   };
   return (
-    <div
-      className=" bg-blue-500 hover:bg-blue-700 cursor-pointer text-white rounded-full p-3 flex items-center gap-2 justify-center w-full"
+   <div className="flex justify-center items-center">
+     <div
+      className=" bg-blue-500 hover:bg-blue-700 cursor-pointer text-white rounded-full p-3 flex items-center gap-2 w-[250px] justify-center "
       onClick={handleGoogleSignIn}
     >
       <button type="button" className="text-red-500 text-2xl">
@@ -42,6 +43,7 @@ const SocialLogin = ({ from }) => {
       </button>
       Continue with Google
     </div>
+   </div>
   );
 };
 

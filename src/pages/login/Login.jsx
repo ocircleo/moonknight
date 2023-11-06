@@ -41,13 +41,10 @@ const Login = () => {
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left md:w-2/4">
-            <Lottie animationData={reader} loop={true} />
-          </div>
-          <div className="card md:w-1/2 flex-shrink-0 max-w-sm shadow-2xl bg-base-100">
+        <div className="hero-content lg:flex lg:justify-center lg:items-center">
+          <div className="bg-white shadow-2xl rounded lg:w-[450px] bg-base-100">
             <form onSubmit={handleSignIn} className="card-body">
-              <h1 className="text-3xl ">Log In</h1>
+              <h1 className="text-3xl ">Log <span className="text-indigo-400">In</span></h1>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -55,8 +52,8 @@ const Login = () => {
                 <input
                   type="email"
                   name="email"
-                  placeholder="email"
-                  className="input input-bordered rounded-full"
+                  placeholder="Email"
+                  className="input input-bordered bg-slate-100 input-info lg:w-[400px] block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none"
                   required
                 />
               </div>
@@ -67,8 +64,8 @@ const Login = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
-                  placeholder="password"
-                  className="input input-bordered rounded-full"
+                  placeholder="Password"
+                  className="input input-bordered bg-slate-100 input-info lg:w-[400px] block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none"
                   required
                 />
                 <div
@@ -90,13 +87,15 @@ const Login = () => {
                   </a>
                 </label>
               </div>
-              <div className="form-control mt-6 ">
+              <div className="form-control mt-6 flex justify-center items-center ">
                 <input
-                  className="btn btn-primary bg-blue-500 border-blue-500 rounded-full text-white font-normal text-lg px-5"
+                  className="btn btn-primary bg-blue-500 border-blue-500 rounded-full text-white font-normal text-lg px-5 w-[250px]"
                   type="submit"
                   value="Sign In"
                 />
               </div>
+              <p className="text-center">Continue with Google</p>
+              <SocialLogin from={from}></SocialLogin>
               <p className="text-center">
                 <small>
                   New here?{" "}
@@ -105,8 +104,7 @@ const Login = () => {
                   </Link>
                 </small>{" "}
               </p>
-              <SocialLogin from={from}></SocialLogin>
-              Continue with Google
+              
             </form>
           </div>
         </div>
