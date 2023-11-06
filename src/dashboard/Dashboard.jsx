@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import ActiveLink from "../shared/Activelink/ActiveLink";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { useContext } from "react";
@@ -76,7 +76,7 @@ const Dashboard = () => {
                         {
                             links.map(ele => <ActiveLink key={ele.title} to={ele.title}><p className="py-1 capitalize font-semibold">{ele.text}</p></ActiveLink>)
                         }
-
+                        <Link className="bg-indigo-300 text-black py-2 rounded font-semibold" to={'/'}>Home</Link>
                     </ul>
 
                 </div>
