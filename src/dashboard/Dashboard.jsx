@@ -57,14 +57,14 @@ const Dashboard = () => {
     return (
         <div>
             <div className="drawer lg:drawer-open">
-                <nav className="w-full h-12 shadow flex justify-between items-center px-4">
-                    <h2 className="text-xl font-semibold">Dash Board</h2>
-                    <label htmlFor="my-drawer-2" className=" font-bold text-3xl  drawer-button lg:hidden "><BsThreeDotsVertical></BsThreeDotsVertical></label>
-                </nav>
+
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col">
                     {/* Page content here */}
-
+                    <nav className="w-full h-12 shadow flex justify-between items-center px-4">
+                        <h2 className="text-xl font-semibold">Dash Board</h2>
+                        <label htmlFor="my-drawer-2" className=" font-bold text-3xl  drawer-button lg:hidden "><BsThreeDotsVertical></BsThreeDotsVertical></label>
+                    </nav>
                     <Outlet></Outlet>
 
 
