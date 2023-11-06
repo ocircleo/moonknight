@@ -160,38 +160,7 @@ const blog = () => {
                     </div>
 
 
-                    <div className="card bg-base-100 shadow-lg mt-7">
-                        <div className="card-body">
-                            <h2 className="card-title font-bold">Categories</h2>
-                            <hr className='my-3' />
-
-                            <ul className="list-disc cursor-pointer">
-                                <li className="group hover:translate-x-4 transition-transform duration-500 ease-in-out">
-                                    Property
-                                </li>
-                                <li className="group hover:translate-x-4 transition-transform duration-500 ease-in-out">
-                                    Villa
-                                </li>
-                                <li className="group hover:translate-x-4 transition-transform duration-500 ease-in-out">
-                                    House
-                                </li>
-                                <li className="group hover:translate-x-4 transition-transform duration-500 ease-in-out">
-                                    Guest House
-                                </li>
-                                <li className="group hover:translate-x-4 transition-transform duration-500 ease-in-out">
-                                    Factory
-                                </li>
-                                <li className="group hover:translate-x-4 transition-transform duration-500 ease-in-out">
-                                    Godown
-                                </li>
-                            </ul>
-
-
-
-
-
-                        </div>
-                    </div>
+                    
 
 
                     <div className="card bg-base-100 w-[100%] shadow-lg mt-7">

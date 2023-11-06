@@ -21,7 +21,7 @@ const Navbar = () => {
       id: 2,
     },
     {
-      to: "/be-a-host",
+      to: "/postHouseInfo",
       title: "Be a Host",
       id: 3,
     },

@@ -24,6 +24,9 @@ import Private_Admin from "./src/private/Private/Private_Admin";
 import Users from "./src/dashboard/admin/Users";
 import PendingApproval from "./src/dashboard/admin/PendingApproval";
 import AddBlog from "./src/dashboard/admin/AddBlog";
+import BeAHostPrivate from "./src/private/Private/BeAHostPrivate";
+import PostARent from "./src/pages/beAhost/PostARent";
+import BeAHostInfoForm from "./src/pages/beAhost/BeAHostInfoForm";
 
 export const routes = createBrowserRouter([
   {
@@ -64,8 +67,14 @@ export const routes = createBrowserRouter([
         element: <Test></Test>,
       },
       {
-        path: "be-a-host",
-        element: <BeAHost></BeAHost>,
+        path: "postHouseInfo",
+        element: <BeAHostPrivate><PostARent></PostARent></BeAHostPrivate>,
+      }, {
+        path: 'applyForHost',
+        element: <BeAHost></BeAHost>
+      }, {
+        path: "hostFormFillUp",
+        element: <Privateuser><BeAHostInfoForm></BeAHostInfoForm></Privateuser>
       },
       {
         path: "blog",
@@ -112,8 +121,6 @@ export const routes = createBrowserRouter([
             path: '/PendingApproval',
             element: <Private_Admin><PendingApproval></PendingApproval></Private_Admin>
           },
-
-
         ]
       }
     ],
