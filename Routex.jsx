@@ -27,6 +27,7 @@ import AddBlog from "./src/dashboard/admin/AddBlog";
 import BeAHostPrivate from "./src/private/Private/BeAHostPrivate";
 import PostARent from "./src/pages/beAhost/PostARent";
 import BeAHostInfoForm from "./src/pages/beAhost/BeAHostInfoForm";
+import EditProfile from "./src/pages/editprofile/EditProfile";
 
 export const routes = createBrowserRouter([
   {
@@ -83,46 +84,50 @@ export const routes = createBrowserRouter([
       {
         path: "search",
         element: <Search></Search>,
+      }, {
+        path: "editProfile",
+        element: <Privateuser><EditProfile></EditProfile></Privateuser>
       },
       {
         path: "Mintainence",
         element: <Mintainence></Mintainence>,
-      }, {
-        path: '/',
-        element: <Privateuser> <Dashboard></Dashboard></Privateuser>,
-        children: [
-          {
-            path: 'dashboard',
-            element: <Profile></Profile>
-          },
-          {
-            path: 'myWishlist',
-            element: <Whishlight></Whishlight>
-          }, {
-            path: 'notifications',
-            element: <Notifications></Notifications>
-          }, {
-            path: '/myhouses',
-            element: <Private_Host><MyHouses></MyHouses></Private_Host>
-          },
-          {
-            path: '/addHouses',
-            element: <Private_Host><BeAHost></BeAHost></Private_Host>
-          },
-          {
-            path: '/users',
-            element: <Private_Admin><Users></Users></Private_Admin>
-          },
-          {
-            path: '/addblog',
-            element: <Private_Admin><AddBlog></AddBlog></Private_Admin>
-          },
-          {
-            path: '/PendingApproval',
-            element: <Private_Admin><PendingApproval></PendingApproval></Private_Admin>
-          },
-        ]
-      }
+      },
     ],
-  },
+
+  }, {
+    path: '/',
+    element: <Privateuser> <Dashboard></Dashboard></Privateuser>,
+    children: [
+      {
+        path: 'dashboard',
+        element: <Profile></Profile>
+      },
+      {
+        path: 'myWishlist',
+        element: <Whishlight></Whishlight>
+      }, {
+        path: 'notifications',
+        element: <Notifications></Notifications>
+      }, {
+        path: '/myhouses',
+        element: <Private_Host><MyHouses></MyHouses></Private_Host>
+      },
+      {
+        path: '/addHouses',
+        element: <Private_Host><BeAHost></BeAHost></Private_Host>
+      },
+      {
+        path: '/users',
+        element: <Private_Admin><Users></Users></Private_Admin>
+      },
+      {
+        path: '/addblog',
+        element: <Private_Admin><AddBlog></AddBlog></Private_Admin>
+      },
+      {
+        path: '/PendingApproval',
+        element: <Private_Admin><PendingApproval></PendingApproval></Private_Admin>
+      },
+    ]
+  }
 ]);
