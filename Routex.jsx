@@ -35,6 +35,7 @@ import Mintainence from "./src/pages/maintainence/Mintainence";
 // =======
 import AddBlog from "./src/pages/addBlog/AddBlog";
 import PendingApproval from "./src/Admin/adminpage/PendingApproval";
+import BeAHostInfoForm from "./src/pages/beAhost/BeAHostInfoForm";
 
 export const routes = createBrowserRouter([
   {
@@ -81,6 +82,10 @@ export const routes = createBrowserRouter([
       {
         path: "be-a-host",
         element: <BeAHost></BeAHost>,
+      },
+      {
+       path: "hostinfo",
+       element:<BeAHostInfoForm></BeAHostInfoForm>
       },
       {
         path: "user-dash-board",
