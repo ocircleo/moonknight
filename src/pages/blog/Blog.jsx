@@ -158,11 +158,6 @@ const blog = () => {
                             <input type="text" placeholder="Search" className="input bg-[#F7F6FF] mt-3 input- w-full " />
                         </div>
                     </div>
-
-
-                    
-
-
                     <div className="card bg-base-100 w-[100%] shadow-lg mt-7">
                         <div className="card-body">
                             <h2 className="card-title font-bold">Top Article</h2>
@@ -182,7 +177,7 @@ const blog = () => {
                                     </div>
                                 </div>
                                 <div className="relative w-full h-80 transform scale-100 overflow-hidden duration-700 hover:scale-105  rounded-lg">
-                                    <div className="bg-cover bg-center h-full relative" style={{ backgroundImage: `url(${article2}) `}}>
+                                    <div className="bg-cover bg-center h-full relative" style={{ backgroundImage: `url(${article2}) ` }}>
                                         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                                         <div className="absolute bottom-7 left-5 text-white text-center text-white hover:text-violet-600 ease-in duration-300">
                                             <h2 className=" font-bold">Excited News About Buildings.</h2>
