@@ -78,34 +78,17 @@ const Navbar = () => {
                   <p className="py-2 capitalize font-semibold text-lg text-center text-black">
                     {user.displayName}
                   </p>
-                  {userDB?.role == "admin" ? (
-                    <>
-                      <Link
-                        className="bg-[#6A94FF] p-2 rounded text-white capitalize font-semibold text-center"
-                        to={"/admin"}
-                      >
-                        Dashboard
-                      </Link>
-                    </>
-                  ) : userDB?.role == "host" ? (
-                    <>
-                      <Link
-                        className="bg-[#6A94FF] p-2 rounded text-white capitalize font-semibold text-center"
-                        to={"/admin"}
-                      >
-                        Dashboard
-                      </Link>
-                    </>
-                  ) : (
-                    <>
-                      <Link
-                        className="bg-[#6A94FF] p-2 rounded text-white capitalize font-semibold text-center"
-                        to={"/admin"}
-                      >
-                        Dashboard
-                      </Link>
-                    </>
-                  )}
+
+                  <>
+                    <Link
+                      className="bg-[#6A94FF] p-2 rounded text-white capitalize font-semibold text-center"
+                      to={"/dashboard"}
+                    >
+                      Dashboard
+                    </Link>
+                  </>
+
+
                   <button
                     onClick={signout}
                     className="bg-[#6A94FF] p-2 rounded text-white capitalize font-semibold text-center"

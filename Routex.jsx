@@ -14,6 +14,16 @@ import Search from "./src/pages/search/Search";
 import Question from "./src/pages/Contact/Question";
 import Dashboard from "./src/dashboard/Dashboard";
 import Mintainence from "./src/pages/maintainence/Mintainence";
+import Privateuser from "./src/private/Private/Privateuser";
+import Profile from "./src/shared/profile/Profile";
+import Whishlight from "./src/dashboard/compo/Whishlist";
+import Notifications from "./src/dashboard/compo/Notifications";
+import Private_Host from "./src/private/Private/Private_Host";
+import MyHouses from "./src/dashboard/host/MyHouses";
+import Private_Admin from "./src/private/Private/Private_Admin";
+import Users from "./src/dashboard/admin/Users";
+import PendingApproval from "./src/dashboard/admin/PendingApproval";
+import AddBlog from "./src/dashboard/admin/AddBlog";
 
 export const routes = createBrowserRouter([
   {
@@ -69,8 +79,42 @@ export const routes = createBrowserRouter([
         path: "Mintainence",
         element: <Mintainence></Mintainence>,
       }, {
-        path: '/dashboard',
-        element: <Dashboard></Dashboard>
+        path: '/',
+        element: <Privateuser> <Dashboard></Dashboard></Privateuser>,
+        children: [
+          {
+            path: 'dashboard',
+            element: <Profile></Profile>
+          },
+          {
+            path: 'myWishlist',
+            element: <Whishlight></Whishlight>
+          }, {
+            path: 'notifications',
+            element: <Notifications></Notifications>
+          }, {
+            path: '/myhouses',
+            element: <Private_Host><MyHouses></MyHouses></Private_Host>
+          },
+          {
+            path: '/addHouses',
+            element: <Private_Host><BeAHost></BeAHost></Private_Host>
+          },
+          {
+            path: '/users',
+            element: <Private_Admin><Users></Users></Private_Admin>
+          },
+          {
+            path: '/addblog',
+            element: <Private_Admin><AddBlog></AddBlog></Private_Admin>
+          },
+          {
+            path: '/PendingApproval',
+            element: <Private_Admin><PendingApproval></PendingApproval></Private_Admin>
+          },
+
+
+        ]
       }
     ],
   },
