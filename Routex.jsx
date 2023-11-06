@@ -2,39 +2,18 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "./src/App";
 import ErrorPage from "./src/shared/error/ErrorPage";
 import Home from "./src/pages/home/Home";
-import Privateuser from "./src/private/Private/Privateuser";
 import Register from "./src/pages/register/Register";
 import Login from "./src/pages/login/Login";
 import Loading from "./src/shared/loading/Loading";
-import Private_Mode from "./src/private/Private/Private_Mode";
-import Moderator from "./src/moderator/Moderator";
-import ModeHome from "./src/moderator/moderetor/ModeHome";
-import Private_Admin from "./src/private/Private/Private_Admin";
-import Admin from "./src/Admin/Admin";
-import Adminhome from "./src/Admin/adminpage/Adminhome";
-import Users from "./src/Admin/adminpage/Users";
 import Test from "./src/pages/test/Test";
 import Blog from "./src/pages/blog/Blog";
-import HostDashBoard from "./src/host-dash-board/HostDashBoard";
-import UserDashBoard from "./src/user-dash-board/UserDashBoard";
 import Contacts from "./src/pages/Contact/Contacts";
-// <<<<<<< HEAD
-// // <<<<<<< HEAD
 import About from "./src/pages/about/About";
-// =======
-// =======
-// import About from "./src/pages/about/About";
-// >>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24
 import BeAHost from "./src/pages/beAhost/BeAHost";
 import Search from "./src/pages/search/Search";
 import Question from "./src/pages/Contact/Question";
-import Dashboard from "./src/pages/dashboard/Dashboard";
+import Dashboard from "./src/dashboard/Dashboard";
 import Mintainence from "./src/pages/maintainence/Mintainence";
-// <<<<<<< HEAD
-// // >>>>>>> f212567304bb130eda8ae5f4357b1da060daf321
-// =======
-import AddBlog from "./src/pages/addBlog/AddBlog";
-import PendingApproval from "./src/Admin/adminpage/PendingApproval";
 
 export const routes = createBrowserRouter([
   {
@@ -75,16 +54,8 @@ export const routes = createBrowserRouter([
         element: <Test></Test>,
       },
       {
-        path: "host-dash-board",
-        element: <HostDashBoard></HostDashBoard>,
-      },
-      {
         path: "be-a-host",
         element: <BeAHost></BeAHost>,
-      },
-      {
-        path: "user-dash-board",
-        element: <UserDashBoard></UserDashBoard>,
       },
       {
         path: "blog",
@@ -95,53 +66,11 @@ export const routes = createBrowserRouter([
         element: <Search></Search>,
       },
       {
-        path: "dashboard",
-        element: <Dashboard></Dashboard>,
-      },
-      {
         path: "Mintainence",
         element: <Mintainence></Mintainence>,
-      },
-    ],
-  },
-  {
-    path: "/",
-    element: (
-      // <Private_Mode>
-      <Moderator></Moderator>
-      //  </Private_Mode>
-    ),
-    children: [
-      {
-        path: "moderator",
-        element: <ModeHome></ModeHome>,
-      },
-    ],
-  },
-  {
-    path: "/",
-    element: (
-      // <Private_Admin>
-      <Admin></Admin>
-      // </Private_Admin>
-    ),
-    errorElement: <ErrorPage></ErrorPage>,
-    children: [
-      {
-        path: "admin",
-        element: <Adminhome></Adminhome>,
-      },
-      {
-        path: "users",
-        element: <Users></Users>,
-      },
-      {
-        path: "addblog",
-        element: <AddBlog></AddBlog>
-      },
-      {
-        path: "PendingApproval",
-        element: <PendingApproval></PendingApproval>
+      }, {
+        path: '/dashboard',
+        element: <Dashboard></Dashboard>
       }
     ],
   },

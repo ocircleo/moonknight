@@ -10,13 +10,9 @@ import { InputText } from "primereact/inputtext"
 // import { filter } from 'lodash';
 
 const Users = () => {
-
-
-  
-const [filters, setFilters] = useState({
-  global: {value: null, matchMode: FilterMatchMode.CONTAINS },
-})
-
+  const [filters, setFilters] = useState({
+    global: { value: null, matchMode: FilterMatchMode.CONTAINS },
+  })
 
   const people = [
     {
@@ -80,101 +76,91 @@ const [filters, setFilters] = useState({
       city: "Madrid"
     }
   ];
-  
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch('users.json')
+      .then(res => res.json())
+      .then(data => {
+        setUsers(data)
+        console.log(data)
+
+      });
+  }, [])
 
 
 
+  const imageBodyTemplate = (users) => {
+    return <img src={users.img} alt="User" className='w-14 h-14  rounded-full' />;
+  };
 
-
-
-
-
-    const [users, setUsers] = useState([]);
-    
-    useEffect(() => {
-        fetch('users.json')
-            .then(res => res.json())
-            .then(data => {
-                setUsers(data)
-                console.log(data)
-                
-            });
-    }, [])
-
-
-
-const imageBodyTemplate = (users) => {
-  return <img src={users.img} alt="User" className='w-14 h-14  rounded-full' />;
-};
-
-const indexBodyTemplate = (rowData, props) => {
-  return (
-    <span className=' text-lg font-bold'>{props.rowIndex + 1}</span>
-  );
-};
-
-
-const adminTemplate = () => {
-  return (
-    <button className='btn text-white border-none bg-indigo-400 hover:bg-success'>Admin</button>
-  );
-};
-
-const hostTemplate = () => {
-  return (
-    <button className='btn bg-indigo-400 border-none text-white hover:bg-success'>Host</button>
-  );
-};
-
-const deleteTemplate = () => {
-  return (
-    <button className='btn bg-red-500 border-none text-white hover:bg-red-800'>Delete</button>
-  );
-};
-
-
-console.log(users);
-console.log(people);
+  const indexBodyTemplate = (rowData, props) => {
     return (
-        <div>
- <h2 className="text-2xl font-bold text-[#172554] pb-0 mb-0 text-center ">Total User :{users.length}</h2>
-           
-
- <InputText
- className='  border-2 p-1  w-96    border-[#6366F1]'
- placeholder='Search by name, gmail, phone number'
-    onInput={(e) =>
-        setFilters({
-          global: { value: e.target.value, matchMode: FilterMatchMode.CONTAINS },
-        })
-    }
- />
+      <span className=' text-lg font-bold'>{props.rowIndex + 1}</span>
+    );
+  };
 
 
+  const adminTemplate = () => {
+    return (
+      <button className='btn text-white border-none bg-indigo-400 hover:bg-success'>Admin</button>
+    );
+  };
 
-<DataTable value={users} sortMode='multiple' filters={filters}
-paginator
-rows={5}
-rowsPerPageOptions={[1,2,3,4,5]}
-totalRecords={5}
->
+  const hostTemplate = () => {
+    return (
+      <button className='btn bg-indigo-400 border-none text-white hover:bg-success'>Host</button>
+    );
+  };
 
-<Column header="No" body={indexBodyTemplate} style={{textAlign: 'center'}} />
-<Column field="imageURL" header="Image"  body={imageBodyTemplate} />
-    
-      <Column field='username' header="Name" sortable/> 
-      <Column field='gmail' header="Gmail" sortable/> 
-      <Column field='phone_number' header="Phone number" sortable /> 
-      <Column header="Admin" body={adminTemplate} />
-      <Column header="Host" body={hostTemplate} />
-      <Column header="Delete" body={deleteTemplate} />
-</DataTable>
-
+  const deleteTemplate = () => {
+    return (
+      <button className='btn bg-red-500 border-none text-white hover:bg-red-800'>Delete</button>
+    );
+  };
 
 
+  console.log(users);
+  console.log(people);
+  return (
+    <div>
+      {/* <h2 className="text-2xl font-bold text-[#172554] pb-0 mb-0 text-center ">Total User :{users.length}</h2>
 
 
-             {/* <div>
+      <InputText
+        className='  border-2 p-1  w-96    border-[#6366F1]'
+        placeholder='Search by name, gmail, phone number'
+        onInput={(e) =>
+          setFilters({
+            global: { value: e.target.value, matchMode: FilterMatchMode.CONTAINS },
+          })
+        }
+      />
+
+
+
+      <DataTable value={users} sortMode='multiple' filters={filters}
+        paginator
+        rows={5}
+        rowsPerPageOptions={[1, 2, 3, 4, 5]}
+        totalRecords={5}
+      >
+
+        <Column header="No" body={indexBodyTemplate} style={{ textAlign: 'center' }} />
+        <Column field="imageURL" header="Image" body={imageBodyTemplate} />
+        <Column field='username' header="Name" sortable />
+        <Column field='gmail' header="Gmail" sortable />
+        <Column field='phone_number' header="Phone number" sortable />
+        <Column header="Admin" body={adminTemplate} />
+        <Column header="Host" body={hostTemplate} />
+        <Column header="Delete" body={deleteTemplate} />
+      </DataTable> */}
+
+
+
+
+
+      <div>
             <h2 className="text-4xl font-bold text-[#172554] pb-0 mb-0 text-center ">Total User :{users.length}</h2>
             <div className="divider"></div> 
             <div className="overflow-x-auto">
@@ -214,9 +200,9 @@ totalRecords={5}
     </tbody>
   </table>
 </div>
-        </div>  */}
         </div>
-    );
+    </div>
+  );
 };
 
 export default Users;
