@@ -27,6 +27,7 @@ import AddBlog from "./src/dashboard/admin/AddBlog";
 import BeAHostPrivate from "./src/private/Private/BeAHostPrivate";
 import PostARent from "./src/pages/beAhost/PostARent";
 import BeAHostInfoForm from "./src/pages/beAhost/BeAHostInfoForm";
+import EditProfile from "./src/pages/editprofile/EditProfile";
 
 export const routes = createBrowserRouter([
   {
@@ -83,6 +84,9 @@ export const routes = createBrowserRouter([
       {
         path: "search",
         element: <Search></Search>,
+      }, {
+        path: "editProfile",
+        element: <Privateuser><EditProfile></EditProfile></Privateuser>
       },
       {
         path: "Mintainence",
