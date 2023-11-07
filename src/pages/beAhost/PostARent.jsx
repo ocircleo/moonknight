@@ -1,9 +1,52 @@
-import React from 'react';
+
 
 const PostARent = () => {
     const submit = e => {
         e.preventDefault()
-        console.log(e.target)
+        const form = event.target;
+        const title = form.title.value;
+        const price = form.price.value;
+        const city = form.city.value;
+        const region = form.region.value;
+        const area = form.area.value;
+        const rooms = form.rooms.value;
+        const beds = form.beds.value;
+        const bathroom = form.bathroom.value;
+        const garage = form.garage.value;
+        const builtin = form.builtin.value;
+        const email = form.email.value;
+        const floor = form.floor.value;
+        const maxpepol = form.maxpepol.value;
+        const description = form.description.value;
+        console.log(title, price, city, region, area, rooms, beds, bathroom, garage, builtin, email, floor, maxpepol, description)
+
+        const uploadHome = {
+            title,
+            price,
+            city,
+            region,
+            area,
+            rooms,
+            beds,
+            bathroom,
+            garage,
+            builtin,
+            email,
+            floor,
+            maxpepol,
+            description
+        }
+        fetch("", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(uploadHome)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
     }
     return (
         <div className='w-full lg:w-5/6 mx-auto p-2 mt-10'>
@@ -21,51 +64,93 @@ const PostARent = () => {
                     <div className='flex flex-col gap-3 ' >
                         <div className='lg:flex md:flex lg:gap-6 md:gap-6'>
                             <fieldset className='flex flex-col gap-3'>
-                                <label htmlFor="city" className='font-semibold text-xl'>City Name</label>
-                                <input type="text" placeholder="Enter city name" className="input input-bordered bg-slate-100 input-info max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <label className='font-semibold text-xl'>Title</label>
+                                <input type="text" name='title' placeholder="Title" className="input input-bordered bg-slate-100 input-info max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
                                 <p className='text-sm text-red-500'></p>
                             </fieldset>
                             <fieldset className='flex flex-col gap-3'>
-                                <label htmlFor="city" className='font-semibold text-xl'>Number Of Rooms</label>
-                                <input type="text" placeholder="Enter Number Of Rooms" className="input input-bordered bg-slate-100 input-info max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <label className='font-semibold text-xl'>Price</label>
+                                <input type="number" name='price' placeholder="Price" className="input input-bordered bg-slate-100 input-info max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
                                 <p className='text-sm text-red-500'></p>
                             </fieldset>
                         </div>
 
+                        <div className='lg:flex md:flex lg:gap-6 md:gap-6'>
+                            <fieldset className='flex flex-col gap-3'>
+                                <label className='font-semibold text-xl'>City</label>
+                                <input type="text" name='city' placeholder="City" className="input input-bordered bg-slate-100 input-info max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <p className='text-sm text-red-500'></p>
+                            </fieldset>
+                            <fieldset className='flex flex-col gap-3'>
+                                <label className='font-semibold text-xl'>Region</label>
+                                <input type="text" name='region' placeholder="Region" className="input input-bordered bg-slate-100 input-info max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <p className='text-sm text-red-500'></p>
+                            </fieldset>
+                        </div>
                         <fieldset className='flex flex-col gap-3'>
-                            <label htmlFor="city" className='font-semibold text-xl'>Aditional Location</label>
-                            <input type="text" placeholder="Enter Aditional Location" className="input input-bordered bg-slate-100 input-info w-full lg:w-[490px] md:w-[490px] block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                            <label className='font-semibold text-xl'>Area</label>
+                            <input type="text" name='area' placeholder="Area" className="input input-bordered bg-slate-100 input-info w-full lg:w-[490px] md:w-[490px] block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
                             <p className='text-sm text-red-500'></p>
                         </fieldset>
 
                         <div className='lg:flex md:flex lg:gap-6 md:gap-6'>
                             <fieldset className='flex flex-col gap-3'>
-                                <label htmlFor="city" className='font-semibold text-xl'>Maximum People</label>
-                                <input type="text" placeholder="Maximum People" className="input input-bordered bg-slate-100 input-info w-full max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <label className='font-semibold text-xl'>Rooms</label>
+                                <input type="number" name='rooms' placeholder="Rooms" className="input input-bordered bg-slate-100 input-info w-full max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
                                 <p className='text-sm text-red-500'></p>
                             </fieldset>
                             <fieldset className='flex flex-col gap-3'>
-                                <label htmlFor="city" className='font-semibold text-xl'>Price</label>
-                                <input type="text" placeholder="Enter Price" className="input input-bordered bg-slate-100 input-info w-full max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <label className='font-semibold text-xl'>Beds</label>
+                                <input type="number" name='beds' placeholder="Beds" className="input input-bordered bg-slate-100 input-info w-full max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <p className='text-sm text-red-500'></p>
+                            </fieldset>
+                        </div>
+                        <div className='lg:flex md:flex lg:gap-6 md:gap-6'>
+                            <fieldset className='flex flex-col gap-3'>
+                                <label className='font-semibold text-xl'>Bathroom</label>
+                                <input type="number" name='bathroom' placeholder="Bathroom" className="input input-bordered bg-slate-100 input-info w-full max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <p className='text-sm text-red-500'></p>
+                            </fieldset>
+                            <fieldset className='flex flex-col gap-3'>
+                                <label className='font-semibold text-xl'>Garage</label>
+                                <input type="text" name='garage' placeholder="Garage" className="input input-bordered bg-slate-100 input-info w-full max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <p className='text-sm text-red-500'></p>
+                            </fieldset>
+                        </div>
+                        <div className='lg:flex md:flex lg:gap-6 md:gap-6'>
+                            <fieldset className='flex flex-col gap-3'>
+                                <label className='font-semibold text-xl'>BuiltIn</label>
+                                <input type="text" name='builtin' placeholder="BuiltIn" className="input input-bordered bg-slate-100 input-info w-full max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <p className='text-sm text-red-500'></p>
+                            </fieldset>
+                            <fieldset className='flex flex-col gap-3'>
+                                <label className='font-semibold text-xl'>HostEmail</label>
+                                <input type="email" name='email' placeholder="HostEmail" className="input input-bordered bg-slate-100 input-info w-full max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <p className='text-sm text-red-500'></p>
+                            </fieldset>
+                        </div>
+                        <div className='lg:flex md:flex lg:gap-6 md:gap-6'>
+                            <fieldset className='flex flex-col gap-3'>
+                                <label className='font-semibold text-xl'>Floor</label>
+                                <input type="number" name='floor' placeholder="Floor" className="input input-bordered bg-slate-100 input-info w-full max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <p className='text-sm text-red-500'></p>
+                            </fieldset>
+                            <fieldset className='flex flex-col gap-3'>
+                                <label className='font-semibold text-xl'>MaxPeople</label>
+                                <input type="number" name='maxpepol' placeholder="MaxPeople" className="input input-bordered bg-slate-100 input-info w-full max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
                                 <p className='text-sm text-red-500'></p>
                             </fieldset>
                         </div>
 
                         <fieldset className='flex flex-col gap-3'>
-                            <label htmlFor="city" className='font-semibold text-xl'>Description</label>
-                            <textarea className="textarea textarea-info input input-bordered bg-slate-100 input-info w-full lg:w-[490px] h-20 block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" placeholder="Enter Description"></textarea>
+                            <label className='font-semibold text-xl'>Description</label>
+                            <textarea name='description' className="textarea textarea-info input input-bordered bg-slate-100 input-info w-full lg:w-[490px] h-20 block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" placeholder="Enter Description"></textarea>
                             <p className='text-sm text-red-500'></p>
                         </fieldset>
-                        <div className='lg:flex lg:justyfiy-between'>
-                            <fieldset className='flex flex-col gap-3'>
-                                <label htmlFor="city" className='font-semibold text-xl'>Image</label>
-                                <input type="file" placeholder="Enter city name" multiple className="file-input w-full max-w-xs" />
-                                <p className='text-sm text-red-500'></p>
-                            </fieldset>
-                            <div className='lg:pt-9 lg:pl-12'>
-                                <button className="btn btn-outline btn-primary">Add House</button>
-                            </div>
-                        </div>
+                        
+                        <input type='submit' className="btn glass bg-indigo-600 text-white hover:btn glass" value="Submit" />
+                            
+                        
                     </div>
 
                 </form>
