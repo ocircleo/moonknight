@@ -25,11 +25,11 @@ const Login = () => {
         .then((result) => {
           const loggedUser = result.user.email;
           signJwt(loggedUser);
-          fetch(`https://moonknight-backend.vercel.app/user/getUser/${newUser.email}`).then(res => res.json()).then(data => setUserDB(data));
+          fetch(`https://moonknight-backend.vercel.app/user/getUser/${loggedUser}`).then(res => res.json()).then(data => setUserDB(data));
           toast.success("successfully login");
           form.reset();
 
-          // navigate(from, { replace: true });
+          navigate(from, { replace: true });
         })
         .catch((error) => {
           toast.error(error.message);
