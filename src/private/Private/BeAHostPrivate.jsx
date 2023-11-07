@@ -6,6 +6,7 @@ import { Authcontext } from '../provider/Provider';
 
 const BeAHostPrivate = ({ children }) => {
   const { user, loading, userDB } = useContext(Authcontext);
+  console.log(userDB)
   const loacation = useLocation();
   if (loading) {
     return <Loading para={true}></Loading>;
