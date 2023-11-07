@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
-  const { createEmailusers, updateUser, signJwt, setUser } =
+  const { createEmailusers, updateUser, signJwt, setUser, setUserDB } =
     useContext(Authcontext);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -43,18 +43,20 @@ const Register = () => {
           updateUser(name)
             .then(() => {
               setUser(createdUser);
-              fetch(`http://localhost:3000/user/createUser`, {
+              createdUser.displayName = name;
+              setUser(createdUser)
+              fetch(`https://moonknight-backend.vercel.app/user/createUser`, {
                 method: 'POST',
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify(user)
-              }).then(res => res.json()).then(data => console.log(data))
+              }).then(res => res.json()).then(data => setUserDB(data))
               form.reset();
             })
             .catch((error) => {
               toast.error(error.message);
             });
           toast.success("Successfully Registerd");
-          // navigate(from, { replace: true });
+          navigate(from, { replace: true });
         })
         .catch((error) => {
           toast.error(error.message);
@@ -129,7 +131,7 @@ const Register = () => {
                   <p className="pb-1">show password</p>
                 </div>
                 <p className="text-red-500 text-xs">{error}</p>
-               
+
               </div>
               <div className="form-control mt-6 flex justify-center items-center">
                 <button
@@ -139,12 +141,12 @@ const Register = () => {
               <p className="text-center">Continue with Google</p>
               <SocialLogin from={from}></SocialLogin>
               <p className="text-center">
-                
-                  Already Registerd ?  
-                  <Link to="/login" className="text-primary">
-                    {" "} Please Sign in
-                  </Link>
-               
+
+                Already Registerd ?
+                <Link to="/login" className="text-primary">
+                  {" "} Please Sign in
+                </Link>
+
               </p>
             </form>
           </div>

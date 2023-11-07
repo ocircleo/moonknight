@@ -16,8 +16,7 @@ export const Authcontext = createContext(null);
 // eslint-disable-next-line react/prop-types
 const Provider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [userD, setUserDB] = useState({});
-  let userDB = { role: 'admin' };
+  const [userDB, setUserDB] = useState({});
   const [loading, setLoading] = useState(true);
   const auth = getAuth(app);
 
@@ -44,7 +43,6 @@ const Provider = ({ children }) => {
   // ===== sign out user using this function =====
   const signout = () => {
     return signOut(auth).then(() => {
-      console.log('signed out')
       localStorage.removeItem("acces_token")
     });
   };
@@ -67,11 +65,13 @@ const Provider = ({ children }) => {
       setUser(newUser);
       if (newUser) {
         signJwt(newUser.email);
+        fetch(`https://moonknight-backend.vercel.app/user/getUser/${newUser.email}`).then(res => res.json()).then(data => setUserDB(data));
+        console.log(userDB)
       }
       setLoading(false);
       return () => unSubscribe();
     });
-  });
+  }, []);
   //===== context api data for user login and sign up management
   let authData = {
     user,

@@ -1,13 +1,11 @@
 import { FaGoogle } from "react-icons/fa";
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
-import app from "../../assets/Firebase_Sdk";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Authcontext } from "../../private/provider/Provider";
 
 const SocialLogin = ({ from }) => {
-  const { googleSignIn, signJwt } = useContext(Authcontext);
+  const { googleSignIn, signJwt, setUserDB } = useContext(Authcontext);
   const navigate = useNavigate();
   const handleGoogleSignIn = () => {
     googleSignIn()
@@ -21,12 +19,12 @@ const SocialLogin = ({ from }) => {
           imageUrl: result.user.photoURL,
           phone: result.user.phoneNumber
         };
-        fetch(`http://localhost:3000/user/createUser`, {
+        fetch(`https://moonknight-backend.vercel.app/user/createUser`, {
           method: 'POST',
           headers: { "content-type": "application/json" },
           body: JSON.stringify(newUser)
-        }).then(res => res.json()).then(data => console.log(data))
-        // navigate(from, { replace: true });
+        }).then(res => res.json()).then(data => setUserDB(data))
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);

@@ -6,7 +6,7 @@ import { Authcontext } from "../../private/provider/Provider";
 import { toast } from "react-toastify";
 
 const Login = () => {
-  const { signInEmailusers, signJwt } = useContext(Authcontext);
+  const { signInEmailusers, signJwt, setUserDB } = useContext(Authcontext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -25,7 +25,7 @@ const Login = () => {
         .then((result) => {
           const loggedUser = result.user.email;
           signJwt(loggedUser);
-          fetch(`http://localhost:3000/user/getUser/${loggedUser}`).then(res => res.json()).then(data => console.log(data))
+          fetch(`https://moonknight-backend.vercel.app/user/getUser/${newUser.email}`).then(res => res.json()).then(data => setUserDB(data));
           toast.success("successfully login");
           form.reset();
 
@@ -90,22 +90,22 @@ const Login = () => {
                   className="btn btn-primary bg-indigo-500 border-indigo-400 rounded-lg text-white font-normal text-lg px-5 w-full"
 
                 >Submit</button>
-          </div>
-       
-        <p className="text-center">Continue with Google</p>
-        <SocialLogin from={from}></SocialLogin>
-        <p className="text-center">
-      
-            New here?{" "}
-            <Link to="/register" className="text-primary">
-              Create a new account
-            </Link>
-          
-        </p>
+              </div>
 
-      </form>
-    </div>
-    </div >
+              <p className="text-center">Continue with Google</p>
+              <SocialLogin from={from}></SocialLogin>
+              <p className="text-center">
+
+                New here?{" "}
+                <Link to="/register" className="text-primary">
+                  Create a new account
+                </Link>
+
+              </p>
+
+            </form>
+          </div>
+        </div >
       </div >
     </div >
   );
