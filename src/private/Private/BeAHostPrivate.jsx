@@ -5,13 +5,12 @@ import { useContext } from 'react';
 import { Authcontext } from '../provider/Provider';
 
 const BeAHostPrivate = ({ children }) => {
-  const { user, loading, userDB } = useContext(Authcontext);
-  console.log(userDB)
+  const { loading, userDB } = useContext(Authcontext);
   const loacation = useLocation();
   if (loading) {
     return <Loading para={true}></Loading>;
   }
-  if (userDB?.role == "host") {
+  if (userDB.role == "host") {
     return children;
   }
   return <Navigate to={"/applyForHost"} state={{ from: loacation }}></Navigate>;

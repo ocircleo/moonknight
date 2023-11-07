@@ -3,7 +3,7 @@
 const PostARent = () => {
     const submit = e => {
         e.preventDefault()
-        const form = event.target;
+        const form = e.target;
         const title = form.title.value;
         const price = form.price.value;
         const city = form.city.value;

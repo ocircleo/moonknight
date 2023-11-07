@@ -6,7 +6,6 @@ const EditProfile = () => {
     const { user } = useContext(Authcontext)
     const handleSubmit = event => {
         event.preventDefault();
-
     }
     return (
         <div className="md:flex md:flex-col   md:justify-center  md:items-center my-5 bg-gradient-to-r from-[#fff] from-10% via-[#dec9f3] via-30% to-[#ffff] to-90% p-4">
@@ -59,7 +58,7 @@ const EditProfile = () => {
 
                         <div className='lg:flex lg:gap-16'>
                             <div className=''>
-                                <img className='md:h-20 md:w-20 sm:h-32 sm:w-32 mx-auto rounded-xl object-cover' src={user.photoURL} alt="" />
+                                <img className='md:h-20 md:w-20 h-32 w-32 mx-auto rounded-xl object-cover' src={user.photoURL} alt="" />
                                 <p className=" text-center text-sm pt-2">You may change profile pic but <br /> not nececery</p>
                             </div>
                             <fieldset className='flex flex-col gap-3'>

@@ -28,6 +28,7 @@ import BeAHostPrivate from "./src/private/Private/BeAHostPrivate";
 import PostARent from "./src/pages/beAhost/PostARent";
 import BeAHostInfoForm from "./src/pages/beAhost/BeAHostInfoForm";
 import EditProfile from "./src/pages/editprofile/EditProfile";
+import Mails from "./src/dashboard/admin/Mails";
 
 export const routes = createBrowserRouter([
   {
@@ -127,6 +128,10 @@ export const routes = createBrowserRouter([
       {
         path: '/PendingApproval',
         element: <Private_Admin><PendingApproval></PendingApproval></Private_Admin>
+      },
+      {
+        path: '/mails',
+        element: <Private_Admin><Mails></Mails></Private_Admin>
       },
     ]
   }

@@ -34,7 +34,10 @@ const Dashboard = () => {
             {
                 title: '/PendingApproval',
                 text: 'Pending Approval'
-            },
+            },{
+                title: '/mails',
+                text: 'mails'
+            }
 
 
         ]
