@@ -1,6 +1,4 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Lottie from "lottie-react";
-import reader from "../../../public/login.json";
 // import reader from "../../../src/login.json";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { useContext, useState } from "react";
@@ -27,7 +25,7 @@ const Login = () => {
         .then((result) => {
           const loggedUser = result.user.email;
           signJwt(loggedUser);
-          fetch(`http://localhost:3000/user/${logged}`)
+          fetch(`http://localhost:3000/user/getUser/${loggedUser}`).then(res => res.json()).then(data => console.log(data))
           toast.success("successfully login");
           form.reset();
 
@@ -40,11 +38,11 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content lg:flex lg:justify-center lg:items-center">
-          <div className="bg-white shadow-2xl rounded lg:w-[450px] bg-base-100">
+      <div className=" min-h-screen bg-base-200 ">
+        <div className=" lg:flex lg:justify-center lg:items-center">
+          <div className="bg-white shadow-2xl my-10 rounded w-full md:w-[550px] mx-auto">
             <form onSubmit={handleSignIn} className="card-body">
-              <h1 className="text-3xl ">Log <span className="text-indigo-400">In</span></h1>
+              <h1 className="text-3xl font-semibold">Log<span className="text-indigo-400">In</span></h1>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -53,7 +51,7 @@ const Login = () => {
                   type="email"
                   name="email"
                   placeholder="Email"
-                  className="input input-bordered bg-slate-100 input-info lg:w-[400px] block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none"
+                  className="input input-bordered bg-slate-100 input-info block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none"
                   required
                 />
               </div>
@@ -65,7 +63,7 @@ const Login = () => {
                   type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="Password"
-                  className="input input-bordered bg-slate-100 input-info lg:w-[400px] block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none"
+                  className="input input-bordered bg-slate-100 input-info block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none"
                   required
                 />
                 <div
@@ -88,28 +86,28 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6 flex justify-center items-center ">
-                <input
-                  className="btn btn-primary bg-blue-500 border-blue-500 rounded-full text-white font-normal text-lg px-5 w-[250px]"
-                  type="submit"
-                  value="Sign In"
-                />
-              </div>
-              <p className="text-center">Continue with Google</p>
-              <SocialLogin from={from}></SocialLogin>
-              <p className="text-center">
-                <small>
-                  New here?{" "}
-                  <Link to="/signup" className="text-primary">
-                    Create a new account
-                  </Link>
-                </small>{" "}
-              </p>
-              
-            </form>
+                <button
+                  className="btn btn-primary bg-indigo-500 border-indigo-400 rounded-lg text-white font-normal text-lg px-5 w-full"
+
+                >Submit</button>
           </div>
-        </div>
-      </div>
+       
+        <p className="text-center">Continue with Google</p>
+        <SocialLogin from={from}></SocialLogin>
+        <p className="text-center">
+      
+            New here?{" "}
+            <Link to="/register" className="text-primary">
+              Create a new account
+            </Link>
+          
+        </p>
+
+      </form>
     </div>
+    </div >
+      </div >
+    </div >
   );
 };
 

@@ -1,23 +1,25 @@
+import React from 'react';
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { Authcontext } from '../../private/provider/Provider';
 import { useContext } from 'react';
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
-import { Authcontext } from '../private/provider/Provider';
-const UserDashBoard = () => {
-    const { user } = useContext(Authcontext);
-    console.log(user)
-    return (
+import { Link } from 'react-router-dom';
 
-        <div className="grid grid-cols-6 max-w-screen-xl mx-auto mt-[8%] sm:px-6 md:px-8 md:py-8 shadow-2xl shadow-teal-100 bg-[#F7F6FF] ">
-            <div className="md:col-span-2 col-span-6 bg-[#6A94FF] md:rounded-s-xl ">
+const Profile = () => {
+    const { user } = useContext(Authcontext)
+    return (
+        <div className="grid col-span-6 w-full font-semibold">
+            <div className=" col-span-6 bg-[#6A94FF] md:rounded-s-xl ">
                 <div className="flex flex-col justify-center items-center text-center h-96 gap-y-3 text-white font-serif">
-                    <img className="rounded-full h-28 w-28 items-center justify-center object-cover" src={user.photoURL} alt="" />
-                    <h2 className="pt-2">{user.displayName} </h2>
+                    <img className="rounded-full h-28 w-28 items-center justify-center" src={user.photoURL} alt="" />
+                    <h2 className="pt-2">{user.displayName}</h2>
+                    <h2>Status : user (verified)</h2>
                     <div className='text-white fill-slate-50 '>
                         <a href="#_" className="px-5 py-2.5 relative rounded group font-medium text-white font-medium inline-block">
                             <span className="absolute top-0 left-0 w-full h-full rounded opacity-50 filter blur-sm bg-gradient-to-br from-purple-600 to-blue-500"></span>
                             <span className="h-full w-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br filter group-active:opacity-0 rounded opacity-50 from-purple-600 to-blue-500"></span>
                             <span className="absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-purple-600 to-blue-500"></span>
                             <span className="absolute inset-0 w-full h-full transition duration-200 ease-out rounded bg-gradient-to-br to-purple-600 from-blue-500"></span>
-                            <span className="relative">Edit</span>
+                            <Link className="relative" to={'/editProfile'}>Edit</Link>
                         </a>
                     </div>
                 </div>
@@ -28,12 +30,11 @@ const UserDashBoard = () => {
                 <div className="flex justify-between my-7  font-serif">
                     <div>
                         <h2>Email</h2>
-                        <p>{user.email
-                        }</p>
+                        <p>{user.email}</p>
                     </div>
                     <div>
                         <h2>Phone</h2>
-                        <p>{user.phoneNumber ? user.phoneNumber : 'No Phone number added'}</p>
+                        <p>01946875729</p>
                     </div>
                 </div>
 
@@ -51,7 +52,7 @@ const UserDashBoard = () => {
                 </div>
 
                 <div className='flex gap-5 py-4 text-[#6A94FF]'>
-                    <FaFacebookF></FaFacebookF>
+                    <FaFacebook></FaFacebook>
                     <FaTwitter></FaTwitter>
                     <FaInstagram></FaInstagram>
 
@@ -61,10 +62,7 @@ const UserDashBoard = () => {
         </div>
 
 
-
-
-
     );
 };
 
-export default UserDashBoard;
+export default Profile;

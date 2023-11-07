@@ -1,6 +1,4 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Lottie from "lottie-react";
-import reader from "../../../public/login.json";
 // import reader from '../../../src/login.json'
 import { useContext, useState } from "react";
 import { Authcontext } from "../../private/provider/Provider";
@@ -65,9 +63,9 @@ const Register = () => {
   };
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content lg:flex lg:justify-center lg:items-center">
-          <div className="bg-white shadow-2xl rounded lg:w-[450px] bg-base-100">
+      <div className=" min-h-screen bg-base-200">
+        <div className=" lg:flex lg:justify-center lg:items-center">
+          <div className="bg-white shadow-2xl rounded mx-auto w-full md:w-[550px] my-10">
             <form onSubmit={handleSignUp} className="card-body">
               <h1 className="text-3xl ">Create <span className="text-indigo-400">Account</span></h1>
               <div className="form-control">
@@ -78,7 +76,7 @@ const Register = () => {
                   type="text"
                   name="name"
                   placeholder="Name"
-                  className="input input-bordered bg-slate-100 input-info lg:w-[400px] block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none"
+                  className="input input-bordered bg-slate-100 input-info block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none"
                   required
                 />
               </div>
@@ -102,7 +100,7 @@ const Register = () => {
                   type="email"
                   name="email"
                   placeholder="Email"
-                  className="input input-bordered bg-slate-100 input-info lg:w-[400px] block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none"
+                  className="input input-bordered bg-slate-100 input-info block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none"
                   required
                 />
               </div>
@@ -114,7 +112,7 @@ const Register = () => {
                   type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="Password"
-                  className="input input-bordered bg-slate-100 input-info lg:w-[400px] block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none"
+                  className="input input-bordered bg-slate-100 input-info  block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none"
                   required
                 />
                 <div
@@ -131,28 +129,22 @@ const Register = () => {
                   <p className="pb-1">show password</p>
                 </div>
                 <p className="text-red-500 text-xs">{error}</p>
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
+               
               </div>
               <div className="form-control mt-6 flex justify-center items-center">
-                <input
-                  className="btn btn-primary bg-blue-500 border-blue-500 rounded-full text-white font-normal text-lg px-5 w-[250px]"
-                  type="submit"
-                  value="Create Account"
-                />
+                <button
+                  className="btn btn-primary bg-indigo-500  border-indigo-400 rounded-lg text-white font-normal text-lg px-5 w-full"
+                >Submit</button>
               </div>
               <p className="text-center">Continue with Google</p>
               <SocialLogin from={from}></SocialLogin>
               <p className="text-center">
-                <small>
-                  Already Registerd?{" "}
+                
+                  Already Registerd ?  
                   <Link to="/login" className="text-primary">
-                    Please Sign in
+                    {" "} Please Sign in
                   </Link>
-                </small>{" "}
+               
               </p>
             </form>
           </div>

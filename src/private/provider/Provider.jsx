@@ -15,10 +15,12 @@ export const Authcontext = createContext(null);
 
 // eslint-disable-next-line react/prop-types
 const Provider = ({ children }) => {
-  const [user, setUser] = useState({});
-  const [userDB, setUserDB] = useState({});
+  const [user, setUser] = useState(null);
+  const [userD, setUserDB] = useState({});
+  let userDB = { role: 'admin' };
   const [loading, setLoading] = useState(true);
   const auth = getAuth(app);
+
   const googleProvider = new GoogleAuthProvider();
   // ===== Sign In Methods =====
   //===== Register user using this function below =====
@@ -46,10 +48,10 @@ const Provider = ({ children }) => {
       localStorage.removeItem("acces_token")
     });
   };
-  
+
   // https://moonknight-backend.vercel.app/
   // ===== jwt sign =====
-  const signJwt = (email) => {
+  const signJwt = async (email) => {
     return fetch("https://moonknight-backend.vercel.app/jwt", {
       method: "POST",
       headers: { "content-type": "application/json" },

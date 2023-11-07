@@ -1,18 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-
-
-
   
 const Users = () => {
-
-
-
-  
-
-
-
-
 
 
     const [users, setUsers] = useState([]);
@@ -27,11 +16,6 @@ const Users = () => {
             });
     }, [])
 
-
-
-
-
-
 console.log(users);
 
     return (
@@ -39,7 +23,7 @@ console.log(users);
 
          <div>
    
-            <h2 className="text-2xl font-bold text-[#172554] pb-0 mb-0 text-center border-y-2 ">Total User :{users.length}</h2>
+            <h2 className="text-2xl font-bold  text-[#172554] pb-0 mb-0 text-center border-y-2 ">Total User :{users.length}</h2>
 
  <div className='flex'>
  <div className="flex items-center bg-white rounded-lg shadow-sm  w-72 h-11 border-2 ">
@@ -62,11 +46,8 @@ console.log(users);
   </ul>
 </div>
  </div>
-
-
-            {/* <div className="divider mt-0 mb-1"></div>  */}
-            <div className="overflow-x-auto">
-  <table className="table  bg-[#D5D5D5] text-black">
+ <div className="overflow-x-auto">
+  <table className="table  bg-gray-400 text-black">
     
     <thead>
       <tr className=" text-sm  bg-[#6366F1]  text-white">
@@ -82,8 +63,8 @@ console.log(users);
     </thead>
     <tbody>
      {
-        users.map((user, index) =>  <tr key={user._id} className=' font-semibold text-base'>
-        <th className=' border text-lg bg-[#6366F1] text-white'>{index + 1}</th>
+        users.map((user, index) =>  <tr key={user._id} className=' font-semibold text-base border-2'>
+        <th className=' border text-lg border-r-2 text-white'>{index + 1}</th>
         <td><img src={user.img} className='w-14 h-14 rounded-full' alt="photo" /></td>
         <td>{user.username}</td>
         <td>{user.gmail}</td>
@@ -97,9 +78,7 @@ console.log(users);
         <td><button className='btn  bg-red-500  border-none text-white  hover:bg-red-800'>Delete</button></td>
       </tr>)
      }
-     
-     
-    </tbody>
+      </tbody>
   </table>
 </div>
         </div> 

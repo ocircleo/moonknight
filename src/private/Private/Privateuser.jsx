@@ -9,7 +9,7 @@ const Privateuser = ({ children }) => {
   if (loading) {
     return <Loading para={true}></Loading>;
   }
-  if (user != {}) {
+  if (user) {
     return children;
   }
   return (
