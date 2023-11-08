@@ -81,6 +81,7 @@ export const routes = createBrowserRouter([
       {
         path: "blog",
         element: <Blog></Blog>,
+        // loader: () => fetch(' https://moonknight-backend.vercel.app/user/allBlog')
       },
       {
         path: "search",
