@@ -40,8 +40,6 @@ const Property = () => {
     }
 
 
-
-
     return (
         <div className="bg-[#1E1D85] overflow-hidden md:px-12 md:py-12">
             <div className="md:grid md:p-7 cols-1 md:grid-cols-3 gap-4">
