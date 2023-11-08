@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-
 import { DataTable } from "primereact/datatable"
 import { Column } from "primereact/column"
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
-
 import { FilterMatchMode } from "primereact/api"
 import { InputText } from "primereact/inputtext"
 // import { filter } from 'lodash';
@@ -80,14 +78,6 @@ const [filters, setFilters] = useState({
       city: "Madrid"
     }
   ];
-  
-
-
-
-
-
-
-
 
     const [users, setUsers] = useState([]);
     
@@ -174,7 +164,7 @@ totalRecords={5}
 
 
 
-             {/* <div>
+             <div>
             <h2 className="text-4xl font-bold text-[#172554] pb-0 mb-0 text-center ">Total User :{users.length}</h2>
             <div className="divider"></div> 
             <div className="overflow-x-auto">
@@ -214,7 +204,7 @@ totalRecords={5}
     </tbody>
   </table>
 </div>
-        </div>  */}
+        </div> 
         </div>
     );
 };

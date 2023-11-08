@@ -39,18 +39,12 @@ const Property = () => {
 
     }
 
-    {/* Aos.init({
-        offset: 200,
-        duration: 1000,
-        easing: 'ease-in-sine',
-        delay: 100,
-      });*/}
 
 
 
     return (
         <div className="bg-[#1E1D85] overflow-hidden md:px-12 md:py-12">
-            <div className="md:grid md:p-5 cols-1 md:grid-cols-3 gap-4">
+            <div className="md:grid md:p-7 cols-1 md:grid-cols-3 gap-4">
                 <div className=" md:w-9/12  text-center md:text-left">
                     <div className="text-white my-8">
                         <h2 className="text-2xl  md:text-4xl  font-bold">
@@ -70,10 +64,10 @@ const Property = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-2" data-aos="fade-down" data-aos-anchor-placement="top-center">
+                <div className="col-span-2">
                     <Slider ref={slider} {...settings}>
 
-                        <div className="p-5">
+                        <div className="p-3">
                             <div className="card h-[300px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
@@ -88,7 +82,7 @@ const Property = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-5">
+                        <div className="p-3">
                             <div className="card h-[300px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
@@ -103,7 +97,7 @@ const Property = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-5">
+                        <div className="p-3">
                             <div className="card h-[300px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
@@ -118,7 +112,7 @@ const Property = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-5">
+                        <div className="p-3">
                             <div className="card h-[300px] max:max:w-[250px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
@@ -133,7 +127,7 @@ const Property = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-5">
+                        <div className="p-3">
                             <div className="card h-[300px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
@@ -148,7 +142,7 @@ const Property = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-5">
+                        <div className="p-3">
                             <div className="card h-[300px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
