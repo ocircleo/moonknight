@@ -39,21 +39,21 @@ const BeAHostInfoForm = () => {
             })
     }
     return (
-        <div className="md:flex md:flex-col  md:justify-center lg:justify-center  md:items-center lg:items-center my-5 ">
-            <div className="bg-gray-100 rounded lg:w-4/6 p-2 md:p-6">
+        <div className="md:flex md:flex-col  md:justify-center  md:items-center lg:items-center my-5 ">
+            <div className="bg-gray-100 rounded lg:w-4/6 p-2 md:p-6 flex flex-col items-center">
 
                 <div className='pb-5 p-2'>
-                    <h1 className=' font-semibold text-xl pb-1 lg:text-3xl  capitalize'>Add your Information  </h1>
+                    <h1 className=' font-semibold text-xl pb-1 lg:text-3xl text-center  capitalize'>Add your Information  </h1>
                     
                 </div>
 
-                <form onSubmit={submit}>
+                <form onSubmit={submit} >
                     <div className='flex flex-col gap-3 p-6' >
                         <div className=' md:flex md:gap-6'>
                             <fieldset className='flex flex-col gap-3'>
 
                                 <label className='font-semibold text-xl'>Name</label>
-                                <input type="text" name='name' required placeholder="Enter Your Name" className="input input-bordered bg-slate-100 input-info max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <input type="text" name='name' required placeholder="Enter Your Name" className="input input-bordered bg-slate-100 input-info  block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-[300px] py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
                                 <p className='text-sm text-red-500'></p>
                             </fieldset>
                             <fieldset className='flex flex-col gap-3'>
@@ -67,7 +67,7 @@ const BeAHostInfoForm = () => {
                             <fieldset className='flex flex-col gap-3'>
 
                                 <label className='font-semibold text-xl'>Email</label>
-                                <input type="text" name='email' required placeholder="Enter Your Email" className="input input-bordered bg-slate-100 input-info w-full max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <input type="text" name='email' required placeholder="Enter Your Email" className="input input-bordered bg-slate-100 input-info   block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-[300px] py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
                                 <p className='text-sm text-red-500'></p>
                             </fieldset>
                             <fieldset className='flex flex-col gap-3'>
@@ -80,7 +80,7 @@ const BeAHostInfoForm = () => {
                             <fieldset className='flex flex-col gap-3'>
 
                                 <label className='font-semibold text-xl'>Thana/Upzila</label>
-                                <input type="text" name='thana_upzila' placeholder="Enter Thana/Upzila" className="input input-bordered bg-slate-100 input-info w-full max-w-xs block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <input type="text" name='thana_upzila' placeholder="Enter Thana/Upzila" className="input input-bordered bg-slate-100 input-info  md:w-[300px] block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
                                 <p className='text-sm text-red-500'></p>
                             </fieldset>
                             <fieldset className='flex flex-col gap-3'>

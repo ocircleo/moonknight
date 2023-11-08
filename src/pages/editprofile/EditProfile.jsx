@@ -8,16 +8,16 @@ const EditProfile = () => {
         event.preventDefault();
     }
     return (
-        <div className="md:flex md:flex-col   md:justify-center  md:items-center my-5 bg-gradient-to-r from-[#fff] from-10% via-[#dec9f3] via-30% to-[#ffff] to-90% p-4">
-            <div className=" rounded lg:w-4/6 p-2 md:p-6">
+        <div className="md:flex md:flex-col md:justify-center  md:items-center my-5  p-4 ">
+            <div className=" rounded lg:w-4/6 p-2 md:p-6 bg-gray-100">
 
                 <div className='pb-5 p-2 text-center'>
-                    <h1 className=' font-semibold font-serif text-xl pb-1 lg:text-3xl  capitalize'>Edit your Information  </h1>
+                    <h1 className=' font-semibold text-xl pb-1 lg:text-3xl  capitalize'>Edit your Information  </h1>
 
                 </div>
 
-                <form onSubmit={handleSubmit} className="flex justify-center items-center  bg-gray-100 ">
-                    <div className='flex flex-col gap-3 p-6 font-serif' >
+                <form onSubmit={handleSubmit} className="flex justify-center items-center ">
+                    <div className='flex flex-col gap-3 p-6 ' >
                         <div className=' md:flex md:gap-6'>
                             <fieldset className='flex flex-col gap-3'>
                                 <label htmlFor="city" className='font-semibold text-xl'>Name</label>

@@ -67,6 +67,8 @@ const Provider = ({ children }) => {
         signJwt(newUser.email);
         fetch(`https://moonknight-backend.vercel.app/user/getUser/${newUser.email}`).then(res => res.json()).then(data => { setUserDB(data); setLoading(false); });
 
+      } else {
+        setLoading(false)
       }
       return () => unSubscribe();
     });
