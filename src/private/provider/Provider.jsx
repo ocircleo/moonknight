@@ -15,10 +15,11 @@ export const Authcontext = createContext(null);
 
 // eslint-disable-next-line react/prop-types
 const Provider = ({ children }) => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const [userDB, setUserDB] = useState({});
   const [loading, setLoading] = useState(true);
   const auth = getAuth(app);
+
   const googleProvider = new GoogleAuthProvider();
   // ===== Sign In Methods =====
   //===== Register user using this function below =====
@@ -42,14 +43,13 @@ const Provider = ({ children }) => {
   // ===== sign out user using this function =====
   const signout = () => {
     return signOut(auth).then(() => {
-      console.log('signed out')
       localStorage.removeItem("acces_token")
     });
   };
-  
+
   // https://moonknight-backend.vercel.app/
   // ===== jwt sign =====
-  const signJwt = (email) => {
+  const signJwt = async (email) => {
     return fetch("https://moonknight-backend.vercel.app/jwt", {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -65,11 +65,14 @@ const Provider = ({ children }) => {
       setUser(newUser);
       if (newUser) {
         signJwt(newUser.email);
+        fetch(`https://moonknight-backend.vercel.app/user/getUser/${newUser.email}`).then(res => res.json()).then(data => { setUserDB(data); setLoading(false); });
+
+      } else {
+        setLoading(false)
       }
-      setLoading(false);
       return () => unSubscribe();
     });
-  });
+  }, []);
   //===== context api data for user login and sign up management
   let authData = {
     user,

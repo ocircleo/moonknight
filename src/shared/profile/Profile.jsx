@@ -1,16 +1,17 @@
-import { useContext } from "react";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-import { Authcontext } from "../../private/provider/Provider";
+import React from 'react';
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { Authcontext } from '../../private/provider/Provider';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
-
-const Adminhome = () => {
+const Profile = () => {
     const { user } = useContext(Authcontext)
     return (
         <div className="grid col-span-6 w-full font-semibold">
             <div className=" col-span-6 bg-[#6A94FF] md:rounded-s-xl ">
                 <div className="flex flex-col justify-center items-center text-center h-96 gap-y-3 text-white font-serif">
                     <img className="rounded-full h-28 w-28 items-center justify-center" src={user.photoURL} alt="" />
-                    <h2 className="pt-2">Md.Mosarof </h2>
+                    <h2 className="pt-2">{user.displayName}</h2>
                     <h2>Status : user (verified)</h2>
                     <div className='text-white fill-slate-50 '>
                         <a href="#_" className="px-5 py-2.5 relative rounded group font-medium text-white font-medium inline-block">
@@ -18,7 +19,7 @@ const Adminhome = () => {
                             <span className="h-full w-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br filter group-active:opacity-0 rounded opacity-50 from-purple-600 to-blue-500"></span>
                             <span className="absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-purple-600 to-blue-500"></span>
                             <span className="absolute inset-0 w-full h-full transition duration-200 ease-out rounded bg-gradient-to-br to-purple-600 from-blue-500"></span>
-                            <span className="relative">Edit</span>
+                            <Link className="relative" to={'/editProfile'}>Edit</Link>
                         </a>
                     </div>
                 </div>
@@ -29,7 +30,7 @@ const Adminhome = () => {
                 <div className="flex justify-between my-7  font-serif">
                     <div>
                         <h2>Email</h2>
-                        <p>mosarof@gmail.com</p>
+                        <p>{user.email}</p>
                     </div>
                     <div>
                         <h2>Phone</h2>
@@ -64,4 +65,4 @@ const Adminhome = () => {
     );
 };
 
-export default Adminhome;
+export default Profile;
