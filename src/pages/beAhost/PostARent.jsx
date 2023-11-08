@@ -137,18 +137,21 @@ const PostARent = () => {
                         </fieldset>
                     </div>
 
-                    <fieldset className='flex flex-col gap-3 '>
+                    <fieldset className='flex flex-col gap-3 w-full md:w-[612px] mx-auto'>
                         <label className='font-semibold text-xl'>Space ( sqft )</label>
                         <input type="number" name='space' placeholder="ex 2000 sqft" className="input input-bordered bg-slate-100 input-info   block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-[300px] py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
                         <p className='text-sm text-red-500'></p>
                     </fieldset>
-                    <fieldset className='flex flex-col gap-3'>
+                    <fieldset className='flex flex-col gap-3 w-full md:w-[612px] mx-auto'>
                         <label className='font-semibold text-xl'>Description</label>
-                        <textarea name='description' rows={28} required className="textarea textarea-info input input-bordered bg-slate-100  lg:w-[490px] h-20 block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-[300px] py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" placeholder="Enter Description"></textarea>
+                        <textarea name='description' required className="textarea textarea-info input input-bordered bg-slate-100  w-full  h-32 block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded  py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" placeholder="Enter Description"></textarea>
                         <p className='text-sm text-red-500'></p>
                     </fieldset>
 
-                    <input type='submit' className="btn  bg-indigo-600 text-white hover:btn glass" value="Submit" />
+                    <div className="w-full flex justify-center">
+
+                        <button type='submit' className="btn bg-indigo-600  text-white hover:btn glass" >Submit</button>
+                    </div>
                 </form>
 
             </div>
