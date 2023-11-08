@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { createBrowserRouter } from "react-router-dom";
 import App from "./src/App";
 import ErrorPage from "./src/shared/error/ErrorPage";
@@ -34,11 +35,9 @@ import Mintainence from "./src/pages/maintainence/Mintainence";
 // // >>>>>>> f212567304bb130eda8ae5f4357b1da060daf321
 // =======
 import AddBlog from "./src/pages/addBlog/AddBlog";
-<<<<<<< HEAD
-// >>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24
-=======
 import PendingApproval from "./src/Admin/adminpage/PendingApproval";
->>>>>>> bdead7bd3ae0c17f176f28641332dce6bf29094e
+import Wishlist from "./src/pages/Wishlist/Wishlist";
+import SeeDetails from "./src/pages/seeDetails/SeeDetails";
 
 export const routes = createBrowserRouter([
   {
@@ -95,6 +94,10 @@ export const routes = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
+        path: "wishlist",
+        element: <Wishlist></Wishlist>,
+      },
+      {
         path: "search",
         element: <Search></Search>,
       },
@@ -105,6 +108,10 @@ export const routes = createBrowserRouter([
       {
         path: "Mintainence",
         element: <Mintainence></Mintainence>,
+      },
+      {
+        path: "seeDetails",
+        element: <SeeDetails></SeeDetails>,
       },
     ],
   },

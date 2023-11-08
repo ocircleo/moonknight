@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useContext } from "react";
 import { dataContext } from "../../private/provider/Data_Provider";
 import Reviews from "./homeCompo/Reviews";
