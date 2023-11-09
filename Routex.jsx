@@ -32,6 +32,7 @@ import EditProfile from "./src/pages/editprofile/EditProfile";
 import Mails from "./src/dashboard/admin/Mails";
 import Whishlist from "./src/dashboard/compo/Whishlist";
 import SeeDetails from "./src/pages/seeDetails/SeeDetails";
+import BlogDetails from "./src/pages/blog/BlogDetails";
 
 export const routes = createBrowserRouter([
   {
@@ -84,6 +85,11 @@ export const routes = createBrowserRouter([
       {
         path: "blog",
         element: <Blog></Blog>,
+        // loader: () => fetch(' https://moonknight-backend.vercel.app/user/allBlog')
+      },
+      {
+        path: "blogDetail",
+        element: <BlogDetails></BlogDetails>,
         // loader: () => fetch(' https://moonknight-backend.vercel.app/user/allBlog')
       },
       {
