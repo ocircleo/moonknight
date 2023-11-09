@@ -66,9 +66,9 @@ const Navbar = () => {
               <div className="dropdown cursor-pointer">
                 <label tabIndex={1} className=" cursor-pointe">
                   <img
-                    src={user.photoURL}
+                    src={userDB.imageUrl}
                     alt=""
-                    className="cursor-pointer h-[40px] w-[40px] md:h-[55px] md:w-[55px] bg-white  rounded-full"
+                    className="object-cover cursor-pointer h-[40px] w-[40px] md:h-[55px] md:w-[55px] bg-gray-300  rounded-full"
                   />
                 </label>
                 <div

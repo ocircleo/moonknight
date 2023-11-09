@@ -50,7 +50,7 @@ const Dashboard = () => {
                 text: 'My Houses'
             },
             {
-                title: '/addHouses',
+                title: '/postHouseInfo',
                 text: 'Add houses'
             },
         ]

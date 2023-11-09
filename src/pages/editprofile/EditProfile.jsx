@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { useContext } from "react";
 import { Authcontext } from "../../private/provider/Provider";
+import { toast } from "react-toastify";
 
 
 const EditProfile = () => {
-    const { user } = useContext(Authcontext);
-    const { userDB } = useContext(Authcontext);
-    const [selectedImage, setSelectedImage] = useState(user.photoURL);
-    console.log(userDB);
-
+    const { userDB, refresh } = useContext(Authcontext);
+    const [selectedImage, setSelectedImage] = useState(userDB.imageUrl);
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -23,12 +21,56 @@ const EditProfile = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        let name, phone, city, region, additional, age;
         const form = e.target;
-        const name = form.name.value;
-        const number = form.number.value;
-        const age = form.age.value;
-        const userData = { name, number, age }
-        console.log(userData)
+        name = form.name.value;
+        phone = form.number.value;
+        age = form.age.value;
+        city = form.city.value;
+        region = form.region.value;
+        additional = form.location.value;
+        const userData = {
+            id: userDB._id,
+            name: name,
+            phone: phone,
+            age: age,
+            city: city,
+            region: region,
+            additional: additional,
+        }
+        fetch('http://localhost:3000/user/updateUser', {
+            method: 'PUT',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(userData)
+        }).then(res => res.json()).then(data => {
+            if (data.acknowledged) {
+                toast('data uploaded');
+                refresh()
+            }
+        })
+
+    }
+    const handleSubmitImage = e => {
+        e.preventDefault()
+        const form = e.target;
+        const image = form.image
+        const imageForm = new FormData();
+        imageForm.append('id', userDB._id);
+        if (image.files[0]) {
+            imageForm.append('profile', image.files[0]);
+            fetch('http://localhost:3000/user/updateImage', {
+                method: 'PUT',
+                body: imageForm
+            }).then(res => res.json()).then(data => {
+                if (data.modifiedCount == 1) {
+                    toast('image uploaded')
+                    form.reset()
+                    refresh()
+                }
+            })
+        } else {
+            toast('image not selected')
+        }
     }
     return (
         <div className="md:flex md:flex-col md:justify-center  md:items-center my-5  p-4 ">
@@ -50,7 +92,7 @@ const EditProfile = () => {
                             </fieldset>
                             <fieldset className='flex flex-col gap-3'>
                                 <label htmlFor="city" className='font-semibold text-xl'>Number</label>
-                                <input type="Number" name='number' id='number' defaultValue={userDB?.phone} placeholder="Enter Your Number" className="input input-bordered bg-slate-100 input-info  block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-[300px] py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <input type="Number" required name='number' id='number' defaultValue={userDB?.phone} placeholder="Enter Your Number" className="input input-bordered bg-slate-100 input-info  block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-[300px] py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
                                 <p className='text-sm text-red-500'></p>
                             </fieldset>
                         </div>
@@ -58,54 +100,64 @@ const EditProfile = () => {
                         <div className='lg:flex md:flex lg:gap-6 md:gap-6'>
                             <fieldset className='flex flex-col gap-3'>
                                 <label htmlFor="city" className='font-semibold text-xl'>Age</label>
-                                <input type="date" name="age" id="age" placeholder="Enter Your Age" className="input input-bordered bg-slate-100 input-info  block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-[300px] py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <input type="number" required defaultValue={userDB.Age || 0} name="age" id="age" placeholder="Enter Your Age" className="input input-bordered bg-slate-100 input-info  block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-[300px] py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
                                 <p className='text-sm text-red-500'></p>
                             </fieldset>
                             <fieldset className='flex flex-col gap-3'>
                                 <label htmlFor="city" className='font-semibold text-xl'>City</label>
-                                <input type="text" name="city" id="city" placeholder="Enter City" className="input input-bordered bg-slate-100 input-info  block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-[300px] py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <input type="text" required defaultValue={userDB.city} name="city" id="city" placeholder="Enter City" className="input input-bordered bg-slate-100 input-info  block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-[300px] py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
                                 <p className='text-sm text-red-500'></p>
                             </fieldset>
                         </div>
                         <div className='lg:flex md:flex lg:gap-6 md:gap-6'>
                             <fieldset className='flex flex-col gap-3'>
                                 <label htmlFor="city" className='font-semibold text-xl'>Thana/Upzila</label>
-                                <input type="text" name="thana" id="thana" placeholder="Enter Thana/Upzila" className="input input-bordered bg-slate-100 input-info  block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-[300px] py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <input type="text" required defaultValue={userDB.region} name="region" id="thana" placeholder="Enter Thana/Upzila" className="input input-bordered bg-slate-100 input-info  block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-[300px] py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
                                 <p className='text-sm text-red-500'></p>
                             </fieldset>
                             <fieldset className='flex flex-col gap-3'>
                                 <label htmlFor="city" className='font-semibold text-xl'>Aditional Location</label>
-                                <input type="text" name="location" id="location" placeholder="Enter Aditional Location" className="input input-bordered bg-slate-100 input-info  block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-[300px] py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+                                <input type="text" required defaultValue={userDB.additional} name="location" id="location" placeholder="Enter Aditional Location" className="input input-bordered bg-slate-100 input-info  block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-[300px] py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
                                 <p className='text-sm text-red-500'></p>
                             </fieldset>
                         </div>
 
-                        <div className='lg:flex lg:gap-16'>
-                            <div className=''>
-                                <img className='md:h-20 md:w-20 h-32 w-32 mx-auto rounded-xl object-cover' src={selectedImage} alt="" />
-                                <p className=" text-center text-sm pt-2">You may change profile pic but <br /> not nececery</p>
-                            </div>
-                            <fieldset className='flex flex-col gap-3'>
-                                <label htmlFor="city" className='font-semibold text-xl'>Add new Profile Image</label>
-                                <input type="file" accept="image" onChange={handleImageChange} placeholder="Enter city name" multiple className="file-input w-full max-w-xs" />
 
-                            </fieldset>
-
-
-                        </div>
                         <div className='lg:pt-6 text-center md:text-left ' type='submit'>
 
-                            <a href="#_" className="box-border relative z-30 inline-flex items-center justify-center w-auto px-8 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-indigo-600 rounded-md cursor-pointer group ring-offset-2 ring-1 ring-indigo-300 ring-offset-indigo-200 hover:ring-offset-indigo-500 ease focus:outline-none">
-                                <span className="absolute bottom-0 right-0 w-8 h-20 -mb-8 -mr-5 transition-all duration-300 ease-out transform rotate-45 translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
-                                <span className="absolute top-0 left-0 w-20 h-8 -mt-1 -ml-12 transition-all duration-300 ease-out transform -rotate-45 -translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
-                                <span className="relative z-20 flex items-center text-sm">
-                                    <svg className="relative w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                                    <button type="submit">submit</button>
-                                </span>
-                            </a>
+
+
+                            <button type="submit" className="bg-indigo-400 px-6 py-2 rounded font-semibold text-white capitalize">submit</button>
+
+
                         </div>
                     </div>
 
+                </form>
+                <form onSubmit={handleSubmitImage} className="gap-6 flex justify-center items-center flex-col">
+
+                    <p className="text-3xl py-2 capitalize">upload profile image</p>
+                    <div className='lg:flex lg:gap-16'>
+                        <div className=''>
+                            <img className='md:h-20 md:w-20 h-32 w-32 mx-auto rounded-xl object-cover' src={selectedImage} alt="" />
+                            <p className=" text-center text-sm pt-2">You may change profile pic but <br /> not nececery</p>
+                        </div>
+                        <fieldset className='flex flex-col gap-3'>
+                            <label htmlFor="city" className='font-semibold text-xl'>Add new Profile Image</label>
+                            <input type="file" name="image" accept="image/*" onChange={handleImageChange} placeholder="Enter city name" multiple className="file-input w-full max-w-xs" />
+
+                        </fieldset>
+
+
+                    </div>
+                    <div className='lg:pt-6 text-center md:text-left ' type='submit'>
+
+
+
+                        <button type="submit" className="bg-indigo-400 px-6 py-2 rounded font-semibold text-white capitalize">Upload</button>
+
+
+                    </div>
                 </form>
             </div>
         </div>
