@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 
-const blog = () => {
+const Blog = () => {
 
     const [blogs, setBlogs] = useState([]);
 
@@ -21,6 +21,14 @@ const blog = () => {
 
     const handleInputChange = e => {
         const text = e.target.value;
+        if (text.length > 0) {
+            fetch(`https://moonknight-backend.vercel.app/user/allBlog`)
+                .then(res => res.json())
+                .then(data => {
+                    setBlogs(data);
+                    console.log(data)
+                })
+        }
         fetch(`https://moonknight-backend.vercel.app/user/blogSearch/${text}`)
             .then(res => res.json())
             .then(data => {
@@ -184,5 +192,5 @@ const blog = () => {
     );
 };
 
-export default blog;
+export default Blog;
 

@@ -9,6 +9,10 @@ const Profile = () => {
     console.log(userDB)
     return (
         <div className=" w-full font-semibold">
+            <div className='grid grid-cols-3'>
+                <div className='col-span-3 md:col-span-2'></div>
+                <div className='col-span-3 md:col-span-1'></div>
+            </div>
             <div className="bg-gray-100 ">
                 <div className="h-56 flex items-center justify-center gap-2 text-black capitalize flex-col">
                     <img className="rounded-full h-28 object-cover w-28 items-center justify-center bg-gray-300" src={userDB.imageUrl} alt="" />
