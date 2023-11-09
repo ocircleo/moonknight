@@ -9,6 +9,10 @@ const Users = () => {
         setAllUsers(data)
       });
   }, [])
+
+
+ 
+
   return (
     <div>
 
@@ -42,9 +46,9 @@ const Users = () => {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
-                <th>Make Admin</th>
-                <th>Make Host</th>
-                <th> Delete</th>
+                <th>Status</th>
+              
+                <th> Block</th>
               </tr>
             </thead>
             <tbody className=''>
@@ -55,10 +59,12 @@ const Users = () => {
                   <td>{ele.displayName}</td>
                   <td>{ele.email}</td>
                   <td>{ele.phone}</td>
-                  <td><button className={`btn text-white  border-none ${ele.role == 'admin' ? 'btn-disabled' : ""}  bg-indigo-400  hover:bg-success`}>{ele.role == 'admin' ? 'Already admin' : "admin"}</button>
+
+                  
+                  <td><button className={`btn text-white  border-none ${ele.role == 'admin' ? 'btn-disabled' : ele.role == 'host' ? 'btn-disabled' : ""}  bg-indigo-400  hover:bg-success`}>{ele.role == 'admin' ? 'admin' :  ele.role == 'host' ? 'Host' : "make admin"}</button>
                   </td>
-                  <td><button className={`btn text-white  border-none ${ele.role == 'host' ? 'btn-disabled' : ""}  bg-indigo-400  hover:bg-success`}>{ele.role == 'host' ? 'Already Host' : "host"}</button>
-                  </td>
+                  {/* <td><button className={`btn text-white  border-none ${ele.role == 'host' ? 'btn-disabled' : ""}  bg-indigo-400  hover:bg-success`}>{ele.role == 'host' ? 'Already Host' : "host"}</button>
+                  </td> */}
 
                   <td><button className='btn  bg-red-500  border-none text-white  hover:bg-red-800'>Block</button></td>
                 </tr>)
