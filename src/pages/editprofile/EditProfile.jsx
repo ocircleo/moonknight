@@ -38,7 +38,7 @@ const EditProfile = () => {
             region: region,
             additional: additional,
         }
-        fetch('http://localhost:3000/user/updateUser', {
+        fetch('https://moonknight-backend.vercel.app/user/updateUser', {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(userData)
@@ -58,7 +58,7 @@ const EditProfile = () => {
         imageForm.append('id', userDB._id);
         if (image.files[0]) {
             imageForm.append('profile', image.files[0]);
-            fetch('http://localhost:3000/user/updateImage', {
+            fetch('https://moonknight-backend.vercel.app/user/updateImage', {
                 method: 'PUT',
                 body: imageForm
             }).then(res => res.json()).then(data => {
