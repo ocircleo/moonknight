@@ -16,7 +16,7 @@ const Data_Provider = ({ children }) => {
     }, 10000)
   }
   useEffect(() => {
-    fetch(`http://localhost:3000/user/productSearch?city=&region=&price=0&skip=0`).then(res => res.json()).then(d => { setInitaialData(d) })
+    fetch(`https://moonknight-backend.vercel.app/user/productSearch?city=&region=&price=0&skip=0`).then(res => res.json()).then(d => { setInitaialData(d) })
   }, [])
 
   const data = { navState, setNavState, searchData, setSearchData, initialData };

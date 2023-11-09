@@ -10,7 +10,7 @@ const Search = () => {
     const [data, setData] = useState([])
     useEffect(() => {
         if (searchData.city) {
-            fetch(`http://localhost:3000/user/productSearch?city=${searchData.city}&region=${searchData.region}&price=0&skip=0`).then(res => res.json()).then(d => { setData(d); console.log(d) })
+            fetch(`https://moonknight-backend.vercel.app/user/productSearch?city=${searchData.city}&region=${searchData.region}&price=0&skip=0`).then(res => res.json()).then(d => { setData(d); console.log(d) })
         } else {
             setData(initialData)
         }
@@ -20,12 +20,12 @@ const Search = () => {
         let form = e.target;
         let region = form.region.value;
         let city = form.city.value;
-        fetch(`http://localhost:3000/user/productSearch?city=${city}&region=${region}&price=0&skip=0`).then(res => res.json()).then(d => { setData(d); console.log(d) })
+        fetch(`https://moonknight-backend.vercel.app/user/productSearch?city=${city}&region=${region}&price=0&skip=0`).then(res => res.json()).then(d => { setData(d); console.log(d) })
     }
     const sort = (e) => {
         const region = document.getElementById('region').value;
         const city = document.getElementById('city').value;
-        fetch(`http://localhost:3000/user/productSearch?city=${city}&region=${region}&price=${e}&skip=0`).then(res => res.json()).then(d => { setData(d); console.log(d) })
+        fetch(`https://moonknight-backend.vercel.app/user/productSearch?city=${city}&region=${region}&price=${e}&skip=0`).then(res => res.json()).then(d => { setData(d); console.log(d) })
     }
     return (
         <div className='w-full lg:w-5/6 mx-auto mt-6'>
