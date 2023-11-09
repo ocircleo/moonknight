@@ -38,7 +38,7 @@ const BeAHostInfoForm = () => {
             region: region,
             additional: additional,
         }
-        fetch("http://localhost:3000/host/applyForHost", {
+        fetch("https://moonknight-backend.vercel.app/host/applyForHost", {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
@@ -51,7 +51,7 @@ const BeAHostInfoForm = () => {
                     const formData = new FormData();
                     formData.append('profile', image);
                     formData.append('id', userDB._id)
-                    fetch('http://localhost:3000/user/updateImage', {
+                    fetch('https://moonknight-backend.vercel.app/user/updateImage', {
                         method: 'PUT',
                         body: formData
                     }).then(res => res.json()).then(data => {

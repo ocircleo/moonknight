@@ -13,7 +13,7 @@ const PostARent = () => {
         formData.append('postId', id);
         formData.append('image', image);
         return new Promise((resolve, reject) => {
-            fetch('http://localhost:3000/host/uploadImage', {
+            fetch('https://moonknight-backend.vercel.app/host/uploadImage', {
                 method: 'PUT',
                 body: formData,
             }).then(res => res.json()).then(data => resolve(data)).catch(error => reject(error))
@@ -59,7 +59,7 @@ const PostARent = () => {
             hostEmail: hostEmail,
 
         }
-        fetch("http://localhost:3000/host/postHouse", {
+        fetch("https://moonknight-backend.vercel.app/host/postHouse", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

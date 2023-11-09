@@ -23,7 +23,7 @@ const AddBlog = () => {
     formData.append('description', description)
     formData.append('id', id)
     toast("uploading your blog")
-    fetch('http://localhost:3000/admin/postBLog', {
+    fetch('https://moonknight-backend.vercel.app/admin/postBLog', {
       method: 'POST',
       body: formData
     })

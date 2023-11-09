@@ -31,7 +31,7 @@ const ContactDetails = () => {
             subject: subject,
             message: message
         }
-        fetch('http://localhost:3000/user/contact', {
+        fetch('https://moonknight-backend.vercel.app/user/contact', {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data)
