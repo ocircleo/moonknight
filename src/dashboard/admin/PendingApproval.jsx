@@ -18,8 +18,8 @@ const PendingApproval = () => {
     return (
 
 <div>
-<h2 className="text-2xl font-bold  text-[#172554] pb-2 mb-0 text-center border-y-2 ">Pending Users To Be Host : {allUsers.length}</h2>
-<div className=' grid grid-cols-3'>
+<h2 className="text-xl md:text-2xl font-bold  text-[#172554] pb-2 mb-0 text-center border-y-2 ">Pending Users To Be Host : {allUsers.length}</h2>
+<div className=' grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 
 {
        allUsers.map((ele) => <div key={ele._id} className=' flex justify-center font-semibold text-base bg-gray-200 border-8'>
@@ -28,7 +28,7 @@ const PendingApproval = () => {
             <div className='relative rounded-lg'>
               
                 <figure className=''>
-                    <img className= 'object-cover transition duration-300 ease-in-out hover:scale-110 h-[30px] md:h-[250px] xl:h-[280px] bg-gray-400 w-full' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/product/product-3.jpg" alt="Shoes" />
+                    <img className= 'object-cover transition duration-300 ease-in-out hover:scale-110 h-[200px] md:h-[250px] xl:h-[280px] bg-gray-400 w-full' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/product/product-3.jpg" alt="Shoes" />
                 </figure>
 
                 <div>

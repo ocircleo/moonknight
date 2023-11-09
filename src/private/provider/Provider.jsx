@@ -19,7 +19,9 @@ const Provider = ({ children }) => {
   const [userDB, setUserDB] = useState({});
   const [loading, setLoading] = useState(true);
   const auth = getAuth(app);
-
+  const refresh = async () => {
+    fetch(`https://moonknight-backend.vercel.app/user/getUser/${user.email}`).then(res => res.json()).then(data => setUserDB(data));
+  }
   const googleProvider = new GoogleAuthProvider();
   // ===== Sign In Methods =====
   //===== Register user using this function below =====
@@ -67,6 +69,8 @@ const Provider = ({ children }) => {
         signJwt(newUser.email);
         fetch(`https://moonknight-backend.vercel.app/user/getUser/${newUser.email}`).then(res => res.json()).then(data => { setUserDB(data); setLoading(false); });
 
+      } else {
+        setLoading(false)
       }
       return () => unSubscribe();
     });
@@ -85,6 +89,7 @@ const Provider = ({ children }) => {
     updateUser,
     signJwt,
     signout,
+    refresh
   };
   return (
     <Authcontext.Provider value={authData}>{children}</Authcontext.Provider>

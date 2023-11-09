@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { createBrowserRouter } from "react-router-dom";
 import App from "./src/App";
 import ErrorPage from "./src/shared/error/ErrorPage";
@@ -29,6 +30,8 @@ import PostARent from "./src/pages/beAhost/PostARent";
 import BeAHostInfoForm from "./src/pages/beAhost/BeAHostInfoForm";
 import EditProfile from "./src/pages/editprofile/EditProfile";
 import Mails from "./src/dashboard/admin/Mails";
+import Whishlist from "./src/dashboard/compo/Whishlist";
+import SeeDetails from "./src/pages/seeDetails/SeeDetails";
 
 export const routes = createBrowserRouter([
   {
@@ -81,6 +84,11 @@ export const routes = createBrowserRouter([
       {
         path: "blog",
         element: <Blog></Blog>,
+        // loader: () => fetch(' https://moonknight-backend.vercel.app/user/allBlog')
+      },
+      {
+        path: "wishlist",
+        element: <Whishlist></Whishlist>,
       },
       {
         path: "search",
@@ -92,6 +100,10 @@ export const routes = createBrowserRouter([
       {
         path: "Mintainence",
         element: <Mintainence></Mintainence>,
+      },
+      {
+        path: "seeDetails",
+        element: <SeeDetails></SeeDetails>,
       },
     ],
 

@@ -13,7 +13,7 @@ const Test = () => {
       role: 'admin'
 
     };
-    fetch(`http://localhost:3000/user/${query}`, {
+    fetch(`https://moonknight-backend.vercel.app/user/${query}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
