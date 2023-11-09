@@ -12,8 +12,6 @@ const Mails = () => {
         });
     }, [])
 
-   
-  
     const toggleInfo = (index) => {
       const newShowAll = [...showAll];
       newShowAll[index] = !newShowAll[index];
