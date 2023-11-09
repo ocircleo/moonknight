@@ -15,15 +15,6 @@ import Search from "./src/pages/search/Search";
 import Question from "./src/pages/Contact/Question";
 import Dashboard from "./src/dashboard/Dashboard";
 import Mintainence from "./src/pages/maintainence/Mintainence";
-<<<<<<< HEAD
-// <<<<<<< HEAD
-// // >>>>>>> f212567304bb130eda8ae5f4357b1da060daf321
-// =======
-import AddBlog from "./src/pages/addBlog/AddBlog";
-import PendingApproval from "./src/Admin/adminpage/PendingApproval";
-import Wishlist from "./src/pages/Wishlist/Wishlist";
-import SeeDetails from "./src/pages/seeDetails/SeeDetails";
-=======
 import Privateuser from "./src/private/Private/Privateuser";
 import Profile from "./src/shared/profile/Profile";
 import Whishlight from "./src/dashboard/compo/Whishlist";
@@ -39,7 +30,8 @@ import PostARent from "./src/pages/beAhost/PostARent";
 import BeAHostInfoForm from "./src/pages/beAhost/BeAHostInfoForm";
 import EditProfile from "./src/pages/editprofile/EditProfile";
 import Mails from "./src/dashboard/admin/Mails";
->>>>>>> 0ff2244261f1fd9b6e9e7f725120681f6b94b785
+import Whishlist from "./src/dashboard/compo/Whishlist";
+import SeeDetails from "./src/pages/seeDetails/SeeDetails";
 
 export const routes = createBrowserRouter([
   {
@@ -96,7 +88,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "wishlist",
-        element: <Wishlist></Wishlist>,
+        element: <Whishlist></Whishlist>,
       },
       {
         path: "search",

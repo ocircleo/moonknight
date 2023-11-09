@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Authcontext } from '../../private/provider/Provider';
 
-const Whishlight = () => {
+const Whishlist = () => {
     const { userDB } = useContext(Authcontext)
     console.log(userDB)
     return (
@@ -11,4 +11,4 @@ const Whishlight = () => {
     );
 };
 
-export default Whishlight;
+export default Whishlist;
