@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { createBrowserRouter } from "react-router-dom";
 import App from "./src/App";
 import ErrorPage from "./src/shared/error/ErrorPage";
@@ -14,6 +15,15 @@ import Search from "./src/pages/search/Search";
 import Question from "./src/pages/Contact/Question";
 import Dashboard from "./src/dashboard/Dashboard";
 import Mintainence from "./src/pages/maintainence/Mintainence";
+<<<<<<< HEAD
+// <<<<<<< HEAD
+// // >>>>>>> f212567304bb130eda8ae5f4357b1da060daf321
+// =======
+import AddBlog from "./src/pages/addBlog/AddBlog";
+import PendingApproval from "./src/Admin/adminpage/PendingApproval";
+import Wishlist from "./src/pages/Wishlist/Wishlist";
+import SeeDetails from "./src/pages/seeDetails/SeeDetails";
+=======
 import Privateuser from "./src/private/Private/Privateuser";
 import Profile from "./src/shared/profile/Profile";
 import Whishlight from "./src/dashboard/compo/Whishlist";
@@ -29,6 +39,7 @@ import PostARent from "./src/pages/beAhost/PostARent";
 import BeAHostInfoForm from "./src/pages/beAhost/BeAHostInfoForm";
 import EditProfile from "./src/pages/editprofile/EditProfile";
 import Mails from "./src/dashboard/admin/Mails";
+>>>>>>> 0ff2244261f1fd9b6e9e7f725120681f6b94b785
 
 export const routes = createBrowserRouter([
   {
@@ -81,6 +92,11 @@ export const routes = createBrowserRouter([
       {
         path: "blog",
         element: <Blog></Blog>,
+        // loader: () => fetch(' https://moonknight-backend.vercel.app/user/allBlog')
+      },
+      {
+        path: "wishlist",
+        element: <Wishlist></Wishlist>,
       },
       {
         path: "search",
@@ -92,6 +108,10 @@ export const routes = createBrowserRouter([
       {
         path: "Mintainence",
         element: <Mintainence></Mintainence>,
+      },
+      {
+        path: "seeDetails",
+        element: <SeeDetails></SeeDetails>,
       },
     ],
 
