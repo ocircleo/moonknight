@@ -46,6 +46,7 @@ const Provider = ({ children }) => {
   const signout = () => {
     return signOut(auth).then(() => {
       localStorage.removeItem("acces_token")
+      setUserDB({})
     });
   };
 
