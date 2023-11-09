@@ -1,31 +1,51 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BsFilter } from 'react-icons/bs';
 import Card from '../../shared/Card';
 import { useState } from 'react';
+import { useContext } from 'react';
+import { dataContext } from '../../private/provider/Data_Provider';
 const Search = () => {
+    const { searchData, initialData } = useContext(dataContext)
     const [Filter, setFilter] = useState(false)
+    const [data, setData] = useState([])
+    useEffect(() => {
+        if (searchData.city) {
+            fetch(`http://localhost:3000/user/productSearch?city=${searchData.city}&region=${searchData.region}&price=0&skip=0`).then(res => res.json()).then(d => { setData(d); console.log(d) })
+        } else {
+            setData(initialData)
+        }
+    }, [])
     const search = (e) => {
-
+        e.preventDefault();
+        let form = e.target;
+        let region = form.region.value;
+        let city = form.city.value;
+        fetch(`http://localhost:3000/user/productSearch?city=${city}&region=${region}&price=0&skip=0`).then(res => res.json()).then(d => { setData(d); console.log(d) })
     }
-    let newArray = [1, 2, 3, 4, 5, 6, 7]
+    const sort = (e) => {
+        const region = document.getElementById('region').value;
+        const city = document.getElementById('city').value;
+        fetch(`http://localhost:3000/user/productSearch?city=${city}&region=${region}&price=${e}&skip=0`).then(res => res.json()).then(d => { setData(d); console.log(d) })
+    }
     return (
         <div className='w-full lg:w-5/6 mx-auto mt-6'>
-            <from onSubmit={search} className="mx-auto border rounded p-2 mt-5 flex flex-col md:flex-row gap-4 items-center justify-center">
-                <input type="text" placeholder='location' name='search' className='border-2 border-indigo-400 rounded p-3 w-full md:w-48 lg:w-96' />
-                <input type="text" placeholder='city (ex: dhaka)' className='w-full md:w-36 lg:w-72 border-2 border-indigo-400 rounded p-3' />
+            <form onSubmit={search} className="mx-auto border rounded p-2 mt-5 flex flex-col md:flex-row gap-4 items-center justify-center">
+                <input type="text" id='region' defaultValue={searchData.region || ''} placeholder='location' name='region' className='border-2 border-indigo-400 rounded p-3 w-full md:w-48 lg:w-96' />
+                <input type="text" id='city' name='city' required defaultValue={searchData.city || ''} placeholder='city (ex: dhaka)' className='w-full md:w-36 lg:w-72 border-2 border-indigo-400 rounded p-3' />
                 <button type='submit' className='bg-indigo-400 w-full md:w-auto px-3 py-3 capitalize font-semibold rounded text-white active:scale-95 duration-100'>Search</button>
-            </from>
+            </form>
             <div className='z-40 w-full mt-2 mb-2 p-2 md:p-3 flex justify-between capitalize border relative'>
                 <p>filters</p>
-                <button onClick={()=>setFilter(!Filter)}><BsFilter className='text-2xl'></BsFilter></button>
-                <div className={`p-2 rounded absolute flex-col ${Filter ? 'flex' : 'hidden'} bg-white border gap-2 right-0 top-12`}>
-                    <button onClick={()=>setFilter(!Filter)} className='capitalize bg-gray-200 p-2'>Price low high</button>
-                    <button onClick={()=>setFilter(!Filter)} className='bg-gray-200 p-2 capitalize'>top rated</button>
+                <button onClick={() => setFilter(!Filter)}><BsFilter className='text-2xl'></BsFilter></button>
+                <div className={`font-semibold p-2 rounded absolute flex-col ${Filter ? 'flex' : 'hidden'} bg-white border gap-2 right-0 top-12`}>
+                    <button onClick={() => { setFilter(!Filter); sort(1) }} className='capitalize bg-gray-200 p-2'>Price low high</button>
+                    <button onClick={() => { setFilter(!Filter); sort(-1) }} className='bg-gray-200 p-2 capitalize'>High to low</button>
                 </div>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:px-10 p-5'>
+                <p className={`${data.length == 0 ? 'block' : 'hidden'} text-xl text-center col-span-3`}> Noting to show</p>
                 {
-                    newArray.map(ele => <Card key={ele}></Card>)
+                    data.map(ele => <Card key={ele._id} data={ele}></Card>)
                 }
 
             </div>
