@@ -2,7 +2,6 @@ import { Link, useRouteError } from "react-router-dom";
 import errorImg from '../../assets/images/error.jpg'
 const ErrorPage = () => {
     const error = useRouteError()
-    console.log(error)
     return (
         <div className="h-screen w-full items-center justify-center flex flex-col">
             <img src={errorImg} alt="" />

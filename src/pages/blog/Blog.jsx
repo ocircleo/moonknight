@@ -26,14 +26,14 @@ const Blog = () => {
                 .then(res => res.json())
                 .then(data => {
                     setBlogs(data);
-                    console.log(data)
+                   
                 })
         }
         fetch(`https://moonknight-backend.vercel.app/user/blogSearch/${text}`)
             .then(res => res.json())
             .then(data => {
                 setBlogs(data);
-                console.log(data)
+               
             })
 
     }
