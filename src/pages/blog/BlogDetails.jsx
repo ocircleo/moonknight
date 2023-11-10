@@ -1,4 +1,8 @@
+import { useLoaderData } from "react-router-dom";
+
 const BlogDetails = () => {
+  const data = useLoaderData();
+  console.log(data)
   return (
     <section className="text-gray-600 body-font bg-gray-200 overflow-hidden">
       <div className="container px-5 py-24 mx-auto">
@@ -6,18 +10,16 @@ const BlogDetails = () => {
           <img
             alt="ecommerce"
             className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-            src="https://dreamsestate.dreamstechnologies.com/html/assets/img/product/product-3.jpg"
+            src={data.imgUrl}
           />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-gray-900 text-3xl  font-medium mb-1">
-              Rahat hosen al
+              {data.title}
             </h2>
-            
+
             <p className="leading-relaxed">
-              Im a 22 years old boy with a passion for technology, xianxia
-              books, and music that hails from Bangladesh I can speak English
-              and bengali fluently, and I have some rudimentary knowledge of
-              hindi and Spanish .
+              {data.description
+              }
             </p>
             <div className="flex mb-4">
               <span className="flex items-center justify-center">

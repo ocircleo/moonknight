@@ -4,11 +4,14 @@ import article2 from '../../assets/images/blogImage/article2.jpg'
 import article3 from '../../assets/images/blogImage/article3.jpg'
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Blog = () => {
 
     const [blogs, setBlogs] = useState([]);
+    // const { _id } = blogs;
+    // console.log(_id, blogs)
 
     useEffect(() => {
         fetch('https://moonknight-backend.vercel.app/user/allBlog')
@@ -26,14 +29,14 @@ const Blog = () => {
                 .then(res => res.json())
                 .then(data => {
                     setBlogs(data);
-                   
+
                 })
         }
         fetch(`https://moonknight-backend.vercel.app/user/blogSearch/${text}`)
             .then(res => res.json())
             .then(data => {
                 setBlogs(data);
-               
+
             })
 
     }
@@ -63,7 +66,8 @@ const Blog = () => {
                                                 <span className="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-purple-500 rounded-full blur-md"></span>
                                                 <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-pink-500 rounded-full blur-md"></span>
                                             </span>
-                                            <span className="relative text-white">View Details</span>
+                                            {/* <span className="relative text-white">View Details</span> */}
+                                            <Link className=' relative text-white' to={`/singleBlog/${blog._id}`}>View Details</Link>
                                         </a>
                                     </div>
                                     <div className="flex gap-6 items-center">

@@ -88,10 +88,12 @@ export const routes = createBrowserRouter([
         // loader: () => fetch(' https://moonknight-backend.vercel.app/user/allBlog')
       },
       {
-        path: "blogDetail",
+        path: "/singleBlog/:id",
         element: <BlogDetails></BlogDetails>,
-        // loader: () => fetch(' https://moonknight-backend.vercel.app/user/allBlog')
-      },
+        loader: ({ params }) => fetch(`https://moonknight-backend.vercel.app/user/singleBlog/${params.id}`)
+      }
+
+      ,
       {
         path: "wishlist",
         element: <Whishlist></Whishlist>,
