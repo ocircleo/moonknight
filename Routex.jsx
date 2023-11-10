@@ -33,6 +33,7 @@ import Mails from "./src/dashboard/admin/Mails";
 import Whishlist from "./src/dashboard/compo/Whishlist";
 import SeeDetails from "./src/pages/seeDetails/SeeDetails";
 import BlogDetails from "./src/pages/blog/BlogDetails";
+import BlogViewDetails from "./src/pages/blog/BlogViewDetails";
 
 export const routes = createBrowserRouter([
   {
@@ -89,7 +90,8 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/singleBlog/:id",
-        element: <BlogDetails></BlogDetails>,
+        // element: <BlogDetails></BlogDetails>,
+        element: <BlogViewDetails></BlogViewDetails>,
         loader: ({ params }) => fetch(`https://moonknight-backend.vercel.app/user/singleBlog/${params.id}`)
       }
 
