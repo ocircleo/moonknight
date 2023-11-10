@@ -18,48 +18,10 @@ const About = () => {
 
   const [counterOn, setCounterOn] = useState(false);
 
-// <<<<<<< HEAD
+
     return (
         <div>
-
-{/* <Swiper
-      // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={50}
-      slidesPerView={3}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
-    >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      
-    </Swiper> */}
-
-
-
-
-            {/* <div className=' bg-blue-950 flex justify-center items-center h-56 '>
-              <div className=''>
-              <h2 className='text-4xl font-bold text-center text-white pb-2'>About Us</h2>
-             <ul className='flex justify-center align-middle text-lg text-white'>
-               <li>
-                <Link to={"/"}> Home</Link>
-              </li>
-              <span className='px-2 text-[#FCAF3D]'>/</span>
-              <li>
-                <Link to={"/about"}> About</Link>
-              </li>
-             </ul>
-              </div> */}
-{/* ======= */}
-  {/* return ( */}
-  
-      <div className=' bg-blue-950 flex justify-center items-center h-56 '>
+ <div className=' bg-blue-950 flex justify-center items-center h-56 '>
         <div className=''>
           <h2 className='text-4xl font-bold text-center text-white pb-2'>About Us</h2>
           <ul className='flex justify-center align-middle text-lg text-white'>
@@ -84,18 +46,17 @@ const About = () => {
         <h4 className='text-[#6C60FE] font-semibold '>About DreamsEstate</h4>
         <h2 className=' text-2xl md:text-4xl lg:text-5xl text-[#0E0E46]  font-bold py-4 lg:pt-6 lg:pb-8 '>We connect building with <br /> people</h2>
 
-        <p className=' text-[#8a99ad] font-serif'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis
-          ligula eu lectus vulputate porttitor sed feugiat nunc. Mauris ac consectetur ante, <br /><br />
+        <p className='text-[#0E0E46]  font-serif'>We foster connections by bringing buildings and people together, creating vibrant communities where
+         individuals thrive within a dynamic and inclusive living environment. <br /><br />
 
-          congue, sed luctus lectus congue. Integer convallis condimentum sem. Duis elementum tortor eget condimentum
-          tempor. Praesent sollicitudin lectus ut pharetra pulvinar.
-          Donec et libero ligula. Vivamus semper at orci at placerat.Placeat Lorem ipsum dolor sit amet.</p>
+         We bridge buildings and people, cultivating dynamic communities. Our focus is on creating vibrant living spaces that cater to diverse lifestyles, fostering 
+         connections and a sense of belonging for individuals seeking more than just a place to live.</p>
 
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5   px-16 md:px-28 lg:px-28 bg-[#f1f1f1]'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5    px-16 md:px-28 lg:px-28 bg-[#f1f1f1]'>
         {/* <div> <img className=' w-80 hover:w-96' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/about-us/about-us-01.jpg" alt="" /></div> */}
 
-        <div className="relative w-full overflow-hidden rounded-3xl h-full"> {/* You can adjust the width and height */}
+        <div className="relative w-full overflow-hidden rounded-3xl h-[450px] "> {/* You can adjust the width and height */}
           <img
             src="https://dreamsestate.dreamstechnologies.com/html/assets/img/about-us/about-us-01.jpg"
             alt="Your Image"
@@ -103,19 +64,19 @@ const About = () => {
           />
         </div>
 
-        <div className="relative w-full overflow-hidden rounded-3xl h-full"> {/* You can adjust the width and height */}
+        <div className="relative w-full overflow-hidden rounded-3xl  h-[450px]"> {/* You can adjust the width and height */}
           <img
             src="https://dreamsestate.dreamstechnologies.com/html/assets/img/about-us/about-us-02.jpg"
             alt="Your Image"
-            className="   transition  duration-1000 transform overflow-hidden  hover:scale-125 "
+            className="   transition  bg-cover duration-1000 transform overflow-hidden  hover:scale-125 "
           />
         </div>
 
-        <div className="relative w-full overflow-hidden rounded-3xl h-full"> {/* You can adjust the width and height */}
+        <div className="relative w-full overflow-hidden rounded-3xl  h-[450px]"> {/* You can adjust the width and height */}
           <img
             src="https://dreamsestate.dreamstechnologies.com/html/assets/img/about-us/about-us-03.jpg"
             alt="Your Image"
-            className="   transition  duration-1000 transform overflow-hidden  hover:scale-125 "
+            className="     transition  duration-1000 transform overflow-hidden  hover:scale-125 "
           />
         </div>
 
@@ -138,7 +99,7 @@ const About = () => {
                 K
               </h1>
               <p className='text-[#8a99ad]  group-hover:text-white text-xl  font-semibold'>Listings Added</p>
-{/* >>>>>>> 4d87507d1bbb043dcfeb5f3e791dc93f52302f24 */}
+
             </div>
           </div>
           <div className='items-center rounded-lg  w-64 h-64  pt-10  bg-[#FFFFFF] hover:bg-[#653cef] group hover:text-white ease-in-out duration-100 '>
@@ -188,28 +149,22 @@ const About = () => {
       <div className='bg-[#1E1D85]  px-12 py-6  md:px-16 md:py-10 lg:px-24 lg:py-16'>
         <div className=' grid grid-cols-1 lg:grid-cols-2  gap-0'>
           <div className='p-0 m-0'>
-            <h2 className=' md:text-center text-2xl md:text-4xl lg:text-5xl text-white font-bold  py-6 md:py-8 lg:py-12 lg:pl-12 '>Ready to Book a Place?</h2>
+            <h2 className=' md:text-center text-2xl md:text-4xl lg:text-4xl text-white font-bold  py-6 md:py-8 lg:py-12 lg:pl-12 '>Ready to Book a Place?</h2>
 
             <img src="https://dreamsestate.dreamstechnologies.com/html/assets/img/about-us/about-us-04.jpg" className='  md:items-center border-8 border-white  my-6  md:my-8 md:ml-16' alt="" />
 
 
           </div>
           <div className='text-white md:px-16'>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis ligula
-              eu lectus vulputate porttitor sed feugiat nunc. <span className='text-[#FCAF3D]'>Mauris ac consectetur ante,</span></p>
+            <p>Welcome to Lo Let Building, where comfort, convenience, and luxury converge to create
+               an unparalleled living experience. Our exceptional residential complex offers an oasis of modern living, tailored 
+              to meet the needs of those seeking a home that effortlessly  <span className='text-[#FCAF3D]'>combines style and functionality.</span></p>
             <br /><br />
-            <p>congue, sed luctus lectus congue. Integer convallis condimentum sem. Duis elementum
-              tortor eget condimentum tempor. Praesent sollicitudin lectus ut pharetra pulvinar. Donec et
-              libero ligula. Vivamus semper at orci at placerat.Placeat Lorem ipsum dolor sit amet. congue, sed luctus lectus
-              congue. Integer convallis condimentum sem. Duis elementum tortor eget condimentum tempor.
-              Praesent sollicitudin lectus ut pharetra pulvinar. Done congue, sed luctus lectu congue. Integer
-              condimentum sem. Duis elementum tortor eget condimentum tempor.
-              Praesent sollicitudin lectus ut pharetra pulvinar. Done Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Quisque quis ligula eu lectus vulputate porttitor sed feugiat nunc. <span className='text-[#FCAF3D]'>Mauris ac consectetur ante,</span></p>
+            <p>Our commitment to quality living extends beyond the apartments themselves. Residents here enjoy a host of amenities that enrich their daily lives. Take advantage of our state-of-the-art fitness center, perfect for those looking to maintain an active lifestyle, or unwind and socialize in our beautifully landscaped communal areas. Whether it's relaxing in our serene gardens or hosting events in our stylish communal spaces,
+               Lo Let Building fosters a sense of community  <span className='text-[#FCAF3D]'>and belonging among its residents.</span></p>
             <br /><br />
-            <p>congue, sed luctus lectus congue. Integer convallis condimentum sem. Duis elementum
-              tortor eget condimentum tempor. Praesent sollicitudin lectus ut pharetra pulvinar. Donec et libero ligula.
-              Vivamus semper at orci at placerat.Placeat Lorem ipsum dolor sit amet.</p>
+            <p>Book your place at Lo Let Building today and embark on a journey towards a refined living experience where every detail is designed to exceed your expectations. Experience the epitome of luxury, convenience, and comfort
+               in the heart of the city. Welcome home to Lo Let Building.</p>
           </div>
         </div>
       </div>

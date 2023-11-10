@@ -38,32 +38,29 @@ const Login = () => {
 
   return (
     <div>
-      <div className=" min-h-screen bg-base-200 ">
+      <div className=" min-h-screen ">
         <div className=" lg:flex lg:justify-center lg:items-center">
-          <div className="bg-white shadow-2xl my-10 rounded w-full md:w-[550px] mx-auto">
+          <div className="bg-white  my-10 rounded w-full md:w-[450px] mx-auto">
             <form onSubmit={handleSignIn} className="card-body">
-              <h1 className="text-3xl font-semibold">Log<span className="text-indigo-400">In</span></h1>
+              <h1 className="text-3xl font-bold text-center pb-10 capitalize"> Sign In to toolate</h1>
+              <SocialLogin from={from}></SocialLogin>
+              <p className="text-center my-1">or</p>
               <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
+
                 <input
                   type="email"
                   name="email"
                   placeholder="Email"
-                  className="input input-bordered bg-slate-100 input-info block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none"
+                  className="input border-2 border-black input-bordered outline-none focus:outline-none focus:border-indigo-400 bg-white focus:bg-white"
                   required
                 />
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
+              <div className="form-control mt-2">
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="Password"
-                  className="input input-bordered bg-slate-100 input-info block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none"
+                  className="input border-2 border-black input-bordered outline-none focus:outline-none focus:border-indigo-400 bg-white focus:bg-white"
                   required
                 />
                 <div
@@ -79,25 +76,18 @@ const Login = () => {
                   />
                   <p className="pb-1">show password</p>
                 </div>
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
               </div>
-              <div className="form-control mt-6 flex justify-center items-center ">
+              <div className="form-control mt-4 flex justify-center items-center ">
                 <button
-                  className="btn btn-primary bg-indigo-500 border-indigo-400 rounded-lg text-white font-normal text-lg px-5 w-full"
+                  className="btn bg-gray-800 border-2 border-black rounded-lg text-white font-semibold text-lg px-5 w-full hover:bg-white hover:text-black hover:border-black"
 
-                >Submit</button>
+                >Login</button>
               </div>
 
-              <p className="text-center">Continue with Google</p>
-              <SocialLogin from={from}></SocialLogin>
               <p className="text-center">
 
                 New here?{" "}
-                <Link to="/register" className="text-primary">
+                <Link to="/register" className="text-blue-500 font-semibold">
                   Create a new account
                 </Link>
 
