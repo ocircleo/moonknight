@@ -1,11 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-<<<<<<< HEAD
-import Rating from 'react-rating';
-import { FaMapMarkerAlt, FaRegStar, FaStar } from 'react-icons/fa';
-=======
 import { FaMapMarkerAlt } from 'react-icons/fa';
->>>>>>> 299b90a9bc2d401eb22c0dbf491724317b9025aa
 import { Link } from 'react-router-dom';
 
 const Card = ({ data }) => {
@@ -65,15 +60,8 @@ const Card = ({ data }) => {
                 <hr />
 
 
-<<<<<<< HEAD
-                    </div>
-                    <div className="">
-                       <Link to="seeDetails"><button className="btn btn-active btn-primary text-sm">Book Now</button></Link>
-                    </div>
-=======
                 <div className="">
                     <Link className="btn bg-indigo-400 text-white font-semibold text-lg w-full capitalize">view Detail</Link>
->>>>>>> 299b90a9bc2d401eb22c0dbf491724317b9025aa
                 </div>
 
             </div>

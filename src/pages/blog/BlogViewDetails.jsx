@@ -25,7 +25,7 @@ const BlogViewDetails = () => {
 
     return (
         <div>
-            <div className="h-[200px] w-[90%] rounded-md mx-auto bg-blue-200 flex justify-center items-center text-center text-white bg-[#47446A]">
+            <div className="h-[200px] w-[90%] rounded-md mx-auto  flex justify-center items-center text-center text-white opacity bg-[#47446A]">
                 <animated.h2 style={scaleIn} className="md:text-4xl text-3xl px-2 font-bold font-serif">
                     {data.title}
                 </animated.h2>
