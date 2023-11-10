@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import slider from '../../assets/images/ContactPage/contact.jpg'
 
-const ImageSlider = () => {
+const ImageSlider = ({ data }) => {
   const trendingRef = useRef(null);
   useEffect(() => {
     const swiperEl = trendingRef.current;
@@ -75,33 +75,32 @@ const ImageSlider = () => {
     // and now initialize it
     swiperEl.initialize();
   }, []);
-  let users = ["slman","Rahim","Mossarof","Mehidy"]
-    return (
-      <swiper-container init="false" ref={trendingRef}>
+  return (
+    <swiper-container init="false" ref={trendingRef}>
       {
-        users.map(ele=>{
-          return(
-              <swiper-slide key={ele}>
-        <div className=" ">
-         
-            <img
-              src={slider}
-              alt=""
-              className="h-[400px] lg:w-[800px] rounded-lg"
-            />
-            <p>{ele}</p>
-            <div className="absolute bottom-0 h-12 lg:w-[800px] rounded-b-lg bg-indigo-200 left-0">
-         </div> 
-        </div>
-       
-      </swiper-slide>
+        data?.map(ele => {
+          return (
+            <swiper-slide key={ele}>
+              <div className=" ">
+
+                <img
+                  src={ele}
+                  alt=""
+                  className="h-[400px] lg:w-[800px] rounded-lg"
+                />
+                <p>{ele}</p>
+                <div className="absolute bottom-0 h-12 lg:w-[800px] rounded-b-lg bg-indigo-200 left-0">
+                </div>
+              </div>
+
+            </swiper-slide>
           )
         })
       }
-    
-      
+
+
     </swiper-container>
-    );
+  );
 };
 
 export default ImageSlider;

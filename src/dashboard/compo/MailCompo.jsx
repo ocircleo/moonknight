@@ -53,7 +53,7 @@ const MailCompo = ({user, handleDelete }) => {
                    <div className="flex  justify-end">
                         {/* <button className="btn btn-active  bg-indigo-500 text-white hover:bg-indigo-800  text-sm">submit</button> */}
                    
-                        <button  onClick={() => handleDelete(user._id)} className="btn btn-active  bg-red-500 text-white hover:bg-red-800  text-sm">remove</button>
+                        {/* <button  onClick={() => handleDelete(user._id)} className="btn btn-active  bg-red-500 text-white hover:bg-red-800  text-sm">remove</button> */}
                     </div>
                    </div>
                </div>  

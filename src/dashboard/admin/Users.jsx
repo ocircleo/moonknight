@@ -1,7 +1,35 @@
 import React, { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { Authcontext } from '../../private/provider/Provider';
+import { toast } from 'react-toastify';
 
 const Users = () => {
   const [allUsers, setAllUsers] = useState([]);
+  const { userDB } = useContext(Authcontext)
+  const search = (e) => {
+    e.preventDefault()
+    const form = e.target;
+    const textInput = form.input.value;
+    const searchBy = form.filter.value;
+    if (textInput.length > 0) {
+      fetch(`https://moonknight-backend.vercel.app/admin/searchUser?filter=${searchBy}&data=${textInput}`).then(res => res.json()).then(data => setAllUsers([data]))
+    } else {
+      fetch('https://moonknight-backend.vercel.app/admin/getUsers/all')
+        .then(res => res.json())
+        .then(data => {
+          setAllUsers(data)
+        });
+    }
+  }
+  const makeAdmin = () => {
+    fetch(`https://moonknight-backend.vercel.app/admin/makeAdmin/${userDB._id}`).then(res => res.json()).then(data => {
+      if (data.modifiedCount == 1) {
+        toast('user role updated')
+      } else {
+        toast('something went wrong')
+      }
+    })
+  }
   useEffect(() => {
     fetch('https://moonknight-backend.vercel.app/admin/getUsers/all')
       .then(res => res.json())
@@ -9,33 +37,22 @@ const Users = () => {
         setAllUsers(data)
       });
   }, [])
-
-
- 
-
   return (
     <div>
-
       <div>
 
         <h2 className="text-2xl font-bold  text-[#172554] pb-0 mb-0 text-center border-y-2 ">Total User :{allUsers.length}</h2>
-
         <div className='flex'>
-          <div className="flex items-center bg-white rounded-lg shadow-sm  w-72 h-11 border-2 ">
-            <input type="text" className=" py-0 my-0 px-4 rounded-lg focus:outline-none" placeholder="Search..." />
-          </div>
-          <div className="dropdown dropdown-hover m-0 ">
-            <label tabIndex={0} className="btn btn-sm h-6  bg-indigo-500  text-white hover:bg-success  text-xs  m-1">Search by
+          <form onSubmit={search} className='flex gap-2'>
+            <input type="text" name='input' placeholder="Type here" className="input input-bordered w-72" />
+            <select name='filter' className="select select-bordered w-28">
+              <option disabled selected>search by</option>
+              <option value={'email'}>email</option>
+              <option value={'phone'}>phone</option>
+            </select>
+            <button type='submit' className="btn btn-info">Search</button>
+          </form>
 
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-6 text-white  " fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </label>
-            <ul tabIndex={0} className="dropdown-content z-[1] bg-success text-white menu p-2 shadow  rounded-box w-52">
-              <li><a>Gmail</a></li>
-              <li><a>Phone Number</a></li>
-            </ul>
-          </div>
         </div>
         <div className="overflow-x-auto my-2">
           <table className="table mt-5">
@@ -47,8 +64,8 @@ const Users = () => {
                 <th>Email</th>
                 <th>Phone Number</th>
                 <th>Status</th>
-              
-                <th> Block</th>
+
+                {/* <th> Block</th> */}
               </tr>
             </thead>
             <tbody className=''>
@@ -60,20 +77,20 @@ const Users = () => {
                   <td>{ele.email}</td>
                   <td>{ele.phone}</td>
 
-                  
-                  <td><button className={`btn text-white  border-none ${ele.role == 'admin' ? 'btn-disabled' : ele.role == 'host' ? 'btn-disabled' : ""}  bg-indigo-400  hover:bg-success`}>{ele.role == 'admin' ? 'admin' :  ele.role == 'host' ? 'Host' : "make admin"}</button>
+
+                  <td><button onClick={makeAdmin} className={`btn text-white  border-none ${ele.role == 'admin' ? 'btn-disabled' : ele.role == 'host' ? 'btn-disabled' : ""}  bg-indigo-400  hover:bg-success`}>{ele.role == 'admin' ? 'admin' : ele.role == 'host' ? 'Host' : "make admin"}</button>
                   </td>
                   {/* <td><button className={`btn text-white  border-none ${ele.role == 'host' ? 'btn-disabled' : ""}  bg-indigo-400  hover:bg-success`}>{ele.role == 'host' ? 'Already Host' : "host"}</button>
                   </td> */}
 
-                  <td><button className='btn  bg-red-500  border-none text-white  hover:bg-red-800'>Block</button></td>
+                  {/* <td><button className='btn  bg-red-500  border-none text-white  hover:bg-red-800'>Block</button></td> */}
                 </tr>)
               }
             </tbody>
           </table>
         </div>
       </div>
-      <div className=' flex justify-center'>
+      {/* <div className=' flex justify-center'>
         <div className="join">
           <button className="join-item btn">«</button>
           <button className="join-item btn">1</button>
@@ -82,7 +99,7 @@ const Users = () => {
           <button className="join-item btn">99</button>
           <button className="join-item btn">»</button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

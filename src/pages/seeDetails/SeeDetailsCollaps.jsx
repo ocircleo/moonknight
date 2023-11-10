@@ -1,72 +1,47 @@
 
 
-const SeeDetailsCollaps = () => {
-    return (
-        <div>
-            <div className="bg-white mt-10 p-4 rounded-lg">
-                <div className="text-2xl font-medium">
-                    Overview
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-5 pt-4  p-4">
-                    <div>
-                        <p>4 Beds</p>
-                    </div>
-                    <div>
-                        <p>4 Baths</p>
-                    </div>
-                    <div>
-                        <p>35000 Sqft</p>
-                    </div>
-                    <div>
-                        <p>2 Garages</p>
-                    </div>
-                    <div>
-                        <p>Year Built: 2005</p>
-                    </div>
-                </div>
-            </div>
+const SeeDetailsCollaps = ({ data }) => {
+  return (
+    <div>
+      <div className="bg-white mt-10 p-4 rounded-lg">
+        <div className="text-2xl font-medium">
+          Overview
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-5 pt-4  p-4">
+          <div>
+            <p>{data.beds} Beds</p>
+          </div>
+          <div>
+            <p>{data.bathroom} Baths</p>
+          </div>
+          <div>
+            <p>{data.space} Sqft</p>
+          </div>
+          <div>
+            <p>{data.garage} Garages</p>
+          </div>
+          <div>
+          </div>
+        </div>
+      </div>
 
-            <div className="bg-white mt-10 p-4 rounded-lg">
-                <div className="text-2xl font-medium">
-                    Description
-                </div>
-                <p className="pt-4">Good road frontage on a paved county road with utilities make it an amazing setting for yourdream country getaway
-                    ! If you like views, you must see this property!,
-                    This property is mostly wooded and sits high on a hilltop overlooking
-                    the Mohawk River Valley.Located right in the heart of Upstate NYs Amish farm Country,
-                    this land is certified organic makingit extremely rare! Good road frontage on a paved county road
-                    with utilities make it an amazingsetting for your dream country getaway! If you like views, you must
-                    see this property!This propertyis mostly wooded and sits high on a hilltop overlooking the Mohawk River
-                    Valley. Located right inthe heart of Upstate NYs Amish farm Country, this land is certified organic making
-                    it extremelyrare! Good road frontage on a paved county road with
-                    utilities make it an amazing setting for yourdream country getaway! If you like views, you must see this property!</p>
-            </div>
-            <div className="bg-white mt-10  rounded-lg p-4">
-                <div className="text-2xl font-medium">
-                Property Details
-                </div>
-                <div className="md:flex md:justify-between gap-4 pt-4 ">
-                    <div>
-                    <p className="text-lg text-gray-500 font-bold">Property Id : <span className="font-normal">22972</span></p>
-                    <p className="text-lg text-gray-500 font-bold">Price : <span className="font-normal">22972</span></p>
-                    <p className="text-lg text-gray-500 font-bold">Price Info: : <span className="font-normal">22972</span></p>
-                    <p className="text-lg text-gray-500 font-bold">Property Id : <span className="font-normal">22972</span></p>
-                    </div>
-                    <div>
-                    <p className="text-lg text-gray-500 font-bold">Property Id : <span className="font-normal">22972</span></p>
-                    <p className="text-lg text-gray-500 font-bold">Property Id : <span className="font-normal">22972</span></p>
-                    <p className="text-lg text-gray-500 font-bold">Property Id : <span className="font-normal">22972</span></p>
-                    <p className="text-lg text-gray-500 font-bold">Property Id : <span className="font-normal">22972</span></p>
-                    </div>
-                    <div>
-                    <p className="text-lg text-gray-500 font-bold">Property Id : <span className="font-normal">22972</span></p>
-                    <p className="text-lg text-gray-500 font-bold">Property Id : <span className="font-normal">22972</span></p>
-                    </div>
-                </div>
-            </div>
+      <div className="bg-white mt-10 p-4 rounded-lg">
+        <div className="text-2xl font-medium">
+          Description
+        </div>
+        <p className="pt-4">{data.description}</p>
+      </div>
+      {/* <div className="bg-white mt-10  rounded-lg p-4"> */}
+        {/* <div className="text-2xl font-medium">
+          Property Details
+        </div> */}
+        <div className="md:flex md:justify-between gap-4 pt-4 ">
+        
+        </div>
+      {/* </div> */}
 
 
-            {/* 
+      {/* 
       <div
       className="bg-[#F7F6FF] overflow-hidden md:px-12 md:py-12"
       data-aos="fade-down"
@@ -324,8 +299,8 @@ const SeeDetailsCollaps = () => {
         </div>
       </div>
     </div>  */}
-        </div>
-    );
+    </div>
+  );
 };
 
 export default SeeDetailsCollaps;

@@ -10,10 +10,8 @@ import { Link } from 'react-router-dom';
 const Blog = () => {
 
     const [blogs, setBlogs] = useState([]);
-    // const { _id } = blogs;
-    // console.log(_id, blogs)
-
     useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         fetch('https://moonknight-backend.vercel.app/user/allBlog')
             .then(res => res.json())
             .then(data => {
@@ -56,20 +54,15 @@ const Blog = () => {
                     {
                         blogs.length ? blogs.map(blog => <div key={blog._id} className="card card-compact w-[100%] bg-base-100 shadow-xl overflow-hidden">
 
-                            <figure><img className="img-fluid object-cover hover:scale-125 transition duration-500 cursor-pointer" src={blog.imgUrl} alt="Shoes" /></figure>
+                            <figure><img className="img-fluid object-cover w-full h-80 hover:scale-125 transition duration-500 cursor-pointer" src={blog.imgUrl} alt="Shoes" /></figure>
                             <div className="card-body">
                                 <div className="flex justify-between items-center">
-                                    <div>
-                                        <a href="#_" className="relative inline-flex items-center justify-center inline-block p-4 px-5 py-3 overflow-hidden font-medium text-indigo-600 rounded-lg shadow-2xl group">
-                                            <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-700 rounded-full blur-md ease"></span>
-                                            <span className="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
-                                                <span className="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-purple-500 rounded-full blur-md"></span>
-                                                <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-pink-500 rounded-full blur-md"></span>
-                                            </span>
-                                            {/* <span className="relative text-white">View Details</span> */}
-                                            <Link className=' relative text-white' to={`/singleBlog/${blog._id}`}>View Details</Link>
-                                        </a>
-                                    </div>
+
+
+
+                                    <Link className=' relative bg-indigo-400 text-white px-4 py-2 font-semibold rounded ' to={`/singleBlog/${blog._id}`}>View Details</Link>
+
+
                                     <div className="flex gap-6 items-center">
                                         <div className="flex justify-center items-center gap-2">
                                             <img className="h-6 w-6 rounded-full" src={blog.imgUrl} alt="" />
@@ -101,7 +94,7 @@ const Blog = () => {
                         </div>
                     }
 
-
+                    {/* 
                     <div className='flex items-center justify-center'>
                         <div className='flex items-center gap-2 hover:bg-[#6C60FE] hover:text-white cursor-pointer  inline-flex px-4 py-2 rounded-lg'>
                             <FaArrowLeft></FaArrowLeft>
@@ -122,7 +115,7 @@ const Blog = () => {
                             <FaArrowRight></FaArrowRight>
                             <p>Next</p>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
                 {/* ...........Left side end........... */}
@@ -192,7 +185,7 @@ const Blog = () => {
 
 
 
-        </div>
+        </div >
     );
 };
 
