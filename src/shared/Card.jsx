@@ -1,6 +1,7 @@
 import React from 'react';
 import Rating from 'react-rating';
 import { FaMapMarkerAlt, FaRegStar, FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Card = () => {
     return (
@@ -72,7 +73,7 @@ const Card = () => {
 
                     </div>
                     <div className="">
-                        <button className="btn btn-active btn-primary text-sm">Book Now</button>
+                       <Link to="seeDetails"><button className="btn btn-active btn-primary text-sm">Book Now</button></Link>
                     </div>
                 </div>
             </div>

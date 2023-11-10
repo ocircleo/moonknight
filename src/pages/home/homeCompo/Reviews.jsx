@@ -2,6 +2,7 @@ import { register } from "swiper/element/bundle";
 import { useEffect } from "react";
 import { useRef } from "react";
 
+
 register();
 const Reviews = () => {
   const trendingRef = useRef(null);
@@ -84,7 +85,7 @@ const Reviews = () => {
         users.map(ele=>{
           return(
               <swiper-slide key={ele}>
-        <div className="relative h-auto  w-full mx-auto md:w-4/6 bg-white rounded flex flex-col item-start justify-center capitalize cursor-pointer text-xl font-semibold p-6 gap-4 border">
+        <div className="relative h-auto  w-full mx-auto md:w-10/12 lg:w-11/12 bg-white rounded flex flex-col item-start justify-center capitalize cursor-pointer text-xl font-semibold p-6 gap-4 border">
           <div className="flex flex-col gap-2 items-center">
             <img
               src="https://source.unsplash.com/random/24x24/?face"
