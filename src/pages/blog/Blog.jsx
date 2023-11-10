@@ -52,11 +52,11 @@ const Blog = () => {
             <div className="grid grid-cols-6 m-6 gap-4 max-w-screen-xl sm:px-4 md:px-6 mx-auto">
 
                 {/* ...........Left side start........... */}
-                <div className="lg:col-span-4 col-span-6 grid gap-5">
+                <div className="lg:col-span-4 col-span-6 grid gap-5 ">
                     {
-                        blogs.length ? blogs.map(blog => <div key={blog._id} className="card card-compact w-[100%] bg-base-100 shadow-xl">
+                        blogs.length ? blogs.map(blog => <div key={blog._id} className="card card-compact w-[100%] bg-base-100 shadow-xl overflow-hidden">
 
-                            <figure><img className="img-fluid hover:scale-125 transition duration-500 cursor-pointer" src={blog.imgUrl} alt="Shoes" /></figure>
+                            <figure><img className="img-fluid object-cover hover:scale-125 transition duration-500 cursor-pointer" src={blog.imgUrl} alt="Shoes" /></figure>
                             <div className="card-body">
                                 <div className="flex justify-between items-center">
                                     <div>
