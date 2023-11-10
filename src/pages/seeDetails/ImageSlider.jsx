@@ -1,37 +1,106 @@
-
+import { useEffect, useRef } from "react";
+import slider from '../../assets/images/ContactPage/contact.jpg'
 
 const ImageSlider = () => {
+  const trendingRef = useRef(null);
+  useEffect(() => {
+    const swiperEl = trendingRef.current;
+    // swiper parameters
+
+    const swiperParams = {
+      slidesPerView: 1,
+      pagination: {
+        clickable: true,
+      },
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      navigation: true,
+
+      injectStyles: [
+        `     
+            .swiper-button-next,
+            .swiper-button-prev {
+              opacity:0;
+              background-position: center;
+              background-size: 0;
+              background-repeat: no-repeat;
+              padding: 0;
+              border-radius: 0px;
+              background-color:gray;
+              display:none;
+            }
+  
+            .swiper-button-prev {
+              background-image: url("/");
+            }
+  
+            .swiper-button-next {
+              background-image: url("/");
+            }
+            
+            .swiper-button-next::after,
+            .swiper-button-prev::after {
+              content: "";
+            }
+  
+            .swiper-pagination-bullet{
+              width: 20px;
+              height: 8px;
+              background-color: blue;
+              border-radius:5px;
+              transition:.5s;
+            }
+            .swiper-pagination-bullet-active{
+              width: 30px;
+              height: 10px;
+            }
+            .swiper-button-next > *{
+              display:none;
+            }
+            .swiper-button-prev > *{
+              display:none;
+            }
+        `,
+      ],
+      on: {
+        init() {
+          // ...
+        },
+      },
+    };
+    // now we need to assign all parameters to Swiper element
+    Object.assign(swiperEl, swiperParams);
+    // and now initialize it
+    swiperEl.initialize();
+  }, []);
+  let users = ["slman","Rahim","Mossarof","Mehidy"]
     return (
-        <div className="carousel w-full max-h-80 ">
-        <div id="slide1" className="carousel-item relative w-full">
-          <img src="https://dreamsestate.dreamstechnologies.com/html/assets/img/product/product-3.jpg" className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="btn btn-circle">❮</a> 
-            <a href="#slide2" className="btn btn-circle">❯</a>
-          </div>
-        </div> 
-        <div id="slide2" className="carousel-item relative w-full">
-          <img src="https://dreamsestate.dreamstechnologies.com/html/assets/img/product/product-3.jpg" className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" className="btn btn-circle">❮</a> 
-            <a href="#slide3" className="btn btn-circle">❯</a>
-          </div>
-        </div> 
-        <div id="slide3" className="carousel-item relative w-full">
-          <img src="https://dreamsestate.dreamstechnologies.com/html/assets/img/product/product-3.jpg" className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" className="btn btn-circle">❮</a> 
-            <a href="#slide4" className="btn btn-circle">❯</a>
-          </div>
-        </div> 
-        <div id="slide4" className="carousel-item relative w-full">
-          <img src="https://dreamsestate.dreamstechnologies.com/html/assets/img/product/product-3.jpg" className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide3" className="btn btn-circle">❮</a> 
-            <a href="#slide1" className="btn btn-circle">❯</a>
-          </div>
+      <swiper-container init="false" ref={trendingRef}>
+      {
+        users.map(ele=>{
+          return(
+              <swiper-slide key={ele}>
+        <div className=" ">
+         
+            <img
+              src={slider}
+              alt=""
+              className="h-[400px] lg:w-[800px] rounded-lg"
+            />
+            <p>{ele}</p>
+            <div className="absolute bottom-0 h-12 lg:w-[800px] rounded-b-lg bg-indigo-200 left-0">
+         </div> 
         </div>
-      </div>
+       
+      </swiper-slide>
+          )
+        })
+      }
+    
+      
+    </swiper-container>
     );
 };
 

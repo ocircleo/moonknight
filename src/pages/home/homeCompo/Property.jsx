@@ -2,7 +2,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import img from '../../../assets/images/Property1 (2).svg'
+import img from '../../../assets/images/property1.svg'
+import img2 from '../../../assets/images/property2.svg'
+import img3 from '../../../assets/images/property3.svg'
+import img4 from '../../../assets/images/property4.svg'
 import {
     faCircleArrowLeft,
     faCircleArrowRight,
@@ -19,10 +22,16 @@ const Property = () => {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 4,
         arrows: false,
         slidesToScroll: 1,
         responsive: [
+            {
+                breakpoint: 1248,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
             {
                 breakpoint: 1024,
                 settings: {
@@ -56,7 +65,7 @@ const Property = () => {
                         <p className="text-small">
                             OUR PURPOSE IS TO HELP PEOPLE REACH THEIR POTENTIAL IN REAL ESTATE.
                         </p>
-                        <div className="mt-4">
+                        <div className="mt-4 block min-[1248px]:hidden">
                             <FontAwesomeIcon onClick={() => slider?.current?.slickPrev()} className="m-2 ms-0 text-4xl" icon={faCircleArrowLeft} />
                             <FontAwesomeIcon onClick={() => slider?.current?.slickNext()} className="m-2 text-4xl" icon={faCircleArrowRight} />
                         </div>
@@ -66,7 +75,7 @@ const Property = () => {
                     <Slider ref={slider} {...settings}>
 
                         <div className="p-3">
-                            <div className="card h-[300px] bg-base-100 shadow-xl">
+                            <div className="card h-[280px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
                                         src={img}
@@ -81,10 +90,10 @@ const Property = () => {
                             </div>
                         </div>
                         <div className="p-3">
-                            <div className="card h-[300px] bg-base-100 shadow-xl">
+                            <div className="card h-[280px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
-                                        src={img}
+                                        src={img2}
                                         alt="Shoes"
                                         className="rounded-xl"
                                     />
@@ -96,10 +105,10 @@ const Property = () => {
                             </div>
                         </div>
                         <div className="p-3">
-                            <div className="card h-[300px] bg-base-100 shadow-xl">
+                            <div className="card h-[280px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
-                                        src={img}
+                                        src={img3}
                                         alt="Shoes"
                                         className="rounded-xl"
                                     />
@@ -111,50 +120,23 @@ const Property = () => {
                             </div>
                         </div>
                         <div className="p-3">
-                            <div className="card h-[300px] max:max:w-[250px] bg-base-100 shadow-xl">
+                            <div className="card h-[280px] max:max:w-[250px] bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img
-                                        src={img}
+                                        src={img4}
                                         alt="Shoes"
                                         className="rounded-xl"
                                     />
                                 </figure>
                                 <div className="card-body items-center text-center">
-                                    <h2 className="card-title">Houses</h2>
+                                    <h2 className="card-title">Villas</h2>
                                     <p>30 Properties</p>
                                 </div>
                             </div>
                         </div>
-                        <div className="p-3">
-                            <div className="card h-[300px] bg-base-100 shadow-xl">
-                                <figure className="px-10 pt-10">
-                                    <img
-                                        src={img}
-                                        alt="Shoes"
-                                        className="rounded-xl"
-                                    />
-                                </figure>
-                                <div className="card-body items-center text-center">
-                                    <h2 className="card-title">Offices</h2>
-                                    <p>30 Properties</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="p-3">
-                            <div className="card h-[300px] bg-base-100 shadow-xl">
-                                <figure className="px-10 pt-10">
-                                    <img
-                                        src={img}
-                                        alt="Shoes"
-                                        className="rounded-xl"
-                                    />
-                                </figure>
-                                <div className="card-body items-center text-center">
-                                    <h2 className="card-title">Apartment</h2>
-                                    <p>30 Properties</p>
-                                </div>
-                            </div>
-                        </div>
+
+
+
                     </Slider>
                 </div>
 
