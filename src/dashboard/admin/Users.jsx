@@ -39,7 +39,7 @@ const Users = () => {
   }, [])
   return (
     <div>
-      <div>
+      <div className='w-full overflow-x-scroll'>
 
         <h2 className="text-2xl font-bold  text-[#172554] pb-0 mb-0 text-center border-y-2 ">Total User :{allUsers.length}</h2>
         <div className='flex'>
@@ -54,7 +54,7 @@ const Users = () => {
           </form>
 
         </div>
-        <div className="overflow-x-auto my-2">
+        <div className="overflow-x-scroll my-2">
           <table className="table mt-5">
 
             <thead className=''>

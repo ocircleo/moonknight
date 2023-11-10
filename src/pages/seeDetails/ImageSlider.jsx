@@ -81,7 +81,7 @@ const ImageSlider = ({ data }) => {
         data?.map(ele => {
           return (
             <swiper-slide key={ele}>
-              <div className=" ">
+              
 
                 <img
                   src={ele}
@@ -89,9 +89,8 @@ const ImageSlider = ({ data }) => {
                   className="h-[400px] lg:w-[800px] rounded-lg"
                 />
                 <p>{ele}</p>
-                <div className="absolute bottom-0 h-12 lg:w-[800px] rounded-b-lg bg-indigo-200 left-0">
-                </div>
-              </div>
+               
+            
 
             </swiper-slide>
           )
