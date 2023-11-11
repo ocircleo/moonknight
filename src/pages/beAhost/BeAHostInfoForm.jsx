@@ -2,8 +2,12 @@ import { useContext } from 'react';
 import pic from '../../assets/images/blogImage/girl1.jpg'
 import { Authcontext } from '../../private/provider/Provider';
 import { useLocation, useNavigate } from 'react-router-dom';
+import usePageTitle from '../../hooks/PageTitleHook';
 
 const BeAHostInfoForm = () => {
+
+    usePageTitle('Too late | host form');
+
     const { userDB, refresh } = useContext(Authcontext)
     const navigate = useNavigate();
     const location = useLocation();

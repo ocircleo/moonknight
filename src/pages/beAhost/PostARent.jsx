@@ -2,9 +2,13 @@ import { useContext, useState } from "react";
 import { Authcontext } from "../../private/provider/Provider";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
+import usePageTitle from "../../hooks/PageTitleHook";
 
 
 const PostARent = () => {
+
+    usePageTitle('Too late | host');
+
     const { userDB } = useContext(Authcontext)
     const [imgError, setimgError] = useState('')
     const uploadImg = (id, image) => {

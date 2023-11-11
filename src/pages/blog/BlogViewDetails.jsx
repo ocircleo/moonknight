@@ -3,8 +3,11 @@
 
 import { useSpring, animated } from 'react-spring';
 import { Link, useLoaderData } from 'react-router-dom';
+import usePageTitle from '../../hooks/PageTitleHook';
 
 const BlogViewDetails = () => {
+    usePageTitle('Too late | blog details');
+
     const data = useLoaderData();
     console.log(data)
 

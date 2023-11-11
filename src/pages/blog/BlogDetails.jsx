@@ -1,6 +1,11 @@
 import { useLoaderData } from "react-router-dom";
+import usePageTitle from "../../hooks/PageTitleHook";
+
 
 const BlogDetails = () => {
+
+  usePageTitle('Too late | blog details');
+
   const data = useLoaderData();
   console.log(data)
   return (

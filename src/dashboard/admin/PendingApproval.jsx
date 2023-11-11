@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
 import { FaMapMarkerAlt, FaRegStar, FaStar } from 'react-icons/fa';
+import usePageTitle from '../../hooks/PageTitleHook';
 
 const PendingApproval = () => {
+
+    usePageTitle('Too late | pending approval');
 
     const [allUsers, setAllUsers] = useState([]);
     useEffect(() => {
@@ -18,7 +21,7 @@ const PendingApproval = () => {
     return (
 
 <div>
-<h2 className="text-xl md:text-2xl font-bold  text-[#172554] pb-2 mb-0 text-center border-y-2 ">Pending Users To Be Host : {allUsers.length}</h2>
+<h2 className="text-xl md:text-2xl font-bold  text-[#172554] pb-2 mb-0 text-center border-y-2 ">Total Pending  : {allUsers.length}</h2>
 <div className=' grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 
 {

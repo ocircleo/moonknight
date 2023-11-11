@@ -4,8 +4,13 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 import { useContext, useState } from "react";
 import { Authcontext } from "../../private/provider/Provider";
 import { toast } from "react-toastify";
+import usePageTitle from "../../hooks/PageTitleHook";
+
 
 const Login = () => {
+
+  usePageTitle('Too late | login');
+
   const { signInEmailusers, signJwt, setUserDB } = useContext(Authcontext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();

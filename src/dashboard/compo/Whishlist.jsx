@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import { Authcontext } from '../../private/provider/Provider';
+import usePageTitle from '../../hooks/PageTitleHook';
 
 
 const Whishlist = () => {
+
+    usePageTitle('Too late | my whishlist');
 
   const {userDB} = useContext(Authcontext)
 

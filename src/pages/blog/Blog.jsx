@@ -5,9 +5,13 @@ import article3 from '../../assets/images/blogImage/article3.jpg'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import usePageTitle from '../../hooks/PageTitleHook';
+
 
 
 const Blog = () => {
+
+    usePageTitle('Too late | blog'); 
 
     const [blogs, setBlogs] = useState([]);
     // const { _id } = blogs;

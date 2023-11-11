@@ -4,9 +4,14 @@ import line from "../../assets/images/ContactPage/line-bg.png";
 import ContactAbout from "./ContactAbout";
 import ContactDetails from "./ContactDetails";
 
+import usePageTitle from "../../hooks/PageTitleHook";
+
 
 
 const Contacts = () => {
+
+    usePageTitle('Too late | contact');
+
     return (
         <div>
             <div className="contact-Background">

@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import usePageTitle from '../../hooks/PageTitleHook';
 
 const Users = () => {
+
+  usePageTitle('Too late | users');
+
   const [allUsers, setAllUsers] = useState([]);
   useEffect(() => {
     fetch('https://moonknight-backend.vercel.app/admin/getUsers/all')

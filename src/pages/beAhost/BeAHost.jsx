@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import usePageTitle from "../../hooks/PageTitleHook";
+
 
 
 const BeAHost = () => {
-
+  usePageTitle('Too late | be a host');
   return (
     <div className=''>
       <div className="bg-slate-100 lg:m-10 md:m-8 m-3 lg:p-12 md:p-10 p-3">
