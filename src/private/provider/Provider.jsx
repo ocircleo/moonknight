@@ -11,6 +11,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
+import { toast } from "react-toastify";
 export const Authcontext = createContext(null);
 
 // eslint-disable-next-line react/prop-types
@@ -64,6 +65,7 @@ const Provider = ({ children }) => {
       });
   };
   useEffect(() => {
+    console.log(userDB)
     const unSubscribe = onAuthStateChanged(auth, (newUser) => {
       setUser(newUser);
       if (newUser) {
@@ -76,6 +78,22 @@ const Provider = ({ children }) => {
       return () => unSubscribe();
     });
   }, []);
+  const addToWishList = (id) => {
+    const data = {
+      id: id,
+      userId: userDB._id,
+    }
+    fetch(`https://moonknight-backend.vercel.app/user/addToWhishList`, {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(res => res.json()).then(d => {
+      if (d.modifiedCount == 1) {
+        toast('added to wishlist')
+        userDB.wishlist.push(id)
+      }
+    })
+  }
   //===== context api data for user login and sign up management
   let authData = {
     user,
@@ -90,10 +108,11 @@ const Provider = ({ children }) => {
     updateUser,
     signJwt,
     signout,
-    refresh
-  };
+    refresh,
+    addToWishList
+  }
   return (
-    <Authcontext.Provider value={authData}>{children}</Authcontext.Provider>
+    <Authcontext.Provider value={authData} > {children}</Authcontext.Provider >
   );
 };
 

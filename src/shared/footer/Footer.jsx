@@ -1,9 +1,17 @@
 /* eslint-disable react/no-unknown-property */
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaAngleRight, FaFacebook, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import { dataContext } from "../../private/provider/Data_Provider";
+import { useContext } from "react";
 
 const Footer = () => {
+  const { setSearchData } = useContext(dataContext)
+  const navigate = useNavigate()
+  const goto = (text) => {
+    setSearchData('', text)
+    navigate('/search')
+  }
   return (
 
     <div className="grid md:grid-cols-2 gap-4 md:px-12 md:py-12 bg-[#10162E]">
@@ -23,12 +31,12 @@ const Footer = () => {
             </label>
           </div>
 
-          <div className="flex mt-4 justify-center md:justify-start"> 
+          <div className="flex mt-4 justify-center md:justify-start">
             <span className="pe-3 cursor-pointer"><FaFacebook className="text-3xl text-[#FD3358]" ></FaFacebook></span>
             <span className="pe-3 cursor-pointer"><FaInstagram className="text-3xl text-[#FD3358]" ></FaInstagram></span>
             <span className="pe-3 cursor-pointer"><FaTwitter className="text-3xl text-[#FD3358]" ></FaTwitter></span>
             <span className="pe-3 cursor-pointer"><FaLinkedinIn className="text-3xl text-[#FD3358]" ></FaLinkedinIn></span>
-            
+
           </div>
 
 
@@ -37,70 +45,70 @@ const Footer = () => {
       </div>
 
 
-        <div className="grid md:grid-cols-3 justify-center gap-4 text-white px-5 ">
-          <nav className="mb-7">
-            <header className="text-white text-2xl font-semibold mb-4">Explore</header>
-            <span className="flex items-center mb-2">
-              <FaAngleRight className="text-xl text-[#FD3358]"></FaAngleRight>
-                <Link className="hover:text-[#FD3358] duration-500" to={"/register"}>Register</Link>                
-            </span>
-            <span className="flex items-center mb-2">
-              <FaAngleRight className="text-xl text-[#FD3358]"></FaAngleRight>
-              <Link className="hover:text-[#FD3358] duration-500" to={"/login"}>Login</Link>
-            </span>
-            <span className="flex items-center mb-2">
-              <FaAngleRight className="text-xl font-thin text-[#FD3358]"></FaAngleRight>
-              <Link className="hover:text-[#FD3358] duration-500" to={"/blog"}>Blog</Link>
-            </span>
+      <div className="grid md:grid-cols-3 justify-center gap-4 text-white px-5 ">
+        <nav className="mb-7">
+          <header className="text-white text-2xl font-semibold mb-4">Explore</header>
+          <span className="flex items-center mb-2">
+            <FaAngleRight className="text-xl text-[#FD3358]"></FaAngleRight>
+            <Link className="hover:text-[#FD3358] duration-500" to={"/register"}>Register</Link>
+          </span>
+          <span className="flex items-center mb-2">
+            <FaAngleRight className="text-xl text-[#FD3358]"></FaAngleRight>
+            <Link className="hover:text-[#FD3358] duration-500" to={"/login"}>Login</Link>
+          </span>
+          <span className="flex items-center mb-2">
+            <FaAngleRight className="text-xl font-thin text-[#FD3358]"></FaAngleRight>
+            <Link className="hover:text-[#FD3358] duration-500" to={"/blog"}>Blog</Link>
+          </span>
 
-          </nav>
-          <nav className="mb-7">
-            <header className="text-white text-2xl font-semibold mb-4">Quick Links</header>
-            <span className="flex items-center mb-2">
-              <FaAngleRight className="text-xl text-[#FD3358]"></FaAngleRight>
-              <Link className="hover:text-[#FD3358] duration-500" to={"/be-a-host"}>Be a Host</Link>
-            </span>
-            <span className="flex items-center mb-2">
-              <FaAngleRight className="text-xl text-[#FD3358]"></FaAngleRight>
-              <Link className="hover:text-[#FD3358] duration-500" to={"/contact"}>Contact</Link>
-            </span>
-            <span className="flex items-center mb-2">
-              <FaAngleRight className="text-xl font-thin text-[#FD3358]"></FaAngleRight>
-              <Link className="hover:text-[#FD3358] duration-500" to={"/about"}>About</Link>
-            </span>
+        </nav>
+        <nav className="mb-7">
+          <header className="text-white text-2xl font-semibold mb-4">Quick Links</header>
+          <span className="flex items-center mb-2">
+            <FaAngleRight className="text-xl text-[#FD3358]"></FaAngleRight>
+            <Link className="hover:text-[#FD3358] duration-500" to={"/applyForHost"}>Be a Host</Link>
+          </span>
+          <span className="flex items-center mb-2">
+            <FaAngleRight className="text-xl text-[#FD3358]"></FaAngleRight>
+            <Link className="hover:text-[#FD3358] duration-500" to={"/contact"}>Contact</Link>
+          </span>
+          <span className="flex items-center mb-2">
+            <FaAngleRight className="text-xl font-thin text-[#FD3358]"></FaAngleRight>
+            <Link className="hover:text-[#FD3358] duration-500" to={"/about"}>About</Link>
+          </span>
 
-          </nav>
-          <nav className="mb-7">
-            <header className="text-white text-2xl font-semibold mb-4">Locations</header>
-            <span className="flex items-center mb-2">
-              <FaAngleRight className="text-xl text-[#FD3358]"></FaAngleRight>
-              <Link className="hover:text-[#FD3358] duration-500" to={"/register"}>Dhaka</Link>
-            </span>
-            <span className="flex items-center mb-2">
-              <FaAngleRight className="text-xl text-[#FD3358]"></FaAngleRight>
-              <Link className="hover:text-[#FD3358] duration-500" to={"/login"}>Barishal</Link>
-            </span>
-            <span className="flex items-center mb-2">
-              <FaAngleRight className="text-xl font-thin text-[#FD3358]"></FaAngleRight>
-              <Link className="hover:text-[#FD3358] duration-500" to={"/blog"}>Jessore</Link>
-            </span>
-            <span className="flex items-center mb-2">
-              <FaAngleRight className="text-xl font-thin text-[#FD3358]"></FaAngleRight>
-              <Link className="hover:text-[#FD3358] duration-500" to={"/blog"}>Rangpur</Link>
-            </span>
-            <span className="flex items-center mb-2">
-              <FaAngleRight className="text-xl font-thin text-[#FD3358]"></FaAngleRight>
-              <Link className="hover:text-[#FD3358] duration-500" to={"/blog"}>Bogura</Link>
-            </span>
-            <span className="flex items-center mb-2">
-              <FaAngleRight className="text-xl font-thin text-[#FD3358]"></FaAngleRight>
-              <Link className="hover:text-[#FD3358] duration-500" to={"/blog"}>Comilla</Link>
-            </span>
+        </nav>
+        <nav className="mb-7">
+          <header className="text-white text-2xl font-semibold mb-4">Locations</header>
+          <span className="flex items-center mb-2">
+            <FaAngleRight className="text-xl text-[#FD3358]"></FaAngleRight>
+            <button className="hover:text-[#FD3358] duration-500" onClick={() => goto('dhaka')}>Dhaka</button>
+          </span>
+          <span className="flex items-center mb-2">
+            <FaAngleRight className="text-xl text-[#FD3358]"></FaAngleRight>
+            <button className="hover:text-[#FD3358] duration-500" onClick={() => goto('Barishal')}>Barishal</button>
+          </span>
+          <span className="flex items-center mb-2">
+            <FaAngleRight className="text-xl font-thin text-[#FD3358]"></FaAngleRight>
+            <button className="hover:text-[#FD3358] duration-500" onClick={() => goto('Jessore')}>Jessore</button>
+          </span>
+          <span className="flex items-center mb-2">
+            <FaAngleRight className="text-xl font-thin text-[#FD3358]"></FaAngleRight>
+            <button className="hover:text-[#FD3358] duration-500" onClick={() => goto('Rangpur')}>Rangpur</button>
+          </span>
+          <span className="flex items-center mb-2">
+            <FaAngleRight className="text-xl font-thin text-[#FD3358]"></FaAngleRight>
+            <button className="hover:text-[#FD3358] duration-500" onClick={() => goto('Bogura')}>Bogura</button>
+          </span>
+          <span className="flex items-center mb-2">
+            <FaAngleRight className="text-xl font-thin text-[#FD3358]"></FaAngleRight>
+            <button className="hover:text-[#FD3358] duration-500" onClick={() => goto('Comilla')}>Comilla</button>
+          </span>
 
-          </nav>
-        </div>
-
+        </nav>
       </div>
+
+    </div>
 
 
 

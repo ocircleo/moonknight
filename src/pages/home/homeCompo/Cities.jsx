@@ -2,10 +2,18 @@ import { faArrowRight, faCircleArrowRight } from '@fortawesome/free-solid-svg-ic
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { element } from 'prop-types';
 import React from 'react';
+import { useContext } from 'react';
+import { dataContext } from '../../../private/provider/Data_Provider';
+import { useNavigate } from 'react-router-dom';
 
 const Cities = () => {
     let cities = [{ city: "Dhaka", properties: '700' }, { city: "Barishal", properties: '200' }, { city: "Jessore", properties: '220' }, { city: "Kummila", properties: '170' }, { city: "Bogura", properties: '70' }, { city: "Rongpur", properties: "40" }]
-
+    const { setSearchData } = useContext(dataContext)
+    const navigate = useNavigate()
+    const goto = (text) => {
+        setSearchData('', text)
+        navigate('/search')
+    }
     return (
         <div>
             <div className=' md:px-12 md:py-12'>
@@ -33,7 +41,7 @@ const Cities = () => {
                                         <p className='text-white text-md font-bold'>{ele.properties} properties</p>
                                     </div>
                                     <div className='absolute  right-8 bottom-5 z-30'>
-                                        <button className="btn btn-circle bg-[#6C60FE] border-none">
+                                        <button onClick={() => goto(ele.city)} className="btn btn-circle bg-[#6C60FE] border-none">
                                             <FontAwesomeIcon className=" text-black text-lg" icon={faArrowRight} />
                                         </button>
                                     </div>

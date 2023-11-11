@@ -16,6 +16,20 @@ const Mails = () => {
         });
     }, [])
 
+    const toggleInfo = (index) => {
+      const newShowAll = [...showAll];
+      newShowAll[index] = !newShowAll[index];
+      setShowAll(newShowAll);
+    };
+
+  const maxLength =10
+    const [showAll, setShowAll] = useState(false);
+
+    const toggleShowAll = () => {
+      setShowAll(!showAll);
+    };
+  
+
     const handleDelete = id => {
       const confirmation = confirm('Are you sure you want to delete');
      if(confirmation){

@@ -14,6 +14,7 @@ const Search = () => {
     const [Filter, setFilter] = useState(false)
     const [data, setData] = useState([])
     useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         if (searchData.city) {
             fetch(`https://moonknight-backend.vercel.app/user/productSearch?city=${searchData.city}&region=${searchData.region}&price=0&skip=0`).then(res => res.json()).then(d => { setData(d); console.log(d) })
         } else {
