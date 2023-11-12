@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import MailCompo from '../compo/MailCompo';
 import NotifiCompo from './NotifiCompo';
+import usePageTitle from '../../hooks/PageTitleHook';
 
 const Notifications = () => {
+
+  usePageTitle('Too late | notifications');
 
     const [allUsers, setAllUsers] = useState([]);
     useEffect(() => {

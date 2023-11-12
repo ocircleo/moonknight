@@ -19,7 +19,7 @@ const MailCompo = ({user, handleDelete }) => {
            <div className=" text-lg shadow-lg  rounded-xl  py-4 px-12  font-semibold font-small">
                    <div>
                    <h2 className='text-xl font-bold pb-0 mt-0'> From : <span className='text-lg font-semibold'>{user.email}</span>   </h2>
-                   <p className=' text-sm space-y-0 text-gray-400 pt-0 mt-0'>12/12/23</p>
+                   <p className=' text-sm space-y-0 text-gray-400 pt-0 mt-0'>12/12/23 12:00</p>
                     <p className='text-lg font-semibold text-gray-400 pt-0 mt-0'>{user.name}</p>
                     <h2></h2>
                     {/* <p className='text-[#172554] py-4 text-base font-medium'></p> */}

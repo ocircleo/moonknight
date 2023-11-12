@@ -3,8 +3,12 @@ import ActiveLink from "../shared/Activelink/ActiveLink";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { useContext } from "react";
 import { Authcontext } from "../private/provider/Provider";
+import usePageTitle from "../hooks/PageTitleHook";
 
 const Dashboard = () => {
+
+    usePageTitle('Too late | dashboard');
+
     const links = [
 
         {

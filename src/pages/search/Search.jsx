@@ -4,7 +4,12 @@ import Card from '../../shared/Card';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { dataContext } from '../../private/provider/Data_Provider';
+import usePageTitle from '../../hooks/PageTitleHook';
+
 const Search = () => {
+
+    usePageTitle('Too late | search place');
+
     const { searchData, initialData } = useContext(dataContext)
     const [Filter, setFilter] = useState(false)
     const [data, setData] = useState([])

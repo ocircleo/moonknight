@@ -4,8 +4,13 @@ import { useContext, useState } from "react";
 import { Authcontext } from "../../private/provider/Provider";
 import { toast } from "react-toastify";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import usePageTitle from "../../hooks/PageTitleHook";
+
 
 const Register = () => {
+
+  usePageTitle('Too late | register');
+
   const { createEmailusers, updateUser, signJwt, setUser, setUserDB } =
     useContext(Authcontext);
   const [error, setError] = useState("");

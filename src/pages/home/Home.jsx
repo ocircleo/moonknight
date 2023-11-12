@@ -11,7 +11,10 @@ import Sales from "./homeCompo/Sales";
 import Cities from "./homeCompo/Cities";
 import Rent from "./homeCompo/Rent";
 import Faq from "./homeCompo/Faq";
+import usePageTitle from "../../hooks/PageTitleHook";
 const Home = () => {
+
+  usePageTitle('Too late | home');
 
   {/* Aos.init({
     offset: 200,

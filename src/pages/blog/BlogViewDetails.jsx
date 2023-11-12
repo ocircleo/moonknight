@@ -4,8 +4,12 @@
 import { useSpring, animated } from 'react-spring';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import usePageTitle from '../../hooks/PageTitleHook';
 
 const BlogViewDetails = () => {
+
+    usePageTitle('Too late | blog details');
+
     const navigate = useNavigate()
     const data = useLoaderData();
     useEffect(() => {

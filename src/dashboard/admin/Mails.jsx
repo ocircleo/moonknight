@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import MailCompo from '../compo/MailCompo';
+import usePageTitle from '../../hooks/PageTitleHook';
 
 const Mails = () => {
+
+  usePageTitle('Too late | mails');
 
     const [allUsers, setAllUsers] = useState([]);
     useEffect(() => {
@@ -42,7 +45,7 @@ const Mails = () => {
            })
      }
    }
-   
+
     return (
         <div className=' bg-slate-50'>
 

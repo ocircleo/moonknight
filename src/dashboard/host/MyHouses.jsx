@@ -4,8 +4,10 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { Authcontext } from '../../private/provider/Provider';
 import { Link } from 'react-router-dom';
+import usePageTitle from '../../hooks/PageTitleHook';
 
 const MyHouses = () => {
+    usePageTitle('Too late | my house');
     const [myHouses, setMyHouses] = useState([])
     const { user } = useContext(Authcontext)
     useEffect(() => {

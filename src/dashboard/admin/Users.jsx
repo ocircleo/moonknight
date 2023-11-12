@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import usePageTitle from '../../hooks/PageTitleHook';
 import { useContext } from 'react';
 import { Authcontext } from '../../private/provider/Provider';
 import { toast } from 'react-toastify';
 
 const Users = () => {
+
+  usePageTitle('Too late | users');
+
   const [allUsers, setAllUsers] = useState([]);
   const { userDB } = useContext(Authcontext)
   const search = (e) => {

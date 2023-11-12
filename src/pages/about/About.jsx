@@ -11,13 +11,33 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
+import { useEffect } from 'react';
+
+import usePageTitle from '../../hooks/PageTitleHook';
+
 
 const About = () => {
 
-
+  usePageTitle('Too late | about');
+  
 
   const [counterOn, setCounterOn] = useState(false);
 
+
+  const [blogs, setBlogs] = useState([]);
+   
+
+    useEffect(() => {
+        fetch('https://moonknight-backend.vercel.app/user/allBlog')
+            .then(res => res.json())
+            .then(data => {
+                setBlogs(data)
+            })
+    }, [])
+
+
+
+ const aboutImg=blogs.slice(0, 3) 
 
     return (
         <div>
@@ -36,11 +56,17 @@ const About = () => {
         </div>
       
       </div>
+
+
+
+
+
+
       <div className=' grid  grid-cols-3'>
         <span className='border-2 border-[#4F46E5]'></span>
         <span className='border-2 border-[#FCAF3D]'></span>
         <span className='border-2  border-[#0DCA95]'></span>
-      </div>
+      </div> 
 
       <div className=' py-6  md:py-8 lg:py-10 px-6 md:px-12 lg:px-28  bg-[#F1F1F1]'>
         <h4 className='text-[#6C60FE] font-semibold '>About DreamsEstate</h4>
@@ -53,35 +79,35 @@ const About = () => {
          connections and a sense of belonging for individuals seeking more than just a place to live.</p>
 
       </div>
+
+
+
+
+
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5    px-16 md:px-28 lg:px-28 bg-[#f1f1f1]'>
-        {/* <div> <img className=' w-80 hover:w-96' src="https://dreamsestate.dreamstechnologies.com/html/assets/img/about-us/about-us-01.jpg" alt="" /></div> */}
-
-        <div className="relative w-full overflow-hidden rounded-3xl h-[450px] "> {/* You can adjust the width and height */}
+    
+{
+  aboutImg.map((ele) => 
+  <div key={ele._id} className="relative w-full overflow-hidden rounded-3xl h-full "> 
           <img
-            src="https://dreamsestate.dreamstechnologies.com/html/assets/img/about-us/about-us-01.jpg"
+            src={ele.imgUrl}
             alt="Your Image"
-            className="   transition  duration-1000 transform overflow-hidden  hover:scale-125 "
+            className="   transition   object-cover h-[500px] duration-1000 transform overflow-hidden  hover:scale-125 "
           />
         </div>
+  )
+}
+        
 
-        <div className="relative w-full overflow-hidden rounded-3xl  h-[450px]"> {/* You can adjust the width and height */}
-          <img
-            src="https://dreamsestate.dreamstechnologies.com/html/assets/img/about-us/about-us-02.jpg"
-            alt="Your Image"
-            className="   transition  bg-cover duration-1000 transform overflow-hidden  hover:scale-125 "
-          />
-        </div>
-
-        <div className="relative w-full overflow-hidden rounded-3xl  h-[450px]"> {/* You can adjust the width and height */}
-          <img
-            src="https://dreamsestate.dreamstechnologies.com/html/assets/img/about-us/about-us-03.jpg"
-            alt="Your Image"
-            className="     transition  duration-1000 transform overflow-hidden  hover:scale-125 "
-          />
-        </div>
 
 
       </div>
+
+
+
+
+
+
 
 
 
@@ -140,7 +166,7 @@ const About = () => {
 
 
         </div>
-      </ScrollTrigger>
+      </ScrollTrigger> 
 
 
 

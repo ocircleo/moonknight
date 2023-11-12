@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import usePageTitle from '../../hooks/PageTitleHook';
 
 const PendingApproval = () => {
+
+    usePageTitle('Too late | pending approval');
 
     const [allUsers, setAllUsers] = useState([]);
     useEffect(() => {

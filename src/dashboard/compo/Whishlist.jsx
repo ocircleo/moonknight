@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import { Authcontext } from '../../private/provider/Provider';
+import usePageTitle from '../../hooks/PageTitleHook';
 import { Link } from 'react-router-dom';
 
 
 const Whishlist = () => {
 
+    usePageTitle('Too late | my whishlist');
+
+//   const {userDB} = useContext(Authcontext)
+
+console.log(userDB);
     const { userDB, refresh } = useContext(Authcontext);
     const [allUsers, setAllUsers] = useState([]);
 
