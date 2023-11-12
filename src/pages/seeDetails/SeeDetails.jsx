@@ -1,5 +1,6 @@
 import ImageSlider from "./ImageSlider";
 
+
 import SimilarListing from "./SimilarListing";
 import { CiLocationOn } from "react-icons/ci";
 import { BiGitCompare } from "react-icons/bi";
@@ -7,23 +8,24 @@ import { AiOutlineHeart, AiOutlineShareAlt } from "react-icons/ai";
 import SeeDetailsCollaps from "./SeeDetailsCollaps";
 import { useLoaderData } from "react-router-dom";
 
+
 const SeeDetails = () => {
   const loader = useLoaderData()
   console.log(loader)
   return (
-    <div className="bg-gray-100 pt-3">
+    <div className="bg-gray-100 pb-4">
       <div className="container-lg w-11/12 mx-auto ">
-        <div className="md:flex md:justify-between pb-8 w-full md:w-5/6 mx-auto">
+        <div className="md:flex md:justify-between pb-8 w-full md:w-5/6 pt-8">
           <section>
             <h1 className="text-3xl font-bold text-slate-700">{loader.title}</h1>
             <p className="flex text-gray-500 pt-6"> <CiLocationOn className="pt-1 h-5 w-5" /> {loader.region},{loader.city}</p>
           </section>
           <section>
             <h1 className="text-3xl font-bold text-slate-700">$ {loader.price}</h1>
-            <div className="flex gap-4 pt-8">
-              {/* <button className="btn hover:bg-indigo-400 bg-white hover:text-white"><AiOutlineShareAlt />Share</button>
+            <div className="flex gap-4 pt-8 ">
+               <button className="btn hover:bg-indigo-400 bg-white hover:text-white"><AiOutlineShareAlt />Share</button>
               <button className="btn hover:bg-indigo-400 bg-white hover:text-white"><BiGitCompare />Add to Compare</button>
-              <button className="btn hover:bg-indigo-400 bg-white hover:text-white"><AiOutlineHeart />Wishlist</button> */}
+              <button className="btn hover:bg-indigo-400 bg-white hover:text-white"><AiOutlineHeart />Wishlist</button> 
             </div>
           </section>
         </div>
@@ -118,6 +120,10 @@ const SeeDetails = () => {
                 </div>
               </div>
             </div>
+            <section>
+
+            </section>
+
           </div>
 
         </div>
@@ -132,11 +138,13 @@ const SeeDetails = () => {
           <div className="lg:w-4/12 w-full lg:float-right">
             {/* left side contact page */}
             <div className=" min-h-full max-h-full sm:max-h-screen md:max-h-full lg:max-h-screen xl:max-h-full p-4">
-
+            
             </div>
           </div>
         </div>
-      </div></div>
+      </div>
+      
+      </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import slider from '../../assets/images/ContactPage/contact.jpg'
+
 
 const ImageSlider = ({ data }) => {
   const trendingRef = useRef(null);
