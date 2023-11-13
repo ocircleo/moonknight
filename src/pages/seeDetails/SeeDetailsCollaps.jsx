@@ -76,7 +76,7 @@ const SeeDetailsCollaps = ({ data }) => {
       </div>
 
       <div className="bg-white mt-10 rounded-lg shadow-md pb-4">
-      <div className="border-solid border-2 border-indigo-400 p-4 rounded-md">
+      <div className="border-solid border-2 border-gray-300 p-4 rounded-md">
       <div className="text-2xl font-medium">
           Reviews
         </div>
