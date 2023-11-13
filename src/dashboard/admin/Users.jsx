@@ -3,13 +3,13 @@ import usePageTitle from '../../hooks/PageTitleHook';
 import { useContext } from 'react';
 import { Authcontext } from '../../private/provider/Provider';
 import { toast } from 'react-toastify';
+import UserCompo from './UserCompo';
 
 const Users = () => {
 
   usePageTitle('Too late | users');
 
   const [allUsers, setAllUsers] = useState([]);
-  const { userDB } = useContext(Authcontext)
   const search = (e) => {
     e.preventDefault()
     const form = e.target;
@@ -24,15 +24,6 @@ const Users = () => {
           setAllUsers(data)
         });
     }
-  }
-  const makeAdmin = () => {
-    fetch(`https://moonknight-backend.vercel.app/admin/makeAdmin/${userDB._id}`).then(res => res.json()).then(data => {
-      if (data.modifiedCount == 1) {
-        toast('user role updated')
-      } else {
-        toast('something went wrong')
-      }
-    })
   }
   useEffect(() => {
     fetch('https://moonknight-backend.vercel.app/admin/getUsers/all')
@@ -69,26 +60,12 @@ const Users = () => {
                 <th>Phone Number</th>
                 <th>Status</th>
 
-                {/* <th> Block</th> */}
+                <th> Block</th>
               </tr>
             </thead>
             <tbody className=''>
               {
-                allUsers.map((ele) => <tr key={ele._id} className=' font-semibold text-base bg-gray-200 border-8'>
-
-                  <td><img src={ele.imageUrl} className='w-14 h-14 rounded-full bg-gray-300' alt="photo" /></td>
-                  <td>{ele.displayName}</td>
-                  <td>{ele.email}</td>
-                  <td>{ele.phone}</td>
-
-
-                  <td><button onClick={makeAdmin} className={`btn text-white  border-none ${ele.role == 'admin' ? 'btn-disabled' : ele.role == 'host' ? 'btn-disabled' : ""}  bg-indigo-400  hover:bg-success`}>{ele.role == 'admin' ? 'admin' : ele.role == 'host' ? 'Host' : "make admin"}</button>
-                  </td>
-                  {/* <td><button className={`btn text-white  border-none ${ele.role == 'host' ? 'btn-disabled' : ""}  bg-indigo-400  hover:bg-success`}>{ele.role == 'host' ? 'Already Host' : "host"}</button>
-                  </td> */}
-
-                  {/* <td><button className='btn  bg-red-500  border-none text-white  hover:bg-red-800'>Block</button></td> */}
-                </tr>)
+                allUsers.map((ele) => <UserCompo key={ele._id} ele={ele}></UserCompo>)
               }
             </tbody>
           </table>

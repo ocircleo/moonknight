@@ -40,6 +40,8 @@ const ContactDetails = () => {
                 form.reset();
                 toast('Message send')
             }
+        }).catch(error => {
+            toast("Sorry error: " + error.message)
         })
     }
 
