@@ -1,7 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 const MailCompo = ({ data, handleDelete }) => {
   const maxLength = 250
+  const [pending, setPending] = useState(true)
   const [showAll, setShowAll] = useState(false);
   const [time, setTime] = useState([])
 
@@ -12,8 +15,31 @@ const MailCompo = ({ data, handleDelete }) => {
     setTime(data.time.split('T'))
 
   }, [data.time])
+  const sendMessage = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const text = form.text.value;
+    const formData = {
+      to: data.email,
+      message: text
+    }
+    fetch(`http://localhost:3000/mail/send_mail`, {
+      method: 'POST',
+      headers: { 'content-type': "application/json" },
+      body: JSON.stringify(formData)
+    }).then(res => res.json()).then(d => {
+      if (d.id) {
+        fetch(`http://localhost:3000/admin/hideEmail/${data._id}`).then(res => res.json()).then(da => {
+          if (da.modifiedCount == 1) {
+            setPending(false)
+            toast('message sent')
+          }
+        })
+      }
+    }).catch(error => toast(error.message))
+  }
   return (
-    <div>
+    <div className={`${pending ? '' : 'hidden'}`}>
       <div className=" text-lg shadow-lg  rounded-xl  py-4 px-12  font-semibold font-small">
         <div>
           <h2>Subject: <span className='text-lg font-semibold capitalize'>{data.subject}</span>   </h2>
@@ -38,14 +64,13 @@ const MailCompo = ({ data, handleDelete }) => {
               </span>
             )}
           </div>
-          <textarea placeholder="Replay" className="textarea textarea-bordered mt-2 text-base textarea-xs w-full h-36" ></textarea>
+
         </div>
         <div>
-          <div className="flex  justify-end flex-col md:flex-row gap-2">
+          <form onSubmit={sendMessage} className="flex  justify-end flex-col gap-2">
+            <textarea required name='text' placeholder="Replay" className="textarea textarea-bordered mt-2 text-base textarea-xs w-full h-36" ></textarea>
             <button className="btn btn-active  bg-indigo-500 text-white hover:bg-indigo-800  text-sm">Send Message</button>
-
-            <button onClick={() => handleDelete(data._id)} className="btn btn-active  bg-red-500 text-white hover:bg-red-800  text-sm">Remove Message</button>
-          </div>
+          </form>
         </div>
       </div>
     </div>
