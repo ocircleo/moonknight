@@ -1,5 +1,8 @@
 import { useContext } from 'react';
+<<<<<<< HEAD
+=======
 // import pic from '../../assets/images/blogImage/girl1.jpg'
+>>>>>>> 6ce21698e31a4173c7c735d4c45a5a5a2fbe5206
 import { Authcontext } from '../../private/provider/Provider';
 import { useLocation, useNavigate } from 'react-router-dom';
 import usePageTitle from '../../hooks/PageTitleHook';
