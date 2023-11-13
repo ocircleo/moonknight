@@ -28,7 +28,7 @@ const ContactAbout = () => {
          </div>
         </div>
         <div>
-          <img  className="w-[800px] h-[550px] rounded-3xl" src={img} alt="" />
+          <img  className="w-[790px] h-[550px] rounded-3xl p-4 pt-6" src={img}  alt="" />
         </div>
       </section>
     </div>
