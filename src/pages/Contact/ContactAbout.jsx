@@ -13,7 +13,7 @@ const ContactAbout = () => {
             <p className="pt-6 text-lg text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis
               ligula eu lectus vulputate porttitor sed feugiat nunc. Mauris ac consectetur ante,</p>
             <div className="pt-4">
-              <button className="btn btn-primary hover:bg-transparent hover:text-black">Contact Sales</button>
+              <Link className="btn btn-primary hover:bg-transparent hover:text-black" to={'#contact'}>Contact Sales</Link>
             </div>
           </div>
          <div className="pt-8">
@@ -28,7 +28,7 @@ const ContactAbout = () => {
          </div>
         </div>
         <div>
-          <img  className="w-[790px] h-[550px] rounded-3xl p-4 pt-6" src={img}  alt="" />
+          <img  className="w-full h-[250px]  md:w-[790px] md:h-[550px] rounded-3xl p-4 pt-6 object-cover" src={img}  alt="" />
         </div>
       </section>
     </div>

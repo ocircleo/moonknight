@@ -49,7 +49,7 @@ const ContactDetails = () => {
         <div className="md:pl-24 lg:pl-24 md:pe-24 lg:pe-24 p-6 overflow-x-hidden">
             <div className="flex flex-col md:flex-row gap-6">
                 <div className="w-full md:w-6/12 shadow sm:rounded-md">
-                    <h1 className="text-black text-2xl font-bold  p-6">Get In Touch</h1>
+                    <h1 className="text-black text-2xl font-bold  p-6 " id="contact">Get In Touch</h1>
                     <hr className="pl-6 pe-6" />
                     <div>
                         <div className="mt-5 md:mt-0 ">
