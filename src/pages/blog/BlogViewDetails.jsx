@@ -1,6 +1,4 @@
 
-
-
 import { useSpring, animated } from 'react-spring';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';

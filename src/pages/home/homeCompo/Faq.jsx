@@ -22,52 +22,63 @@ const Faq = () => {
                         </p>
                     </div>
 
+                    
+
+
+
+
                     <div className='mt-6'>
-                        <div className="collapse collapse-plus bg-white my-3 rounded-none">
-                            <input type="radio" name="my-accordion-3" checked="checked" />
-                            <div className="collapse-title text-xl font-medium">
-                                1. What are the costs by a house?
+                        <div className="collapse collapse-plus bg-white rounded-none mb-4">
+                            <input type="checkbox" />
+                            <div className="collapse-title text-lg font-medium">
+                               1. What are the costs to buy a house?
                             </div>
                             <div className="collapse-content">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, excepturi.</p>
+                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    </p>
                             </div>
                         </div>
-                        <div className="collapse collapse-plus bg-white my-3 rounded-none">
-                            <input type="radio" name="my-accordion-3" />
-                            <div className="collapse-title text-xl font-medium">
-                                2. What are the steps to sell a house?
+                        <div className="collapse collapse-plus bg-white  rounded-none mb-4">
+                            <input type="checkbox" />
+                            <div className="collapse-title text-lg font-medium">
+                               2. What are the steps to sell a house?
                             </div>
                             <div className="collapse-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, cupiditate.</p>
+                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    </p>
                             </div>
                         </div>
-                        <div className="collapse collapse-plus bg-white my-3 rounded-none">
-                            <input type="radio" name="my-accordion-3" />
-                            <div className="collapse-title text-xl font-medium">
+                        <div className="collapse collapse-plus bg-white rounded-none mb-4">
+                            <input type="checkbox" />
+                            <div className="collapse-title text-lg font-medium">
                                 3. Do you have loan consultants?
                             </div>
                             <div className="collapse-content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eveniet laboriosam consectetur laborum unde amet!</p>
+                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    </p>
                             </div>
                         </div>
-                        <div className="collapse collapse-plus bg-white my-3 rounded-none">
-                            <input type="radio" name="my-accordion-3" />
-                            <div className="collapse-title text-xl font-medium">
+                        <div className="collapse collapse-plus bg-white rounded-none mb-4">
+                            <input type="checkbox" />
+                            <div className="collapse-title text-lg font-medium">
                                 4. When will the project be completed?
                             </div>
                             <div className="collapse-content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eveniet laboriosam consectetur laborum unde amet!</p>
+                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    </p>
                             </div>
                         </div>
-                        <div className="collapse collapse-plus bg-white my-3 rounded-none">
-                            <input type="radio" name="my-accordion-3" />
-                            <div className="collapse-title text-xl font-medium">
-                                5. What are steps to rent a house?
+                        <div className="collapse collapse-plus bg-white rounded-none mb-4">
+                            <input type="checkbox" />
+                            <div className="collapse-title text-lg font-medium">
+                               5. What are the steps to rent a house?
                             </div>
                             <div className="collapse-content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eveniet laboriosam consectetur laborum unde amet!</p>
+                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    </p>
                             </div>
                         </div>
+                      
                     </div>
 
                 </div>
