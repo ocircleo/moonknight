@@ -1,38 +1,40 @@
-.cont{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.cont {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.con{
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    position: relative;
+.con {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  position: relative;
 }
-.ro{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    border-width: 8px;
-    border-color: transparent;
+.ro {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border-width: 8px;
+  border-color: transparent;
 }
-.ff{
-    border-top-color:  rgb(250, 46, 46) ;
-    z-index: 11;
-    animation: aniff 1.5s linear 0s infinite;
+.ff {
+  border-top-color: rgb(129 140 248);
+  z-index: 11;
+  animation: aniff 1.5s linear 0s infinite;
 }
-.ffs{
-    border-top-color: rgb(250, 46, 46) ;
-    z-index: 12;
-    animation: aniff 1.5s linear .5s infinite;
+.ffs {
+  border-top-color: rgb(129 140 248);
+  z-index: 12;
+  animation: aniff 1.5s linear 0.5s infinite;
 }
-.ffd{
-    border-top-color:  rgb(250, 46, 46);
-    z-index: 13;
-    animation: aniff 1.5s linear 1s infinite;
+.ffd {
+  border-top-color: rgb(129 140 248);
+  z-index: 13;
+  animation: aniff 1.5s linear 1s infinite;
 }
 @keyframes aniff {
-    100%{transform: rotate(-360deg);}
+  100% {
+    transform: rotate(-360deg);
+  }
 }

@@ -19,10 +19,10 @@ const Dashboard = () => {
             title: '/myWishlist',
             text: "myWishlist"
         },
-        // {
-        //     title: '/notifications',
-        //     text: "notifications"
-        // },
+        {
+            title: '/notifications',
+            text: "notifications"
+        },
     ];
     const { user, userDB } = useContext(Authcontext)
     if (userDB?.role == 'admin') {
