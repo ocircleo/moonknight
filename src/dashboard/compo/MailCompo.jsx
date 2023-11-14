@@ -23,13 +23,13 @@ const MailCompo = ({ data, handleDelete }) => {
       to: data.email,
       message: text
     }
-    fetch(`http://localhost:3000/mail/send_mail`, {
+    fetch(`https://moonknight-backend.vercel.app/mail/send_mail`, {
       method: 'POST',
       headers: { 'content-type': "application/json" },
       body: JSON.stringify(formData)
     }).then(res => res.json()).then(d => {
       if (d.id) {
-        fetch(`http://localhost:3000/admin/hideEmail/${data._id}`).then(res => res.json()).then(da => {
+        fetch(`https://moonknight-backend.vercel.app/admin/hideEmail/${data._id}`).then(res => res.json()).then(da => {
           if (da.modifiedCount == 1) {
             setPending(false)
             toast('message sent')
