@@ -14,7 +14,7 @@ import { useRef } from "react";
 
 const Property = () => {
     const slider = useRef(null);
-
+      
 
     const settings = {
         dots: false,

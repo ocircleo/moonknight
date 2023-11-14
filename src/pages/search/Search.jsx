@@ -5,10 +5,13 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { dataContext } from '../../private/provider/Data_Provider';
 import usePageTitle from '../../hooks/PageTitleHook';
+import Loading from '../../shared/loading/Loading';
 
 const Search = () => {
 
     usePageTitle('Too late | search place');
+
+    const [spinner, setSpinner]= useState(false)
 
     const { searchData, initialData } = useContext(dataContext)
     const [Filter, setFilter] = useState(false)
@@ -23,15 +26,16 @@ const Search = () => {
     }, [])
     const search = (e) => {
         e.preventDefault();
+        setSpinner(true)
         let form = e.target;
         let region = form.region.value;
         let city = form.city.value;
-        fetch(`https://moonknight-backend.vercel.app/user/productSearch?city=${city}&region=${region}&price=0&skip=0`).then(res => res.json()).then(d => { setData(d); console.log(d) })
+        fetch(`https://moonknight-backend.vercel.app/user/productSearch?city=${city}&region=${region}&price=0&skip=0`).then(res => res.json()).then(d => { setData(d); setSpinner(false); console.log(d) })
     }
     const sort = (e) => {
         const region = document.getElementById('region').value;
         const city = document.getElementById('city').value;
-        fetch(`https://moonknight-backend.vercel.app/user/productSearch?city=${city}&region=${region}&price=${e}&skip=0`).then(res => res.json()).then(d => { setData(d); console.log(d) })
+        fetch(`https://moonknight-backend.vercel.app/user/productSearch?city=${city}&region=${region}&price=${e}&skip=0`).then(res => res.json()).then(d => { setData(d);  console.log(d) })
     }
     return (
         <div className='w-full lg:w-5/6 mx-auto mt-6'>
@@ -48,13 +52,21 @@ const Search = () => {
                     <button onClick={() => { setFilter(!Filter); sort(-1) }} className='bg-gray-200 p-2 capitalize'>High to low</button>
                 </div>
             </div>
+           {spinner ? (
+         <div className=' my-8 lg:my-36'>
+              <Loading></Loading>
+         </div>
+           ): 
+           (
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:px-10 p-5'>
-                <p className={`${data.length == 0 ? 'block' : 'hidden'} text-xl text-center col-span-3`}> Noting to show</p>
-                {
-                    data.map(ele => <Card key={ele._id} data={ele}></Card>)
-                }
+            <p className={`${data.length == 0 ? 'block' : 'hidden'} text-xl text-center col-span-3`}> Noting to show</p>
+            {
+                data.map(ele => <Card key={ele._id} data={ele}></Card>)
+            }
 
-            </div>
+        </div>
+           )
+           }
         </div>
     );
 };
