@@ -31,7 +31,7 @@ const BlogViewDetails = () => {
     });
 
     return (
-        <div className='w-full md:w-4/6 mx-auto '>
+        <div className='w-full md:w-5/6 mx-auto '>
             <div className="py-3 w-full rounded-md mx-auto  flex justify-center items-center text-center text-white opacity bg-[#47446A]">
                 <animated.h2 style={scaleIn} className=" text-2xl px-2 font-bold ">
                     {data.title}
@@ -42,9 +42,9 @@ const BlogViewDetails = () => {
 
             <div className="card my-8 w-full  h-[700px] mx-auto  bg-base-100 shadow-xl">
                 <figure><img className=' object-cover hover:scale-125 transition duration-500 cursor-pointer w-full' src={data.imgUrl} alt="Shoes" /></figure>
-                <div className="card-body">
+                <div className="card-body bg-gray-200 ">
 
-                    <h2 className="text-2xl font-black pb-3 flex items-center justify-between">
+                    <h2 className="text-2xl  font-black pb-3 flex items-center justify-between">
                         <h2 className='font-bold'>{data.title}</h2>
                         <span className='text-sm'>{formattedTime}</span>
                     </h2>

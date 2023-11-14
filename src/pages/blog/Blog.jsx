@@ -31,7 +31,7 @@ const Blog = () => {
 
     const handleInputChange = e => {
         const text = e.target.value;
-        if (text.length > 2) {
+        if (text.length > 0) {
          
             fetch(`https://moonknight-backend.vercel.app/user/allBlog`)
                 .then(res => res.json())
@@ -80,10 +80,27 @@ const Blog = () => {
        </div>
        ):(
          <div className='bg-[#F7F6FF]'>
-         <div className="h-[200px] bg-[#3D3D6A] text-white text-center py-8">
-             <h1 className="text-4xl font-bold mb-2">Blog List</h1>
-             <p>Home/Blog List</p>
-         </div>
+         <div className=' bg-blue-950 flex justify-center items-center h-56 '>
+        <div className=''>
+          <h2 className='text-4xl font-bold text-center text-white pb-2'>Blogs</h2>
+          <ul className='flex justify-center align-middle text-lg text-white'>
+            <li>
+              <Link to={"/"}> Home</Link>
+            </li>
+            <span className='px-2 text-[#FCAF3D]'>/</span>
+            <li>
+              <Link to={"/about"}> About</Link>
+            </li>
+          </ul>
+        </div>
+      
+      </div>
+
+         <div className=' grid  grid-cols-3'>
+        <span className='border-2 border-[#4F46E5]'></span>
+        <span className='border-2 border-[#FCAF3D]'></span>
+        <span className='border-2  border-[#0DCA95]'></span>
+      </div> 
 
          <div className="grid grid-cols-6 m-6 gap-4 max-w-screen-xl sm:px-4 md:px-6 mx-auto">
 
