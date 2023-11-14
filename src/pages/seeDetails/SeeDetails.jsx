@@ -32,7 +32,7 @@ const SeeDetails = () => {
       date: date,
     }
     toast('sending please, wait')
-    fetch('http://localhost:3000/user/sendMessage', {
+    fetch('https://moonknight-backend.vercel.app/user/sendMessage', {
       method: "POST",
       headers: { 'content-type': "application/json" },
       body: JSON.stringify(data)
