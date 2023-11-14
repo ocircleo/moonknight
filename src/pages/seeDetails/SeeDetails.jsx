@@ -11,20 +11,19 @@ import { useLoaderData } from "react-router-dom";
 
 const SeeDetails = () => {
   const loader = useLoaderData()
-  console.log(loader)
   return (
     <div className="bg-gray-100 pb-4">
       <div className="container-lg w-11/12 mx-auto ">
-        <div className="md:flex md:justify-between pb-8 w-full md:w-5/6 pt-8">
+        <div className="md:flex md:justify-between pb-8 w-full md:w-5/6 pt-8 mx-auto">
           <section>
             <h1 className="text-3xl font-bold text-slate-700">{loader.title}</h1>
             <p className="flex text-gray-500 pt-6"> <CiLocationOn className="pt-1 h-5 w-5" /> {loader.region},{loader.city}</p>
           </section>
           <section>
-            <h1 className="text-3xl font-bold text-slate-700">$ {loader.price}</h1>
-            <div className="flex gap-4 pt-8 ">
+            <h1 className="text-3xl font-bold text-slate-700 md:text-right">$ {loader.price}</h1>
+            <div className="md:flex gap-4 pt-8 ">
                <button className="btn hover:bg-indigo-400 bg-white hover:text-white"><AiOutlineShareAlt />Share</button>
-              <button className="btn hover:bg-indigo-400 bg-white hover:text-white"><BiGitCompare />Add to Compare</button>
+             
               <button className="btn hover:bg-indigo-400 bg-white hover:text-white"><AiOutlineHeart />Wishlist</button> 
             </div>
           </section>
@@ -120,8 +119,15 @@ const SeeDetails = () => {
                 </div>
               </div>
             </div>
-            <section>
-
+            <section className="pt-20">
+            <div className="w-full  shadow sm:rounded-md bg-white">
+              <h1 className="text-xl font-semibold p-4">Owner Details</h1>
+              <hr className="pl-6 pe-6" />
+             <div className="p-4">
+             <h4 className="text-base font-medium">Owner Name : Mehedi Hassan Niloy</h4>
+              <h4 className="text-base font-medium pt-3 pb-3">Owner Email : {loader.hostEmail}</h4>
+             </div>
+            </div>
             </section>
 
           </div>

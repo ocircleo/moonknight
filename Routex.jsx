@@ -134,10 +134,10 @@ export const routes = createBrowserRouter([
         path: 'myWishlist',
         element: <Whishlight></Whishlight>
       },
-      //  {
-      //   path: 'notifications',
-      //   element: <Notifications></Notifications>
-      // },
+      {
+        path: 'notifications',
+        element: <Notifications></Notifications>
+      },
       {
         path: '/myhouses',
         element: <Private_Host><MyHouses></MyHouses></Private_Host>

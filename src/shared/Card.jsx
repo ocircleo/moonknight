@@ -30,10 +30,10 @@ const Card = ({ data }) => {
 
     return (
 
-        <div className="card w-auto  bg-white shadow-xl h-auto">
+        <div className="w-auto  bg-white shadow-xl h-auto flex flex-col justify-between">
             <div className='relative rounded-lg'>
-                <figure className=''>
-                    <img className='object-cover transition duration-300 ease-in-out hover:scale-110 h-[350px] md:h-[250px] xl:h-[350px] bg-gray-400 w-full' src={data?.images[0]} alt="Shoes" />
+                <figure className='w-full rounded overflow-hidden'>
+                    <img className='rounded object-cover transition duration-300 ease-in-out hover:scale-110 h-[350px] md:h-[250px] xl:h-[350px] bg-gray-400 w-full' src={data?.images[0]} alt="Shoes" />
                 </figure>
 
                 <div>
@@ -47,7 +47,7 @@ const Card = ({ data }) => {
 
                 </div>
             </div>
-            <div className="card-body">
+            <div className="card-body justify-between">
                 {/* <div className=''>
                     <Rating
                         placeholderRating={5}
@@ -85,7 +85,7 @@ const Card = ({ data }) => {
 
 
                 <div className="">
-                    <Link to={`/seeDetaill/${data?._id}`} className="btn bg-indigo-400 text-white font-semibold text-lg w-full capitalize">view Detail</Link>
+                    <Link to={`/seeDetaill/${data?._id}`} className="btn hover:text-black bg-indigo-400 text-white font-semibold text-lg w-full capitalize">view Detail</Link>
                 </div>
 
             </div>

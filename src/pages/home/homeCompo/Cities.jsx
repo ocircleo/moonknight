@@ -1,7 +1,6 @@
 import { faArrowRight, faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { element } from 'prop-types';
-import React from 'react';
+
 import { useContext } from 'react';
 import { dataContext } from '../../../private/provider/Data_Provider';
 import { useNavigate } from 'react-router-dom';

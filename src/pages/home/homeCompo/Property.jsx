@@ -1,4 +1,5 @@
 import Slider from "react-slick";
+import { faCircleArrowLeft, faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,10 +7,7 @@ import img from '../../../assets/images/property1.svg'
 import img2 from '../../../assets/images/property2.svg'
 import img3 from '../../../assets/images/property3.svg'
 import img4 from '../../../assets/images/property4.svg'
-import {
-    faCircleArrowLeft,
-    faCircleArrowRight,
-} from "@fortawesome/free-solid-svg-icons";
+
 import { useRef } from "react";
 //import Aos from 'aos';
 //import 'aos/dist/aos.css'
