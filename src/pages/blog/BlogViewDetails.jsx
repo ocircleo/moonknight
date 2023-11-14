@@ -42,13 +42,13 @@ const BlogViewDetails = () => {
 
             <div className="card my-8 w-full  h-[700px] mx-auto  bg-base-100 shadow-xl">
                 <figure><img className=' object-cover hover:scale-125 transition duration-500 cursor-pointer w-full' src={data.imgUrl} alt="Shoes" /></figure>
-                <div className="card-body bg-gray-200 ">
+                <div className="card-body bg-gray-50 ">
 
                     <h2 className="text-2xl  font-black pb-3 flex items-center justify-between">
-                        <h2 className='font-bold'>{data.title}</h2>
+                        <h2 className='font-bold text-lg md:text-xl'>{data.title}</h2>
                         <span className='text-sm'>{formattedTime}</span>
                     </h2>
-                    <p className='text-lg'>{data.description}</p>
+                    <p className='text-base md:text-lg'>{data.description}</p>
 
 
                     <button onClick={() => navigate(-1)} className='self-start bg-indigo-400 py-1 px-3 rounded font-semibold text-white'> Go back</button>

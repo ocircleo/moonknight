@@ -124,13 +124,13 @@ const Blog = () => {
 
 
 
-        <Link className=' relative bg-indigo-400 text-white px-4 py-2 font-semibold rounded ' to={`/singleBlog/${selectedBlog._id}`}>View Details</Link>
+        <Link className=' relative bg-indigo-400 text-white px-2 md:px-4 py-2 font-semibold rounded ' to={`/singleBlog/${selectedBlog._id}`}>View Details</Link>
 
 
         <div className="flex gap-6 items-center">
             <div className="flex justify-center items-center gap-2">
                 <img className="h-6 w-6 rounded-full" src={selectedBlog.imgUrl} alt="" />
-                <h2 className="font-size: 14px; font-weight: 500; color: #8A909A;">
+                <h2 className=" text-base md:text-2xl font-weight: 500; color: #8A909A;">
                     {selectedBlog.title.length > 10
                         ? `${selectedBlog.title.substring(0, 10)}...`
                         : selectedBlog.title}
