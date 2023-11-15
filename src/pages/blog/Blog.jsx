@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import usePageTitle from '../../hooks/PageTitleHook';
 import Loading from '../../shared/loading/Loading';
-import BlogSideBar from './BlogSideBar';
+
 
 
 
@@ -30,23 +30,26 @@ const Blog = () => {
 
 
     const handleInputChange = e => {
-        const text = e.target.value;
+        e.preventDefault();
+        const text = e.target.data.value;
+        setSpinner(true)
         if (text.length > 0) {
-         
+           
             fetch(`https://moonknight-backend.vercel.app/user/allBlog`)
                 .then(res => res.json())
                 .then(data => {
                     setBlogs(data);
-                   
+                    setSpinner(false)
 
                 })
         }
+       
         fetch(`https://moonknight-backend.vercel.app/user/blogSearch/${text}`)
       
             .then(res => res.json())
             .then(data => {
                 setBlogs(data);
-              
+                setSpinner(false)
 
             })
 
@@ -108,64 +111,7 @@ const Blog = () => {
              <div className="lg:col-span-4 col-span-6 grid gap-5 ">
 
                 {/* ...........right side data show........... */} 
-                {selectedBlog && 
-                <div>
-                      {/* <h2>{selectedBlog?.title}</h2>
-        <p>{selectedBlog?.description}</p>
-        <figure><img className="img-fluid object-cover
-         w-full h-80 hover:scale-125 transition duration-500
-          cursor-pointer" src={selectedBlog?.imgUrl} alt="Shoes" /></figure> */}
-
- <div key={selectedBlog._id} className="card card-compact w-[100%] bg-base-100 shadow-xl overflow-hidden">
-
-<figure><img className="img-fluid object-cover w-full h-80 hover:scale-125 transition duration-500 cursor-pointer" src={selectedBlog.imgUrl} alt="Shoes" /></figure>
-<div className="card-body">
-    <div className="flex justify-between items-center">
-
-
-
-        <Link className=' relative bg-indigo-400 text-white px-2 md:px-4 py-2 font-semibold rounded ' to={`/singleBlog/${selectedBlog._id}`}>View Details</Link>
-
-
-        <div className="flex gap-6 items-center">
-            <div className="flex justify-center items-center gap-2">
-                <img className="h-6 w-6 rounded-full" src={selectedBlog.imgUrl} alt="" />
-                <h2 className=" text-base md:text-2xl font-weight: 500; color: #8A909A;">
-                    {selectedBlog.title.length > 10
-                        ? `${selectedBlog.title.substring(0, 10)}...`
-                        : selectedBlog.title}
-                </h2>
-
-            </div>
-            <div className='flex items-center gap-1'>
-                <span className='text-gray-500'><FaCalendarAlt /></span>
-                <h2>
-                    {new Date(selectedBlog.time).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
-                </h2>
-            </div>
-
-
-        </div>
-    </div>
-
-</div>
-<div className='px-4 bg-white'>
-    <h1 className='py-4 delay-300 duration-700 cursor-pointer text-2xl font-bold color text-[#0E0E46]
-     hover:text-violet-600 active:text-violet-700 focus:outline-none 
-     focus:ring focus:ring-violet-300 '>
-         {selectedBlog.title.length > 15
-                        ? `${selectedBlog.title.substring(0, 15)}...`
-                        : selectedBlog.title}
-     </h1>
-    <p className='pb-4'>
-    { `${selectedBlog.description.substring(0, 150)}...`}
-    </p>
-</div>
-</div> 
- 
-
-                </div>
-                }
+              
 
                   {/* ...........right side data show end........... */} 
                  {
@@ -251,7 +197,9 @@ const Blog = () => {
                      <div className="card-body">
                          <h2 className="card-title font-bold">Filter</h2>
                          <hr className='' />
-                         <input onChange={handleInputChange} type="text" placeholder="Search" className="input bg-[#F7F6FF] mt-3 input- w-full " />
+                         <form onSubmit={handleInputChange}>
+                         <input type="text" name='data' placeholder="Search" className="input bg-[#F7F6FF] mt-3 input- w-full " />
+                    </form>
                      </div>
                  </div>
                  <div className="card bg-base-100 p-3 mx-4 w-[100%] shadow-lg mt-7">
@@ -260,7 +208,27 @@ const Blog = () => {
                          <hr className='my-3' />
                          <div className='grid gap-6 '>
 
-                             {/* <div className="relative w-full h-80 transform scale-100 overflow-hidden duration-700 hover:scale-105  rounded-lg">
+       { 
+        blogs.map(blog =>
+            <Link key={blog._id} className="relative w-full h-80 transform scale-100 overflow-hidden duration-700 hover:scale-105  rounded-lg " to={`/singleBlog/${blog._id}`}>
+                                 <div className="bg-cover rounded-2xl bg-center h-full relative" style={{ backgroundImage: `url(${blog.imgUrl})` }}>
+                                     <div className="absolute   inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                                     <div className="absolute bottom-7 left-5  text-center text-white hover:text-violet-600 ease-in duration-300">
+                                         <h2 className=" font-bold md:text-xl lg:text-2xl"> {blog.title.length > 10
+                        ? `${blog.title.substring(0, 15)}...`
+                        : blog.title}</h2>
+                                         <div className='flex items-center gap-1 mt-3 text-1xl text-white hover:text-violet-600 ease-in duration-300'>
+                                             <span className=' text-white hover:text-violet-600 ease-in duration-300'><FaCalendarAlt /></span>
+                                             <h2 className=''> Feb 6,2023</h2>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </Link>
+            )
+       }
+
+
+                            {/* <div className="relative w-full h-80 transform scale-100 overflow-hidden duration-700 hover:scale-105  rounded-lg">
                                  <div className="bg-cover bg-center h-full relative" style={{ backgroundImage: `url(${article1})` }}>
                                      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                                      <div className="absolute bottom-7 left-5 text-white text-center text-white hover:text-violet-600 ease-in duration-300">
@@ -271,31 +239,8 @@ const Blog = () => {
                                          </div>
                                      </div>
                                  </div>
-                             </div>
-                             <div className="relative w-full h-80 transform scale-100 overflow-hidden duration-700 hover:scale-105  rounded-lg">
-                                 <div className="bg-cover bg-center h-full relative" style={{ backgroundImage: `url(${article2}) ` }}>
-                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                                     <div className="absolute bottom-7 left-5 text-white text-center text-white hover:text-violet-600 ease-in duration-300">
-                                         <h2 className=" font-bold">Excited News About Buildings.</h2>
-                                         <div className='flex items-center gap-1 mt-3 text-1xl text-white hover:text-violet-600 ease-in duration-300'>
-                                             <span className='text-white text-white hover:text-violet-600 ease-in duration-300'><FaCalendarAlt /></span>
-                                             <h2 className=''> Feb 6,2023</h2>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div className="relative w-full h-80 transform scale-100 overflow-hidden duration-700 hover:scale-105  rounded-lg">
-                                 <div className="bg-cover bg-center h-full relative" style={{ backgroundImage: `url(${article3})` }}>
-                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                                     <div className="absolute bottom-7 left-5 text-white text-center text-white hover:text-violet-600 ease-in duration-300">
-                                         <h2 className=" md:pl-0 font-bold">8 Amazing Tricks About Build Dream..</h2>
-                                         <div className='flex items-center gap-1 mt-3 text-1xl text-white hover:text-violet-600 ease-in duration-300'>
-                                             <span className='text-white text-white hover:text-violet-600 ease-in duration-300'><FaCalendarAlt /></span>
-                                             <h2 className=''> Feb 6,2023</h2>
-                                         </div>
-                                     </div>
-                                 </div>
                              </div> */}
+                        
 
 
                          </div>
@@ -303,12 +248,7 @@ const Blog = () => {
                  </div>
 
 
-          {
-            allBlog.map(blog => <BlogSideBar key={blog._id}
-            blog={blog}
-            onSelectBlog={handleSelectBlog}
-            ></BlogSideBar>)
-          }
+       
 
              </div>
              {/* right side end */}
