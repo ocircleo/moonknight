@@ -18,8 +18,10 @@ const Faq = () => {
                             <span></span>
                         </div>
                         <p className="text-lg font-semibold text-slate-500">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem debitis odit ab nostrum provident unde officiis ex illum est totam nobis perferendis, eum molestias temporibus veniam excepturi aliquam recusandae exercitationem!
-                        </p>
+                        The completion deadline for our innovative and sustainable building project, TolaTE Building,
+                         is set for [insert specific date]. We are committed to delivering a cutting-edge structure that 
+                         not only meets industry standards but also exceeds expectations in terms of efficiency and environmental sustainability.
+                         Stay tuned for updates as we work diligently to bring TolaTE Building to life         </p>
                     </div>
 
                     
@@ -34,7 +36,11 @@ const Faq = () => {
                                1. What are the costs to buy a house?
                             </div>
                             <div className="collapse-content">
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                <p>Purchase Price: The actual cost of the house.
+Down Payment: A percentage of the purchase price paid upfront.
+Closing Costs: Fees for services and expenses associated with finalizing the sale.
+Property Taxes and Insurance: Ongoing costs associated with homeownership.
+Home Inspection and Appraisal Fees: Costs for evaluating the condition and value of the property.
                                     </p>
                             </div>
                         </div>
@@ -44,7 +50,12 @@ const Faq = () => {
                                2. What are the steps to sell a house?
                             </div>
                             <div className="collapse-content">
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                <p>Prepare Your Home: Make necessary repairs and improvements.
+Set a Price: Determine a competitive and realistic selling price.
+Market Your Property: Use various channels to advertise your home.
+Negotiate Offers: Work with potential buyers to reach a mutually agreeable price.
+Complete Required Paperwork: Sign necessary documents for the sale.
+Close the Deal: Transfer ownership and receive payment.
                                     </p>
                             </div>
                         </div>
@@ -54,8 +65,9 @@ const Faq = () => {
                                 3. Do you have loan consultants?
                             </div>
                             <div className="collapse-content">
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    </p>
+                                <p> Yes, loan consultants are professionals who assist individuals in understanding and securing loans. 
+                                    They can provide advice on different types of loans, 
+                                    help with the application process, and guide borrowers through the financing process.                                    </p>
                             </div>
                         </div>
                         <div className="collapse collapse-plus bg-white rounded-none mb-4">
@@ -64,7 +76,9 @@ const Faq = () => {
                                 4. When will the project be completed?
                             </div>
                             <div className="collapse-content">
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                <p> The completion date of a construction project depends on various
+                                     factors such as the size of the project, weather conditions, and unforeseen challenges. It is essential to work 
+                                    closely with the project manager or contractor to get accurate timelines and updates.
                                     </p>
                             </div>
                         </div>
@@ -74,7 +88,12 @@ const Faq = () => {
                                5. What are the steps to rent a house?
                             </div>
                             <div className="collapse-content">
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                <p> Search for Rental Properties: Look for properties that meet your criteria.
+Contact Landlords or Property Managers: Inquire about availability, terms, and conditions.
+View Properties: Schedule visits to potential rental units.
+Submit Rental Application: Provide required documentation and information.
+Review Lease Agreement: Understand terms and conditions before signing.
+Pay Security Deposit and Rent: Secure the property by paying the required upfront costs.
                                     </p>
                             </div>
                         </div>

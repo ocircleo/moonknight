@@ -29,52 +29,64 @@ const Blog = () => {
     }, [])
 
 
-    const handleInputChange = e => {
-        e.preventDefault();
-        const text = e.target.data.value;
-        setSpinner(true)
-        if (text.length > 0) {
+//     const handleInputChange = e => {
+//         e.preventDefault();
+//         const text = e.target.data.value;
+//         setSpinner(true)
+
+// if (text.length > 0) {
            
-            fetch(`https://moonknight-backend.vercel.app/user/allBlog`)
-                .then(res => res.json())
-                .then(data => {
-                    setBlogs(data);
-                    setSpinner(false)
+//     fetch(`https://moonknight-backend.vercel.app/user/allBlog`)
+//         .then(res => res.json())
+//         .then(data => {
+//             setBlogs(data);
+//             setSpinner(false)
 
-                })
-        }
-       
-        fetch(`https://moonknight-backend.vercel.app/user/blogSearch/${text}`)
+//         })
       
-            .then(res => res.json())
-            .then(data => {
+// }
+
+// fetch(`https://moonknight-backend.vercel.app/user/blogSearch/${text}`)
+
+//     .then(res => res.json())
+//     .then(data => {
+//         setBlogs(data);
+//         setSpinner(false)
+
+//     })
+    
+
+//     }
+
+const handleInputChange = (e) => {
+   
+    const text = e.target.data.value;
+
+    setSpinner(true);
+
+    if (text.length > 0) {
+        fetch(`https://moonknight-backend.vercel.app/user/blogSearch/${text}`)
+            .then((res) => res.json())
+            .then((data) => {
                 setBlogs(data);
-                setSpinner(false)
-
+                setSpinner(false);
             })
-
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+                setBlogs([]);
+                setSpinner(false);
+            });
+    } else {
+        setBlogs([]);
+        setSpinner(false);
     }
+};
 
 
 
 
- const [allBlog, setAllBlog] = useState([]);
-    useEffect(() => {
-        fetch(`https://moonknight-backend.vercel.app/user/allBlog`)
-        .then(res => res.json())
-        .then(data => {
-            setAllBlog(data)
-        });
-    }, [])
 
-
-    const [selectedBlog, setSelectedBlog] = useState(null);
-
-    const handleSelectBlog = (blog) => {
-        setSelectedBlog(blog);
-        console.log(selectedBlog);
-      };
-
+  
     return (
        <>
        {spinner ? (
