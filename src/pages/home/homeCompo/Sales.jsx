@@ -1,7 +1,6 @@
-import React from 'react';
+
 import Card from '../../../shared/Card';
-import { useState } from 'react';
-import { useEffect } from 'react';
+
 import { useContext } from 'react';
 import { dataContext } from '../../../private/provider/Data_Provider';
 import Loading from '../../../shared/loading/Loading';
