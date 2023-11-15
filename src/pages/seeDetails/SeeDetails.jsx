@@ -10,12 +10,12 @@ import { useLoaderData } from "react-router-dom";
 import { useContext } from "react";
 import { Authcontext } from "../../private/provider/Provider";
 import { toast } from "react-toastify";
+import { useEffect } from "react";
 
 
 const SeeDetails = () => {
   const { userDB } = useContext(Authcontext)
   const loader = useLoaderData()
-  console.log(loader)
   const bookProperty = (e) => {
     e.preventDefault();
     let form = e.target;
@@ -43,6 +43,9 @@ const SeeDetails = () => {
     }).catch(err => toast(err.message))
 
   }
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [])
   return (
     <div className="bg-gray-100 pb-4">
       <div className="container-lg w-11/12 mx-auto ">

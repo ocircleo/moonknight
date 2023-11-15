@@ -1,17 +1,64 @@
 import { useContext } from "react";
 import { Authcontext } from "../../private/provider/Provider";
-import ReactStars from "react-rating-stars-component";
+
 import { LiaBedSolid } from "react-icons/lia";
 import { BiBuildingHouse, BiBath, BiSolidCarGarage } from "react-icons/bi";
-import { SlCalender} from "react-icons/sl";
+import { SlCalender } from "react-icons/sl";
+import { toast } from "react-toastify";
+import { useEffect } from "react";
+import { useState } from "react";
+import Reviews from "./Reviews";
 
 
 
 const SeeDetailsCollaps = ({ data }) => {
   const { userDB, refresh } = useContext(Authcontext)
-  const ratingChanged = (newRating) => {
-    console.log(newRating);
-  };
+  let [reviews, setReviews] = useState([])
+  const review = (e) => {
+    e.preventDefault();
+    let form = e.target;
+    let name, email, description, rating;
+    name = form.name.value;
+    email = form.email.value;
+    description = form.description.value;
+    rating = form.rating.value;
+    const comentData = {
+      postId: data._id,
+      hostEmail: data.hostEmail,
+      name: name,
+      email: email,
+      description: description,
+      rating: rating,
+      userImg: userDB?.imageUrl || false,
+
+    }
+
+    fetch('https://moonknight-backend.vercel.app/user/comment', {
+      method: 'POST',
+      headers: { 'content-type': "application/json" },
+      body: JSON.stringify(comentData)
+    }).then(res => res.json()).then(data => {
+      if (data.modifiedCount == 1) {
+        toast('posted');
+        form.reset()
+      }
+    })
+  }
+  useEffect(() => {
+    console.log(data.comments.length > 0)
+    if (data?.comments.length > 0) {
+      const fetchData = async () => {
+        try {
+          const promises = data.comments.map(id => fetch(`https://moonknight-backend.vercel.app/user/comment/${id}`).then(res => res.json()))
+          const result = await Promise.all(promises)
+          setReviews(result)
+        } catch (err) {
+          console.log(err)
+        }
+      }
+      fetchData()
+    }
+  }, [data.comments])
   return (
     <div>
       <div className="bg-white mt-10 p-4 rounded-lg shadow-md pt-4">
@@ -20,25 +67,25 @@ const SeeDetailsCollaps = ({ data }) => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-5 pt-4  p-4">
           <div>
-            <p className="text-indigo-400 pl-3 text-2xl"><LiaBedSolid/></p>
+            <p className="text-indigo-400 pl-3 text-2xl"><LiaBedSolid /></p>
             <p className="text-lg pt-2">{data.beds} Beds</p>
           </div>
           <div>
-          <p className="text-indigo-400 pl-3 text-2xl"><BiBath/></p>
+            <p className="text-indigo-400 pl-3 text-2xl"><BiBath /></p>
             <p className="text-lg pt-2">{data.bathroom} Baths</p>
           </div>
           <div>
-          <p className="text-indigo-400 pl-3 text-2xl"><BiBuildingHouse/></p>
+            <p className="text-indigo-400 pl-3 text-2xl"><BiBuildingHouse /></p>
             <p className="text-lg pt-2">{data.space} Sqft</p>
           </div>
           <div>
-          <p className="text-indigo-400 pl-3 text-2xl"><BiSolidCarGarage/></p>
+            <p className="text-indigo-400 pl-3 text-2xl"><BiSolidCarGarage /></p>
             <p className="text-lg pt-2">{data.garage} Garages</p>
           </div>
           <div>
-          <p className="text-indigo-400 pl-3 text-2xl"><SlCalender/></p>
+            <p className="text-indigo-400 pl-3 text-2xl"><SlCalender /></p>
             <p className="text-lg pt-2">{data.builtIn} Built In Year</p>
-          
+
           </div>
         </div>
       </div>
@@ -76,39 +123,29 @@ const SeeDetailsCollaps = ({ data }) => {
       </div>
 
       <div className="bg-white mt-10 rounded-lg shadow-md pb-4">
-      <div className="border-solid border-2 border-gray-300 p-4 rounded-md">
-      <div className="text-2xl font-medium">
-          Reviews
-        </div>
-        <section className="pt-3 ">
-          <div className="md:flex md:justify-between pb-5">
-            <div className="md:flex gap-8 ">
-              <img className="w-20 h-20 rounded-lg" src={userDB.imageUrl} alt="" />
-              <h3 className="text-xl font-medium pt-4">{userDB.name}</h3>
-            </div>
-            <div className="flex gap-4">
-              <div><ReactStars count={5} onChange={ratingChanged} size={24} activeColor="#ffd700" /></div>
-              <h3 className="text-lg font-medium pt-1 ">4.0(20 Reviews)</h3>
-            </div>
+        <div className="border-solid  border-gray-300 p-2 rounded-md">
+          <div className="text-2xl font-medium  p-2">
+            Reviews
           </div>
-          <hr/>
-           
-          <div >
-            <p className="text-lg text-gray-400 pt-8 pb-8">It was popularised in the 1960s with the release of Letraset sheets containing LoremIpsum passages,
-              and more recently with desktop publishing software like Aldus
-              PageMakerincluding versions of Lorem Ipsum.It was popularised in the 1960s</p>
-          </div>
-        </section>
-      </div>
+          <div className="flex flex-col gap-4">
+            {
+              data?.comments.length > 0 ? <>{
+                reviews.map(ele => <Reviews key={ele._id} data={ele}></Reviews>)
+              }</> : <p className="text-xl text-center font-semibold text-gray-400">No Reviews</p>
+            }
 
-        <form className="w-full p-4">
-           <div>
-           <fieldset className='flex flex-col gap-3 '>
+
+          </div>
+        </div>
+
+        <form onSubmit={review} className="w-full p-4">
+          <div>
+            <fieldset className='flex flex-col gap-3 '>
               <label className='font-semibold text-xl'>Name</label>
               <input type="text" required name='name' defaultValue={userDB.name} placeholder="Enter Your Name" className="input input-bordered bg-slate-100 input-info  block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-[100%] py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
               <p className='text-sm text-red-500'></p>
             </fieldset>
-           </div>
+          </div>
           <div className='lg:flex lg:gap-6 justify-center pt-3'>
             <fieldset className='flex flex-col gap-3'>
               <label className='font-semibold text-xl'>Email</label>
@@ -117,7 +154,7 @@ const SeeDetailsCollaps = ({ data }) => {
             </fieldset>
             <fieldset className='flex flex-col gap-3 '>
               <label className='font-semibold text-xl'>Ratting</label>
-              <input type="number" required name='ratting' placeholder="Enter Ratting Point" className="input input-bordered bg-slate-100 input-info  block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-full lg:w-[375px]  py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
+              <input type="number" required name='rating' placeholder="Enter Ratting Point" className="input input-bordered bg-slate-100 input-info  block pr-10 shadow appearance-none border-b-2 border-white border-b-indigo-400  rounded w-full md:w-full lg:w-[375px]  py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-b-indigo-900 transition duration-500 ease-in-out outline-none" />
               <p className='text-sm text-red-500'></p>
             </fieldset>
           </div>
