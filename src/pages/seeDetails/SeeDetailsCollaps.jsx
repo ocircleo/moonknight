@@ -45,7 +45,6 @@ const SeeDetailsCollaps = ({ data }) => {
     })
   }
   useEffect(() => {
-    console.log(data.comments.length > 0)
     if (data?.comments.length > 0) {
       const fetchData = async () => {
         try {

@@ -1,9 +1,5 @@
 import ImageSlider from "./ImageSlider";
-
-
-import SimilarListing from "./SimilarListing";
 import { CiLocationOn } from "react-icons/ci";
-import { BiGitCompare } from "react-icons/bi";
 import { AiOutlineHeart, AiOutlineShareAlt } from "react-icons/ai";
 import SeeDetailsCollaps from "./SeeDetailsCollaps";
 import { useLoaderData } from "react-router-dom";
@@ -11,10 +7,12 @@ import { useContext } from "react";
 import { Authcontext } from "../../private/provider/Provider";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
+import { useState } from "react";
 
 
 const SeeDetails = () => {
-  const { userDB } = useContext(Authcontext)
+  const { addToWishList, userDB } = useContext(Authcontext)
+  const [wish, setWish] = useState(false)
   const loader = useLoaderData()
   const bookProperty = (e) => {
     e.preventDefault();
@@ -43,9 +41,25 @@ const SeeDetails = () => {
     }).catch(err => toast(err.message))
 
   }
+  const wishList = () => {
+    if (loader._id) {
+      addToWishList(loader._id)
+      setWish(true);
+    } else {
+      toast('login to add to wishlist')
+    }
+  }
+  const share = () => {
+    let location = window.location
+    navigator.clipboard.writeText(location.href)
+    toast('linked copied');
+  }
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [])
+    if (userDB.wishlist) {
+      userDB.wishlist.indexOf(loader._id) ? setWish(true) : ""
+    }
+  }, [userDB.wishlist, loader._id])
   return (
     <div className="bg-gray-100 pb-4">
       <div className="container-lg w-11/12 mx-auto ">
@@ -57,9 +71,9 @@ const SeeDetails = () => {
           <section>
             <h1 className="text-3xl font-bold text-slate-700 md:text-right">$ {loader.price}</h1>
             <div className="md:flex gap-4 pt-8 ">
-              <button className="btn hover:bg-indigo-400 bg-white hover:text-white"><AiOutlineShareAlt />Share</button>
+              <button onClick={share} className="btn hover:bg-indigo-400 bg-white hover:text-white"><AiOutlineShareAlt />Share</button>
 
-              <button className="btn hover:bg-indigo-400 bg-white hover:text-white"><AiOutlineHeart />Wishlist</button>
+              <button onClick={wishList} className={` btn  bg-white hover:text-white ${wish ? "btn-disabled" : "hover:bg-indigo-400"}`}><AiOutlineHeart />Wishlist</button>
             </div>
           </section>
         </div>
