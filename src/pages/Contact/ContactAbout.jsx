@@ -10,8 +10,8 @@ const ContactAbout = () => {
         <div className="pt-6">
           <div className="shadow-md bg-white w-11/12 p-6">
             <h1 className="text-3xl font-bold">Talk to Member of Sales Team</h1>
-            <p className="pt-6 text-lg text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis
-              ligula eu lectus vulputate porttitor sed feugiat nunc. Mauris ac consectetur ante,</p>
+            <p className="pt-6 text-lg text-gray-500">
+Connect with our expert sales team to explore options, answer queries, and guide you seamlessly through your property journey.</p>
             <div className="pt-4">
               <Link className="btn btn-primary hover:bg-transparent hover:text-black" to={'#contact'}>Contact Sales</Link>
             </div>
@@ -19,8 +19,8 @@ const ContactAbout = () => {
          <div className="pt-8">
          <div className="shadow-md bg-white w-11/12 p-6">
             <h1 className="text-3xl font-bold">Product & Account Support</h1>
-            <p className="pt-6 text-lg text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis
-              ligula eu lectus vulputate porttitor sed feugiat nunc. Mauris ac consectetur ante,</p>
+            <p className="pt-6 text-lg text-gray-500">
+Our dedicated support team is here to assist you with any product-related inquiries or account issues. Contact us for prompt and reliable assistance to enhance your user experience.</p>
             <div className="pt-4">
               <Link to="/question"><button className="btn btn-primary hover:bg-transparent hover:text-black">Go to FAQ</button></Link>
             </div>

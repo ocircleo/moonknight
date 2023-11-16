@@ -16,7 +16,8 @@ const WorkSection = () => {
                 </div>
                 <div className='text-center p-3'>
                     <h1 className='text-slate-700 text-xl font-mono pt-2'>01. Search for Location</h1>
-                    <p className='text-slate-500 text-base font-mono pt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio…</p>
+                    <p className='text-slate-500 text-base font-mono pt-2'>Explore diverse locales that match your lifestyle.
+                     Find the ideal spot for your dream home in a few simple steps.</p>
                 </div>
             </div>
             <div className="shadow-2xl card bg-base-100  pt-8 w-11/12">
@@ -27,7 +28,7 @@ const WorkSection = () => {
                 </div>
                 <div className='text-center p-3'>
                     <h1 className='text-slate-700 text-xl font-mono pt-2'>02. Select Property Type</h1>
-                    <p className='text-slate-500 text-base font-mono pt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio…</p>
+                    <p className='text-slate-500 text-base font-mono pt-2'>Choose your perfect property - be it a modern apartment, a cozy townhouse, or a spacious family home.</p>
                 </div>
             </div>
 
@@ -39,7 +40,7 @@ const WorkSection = () => {
                 </div>
                 <div className='text-center p-3'>
                     <h1 className='text-slate-700 text-xl font-mono pt-2'>03. Book Your Property</h1>
-                    <p className='text-slate-500 text-base font-mono pt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio…</p>
+                    <p className='text-slate-500 text-base font-mono pt-2'>Secure your dream space effortlessly. From selection to booking, make your homeownership journey a seamless and fulfilling experience.</p>
                 </div>
             </div>
 
