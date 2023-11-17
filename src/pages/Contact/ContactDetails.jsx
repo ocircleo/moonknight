@@ -52,7 +52,7 @@ const ContactDetails = () => {
                     <h1 className="text-black text-2xl font-bold  p-6 " id="contact">Get In Touch</h1>
                     <hr className="pl-6 pe-6" />
                     <div>
-                        <div className="mt-5 md:mt-0 ">
+                        <div className="mt-5 md:mt-0 "id="contact">
                             <form onSubmit={submitForm}>
                                 <div>
                                     <div className="px-4 py-5 sm:p-6">
