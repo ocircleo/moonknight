@@ -19,11 +19,11 @@ const Search = () => {
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         if (searchData.city) {
-            fetch(`https://moonknight-backend.vercel.app/user/productSearch?city=${searchData.city}&region=${searchData.region}&price=0&skip=0`).then(res => res.json()).then(d => { setData(d); console.log(d) })
+            fetch(`https://moonknight-backend.vercel.app/user/productSearch?city=${searchData.city}&region=&price=0&skip=0`).then(res => res.json()).then(d => { setData(d); console.log(d) })
         } else {
             setData(initialData)
         }
-    }, [])
+    }, [initialData, searchData.city])
     const search = (e) => {
         e.preventDefault();
         setSpinner(true)

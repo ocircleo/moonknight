@@ -14,7 +14,7 @@ const Data_Provider = ({ children }) => {
     searchData.city = city;
     setTimeout(() => {
       searchData.city = '';
-    }, 1000)
+    }, 3000)
   }
   useEffect(() => {
     fetch(`https://moonknight-backend.vercel.app/user/productSearch?city=&region=&price=0&skip=0`)

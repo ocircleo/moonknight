@@ -24,7 +24,7 @@ const Banner = () => {
         <h2 className='text-xl md:text-3xl lg:text-5xl font-bold  leading-snug text-blue-950'>Find Your Best Dream House  for <br />
           <span className=' text-[#6C60FE]'> Rental, Buy & Sell...</span></h2>
         <p className=' text-blue-950 pt-6 md:text-xl'>Properties for buy / rent in in your location.
-          We have more <br /> than 3000+ listings for you to choose</p>
+          We have more <br /> than 35+ listings for you to choose</p>
       </div>
       <form onSubmit={searchPage} className="mx-auto rounded p-4 mt-5 flex flex-col md:flex-row gap-4 items-center justify-center bg-white/10 w-5/6 md:w-4/6">
         <input type="text" placeholder='location' name='location' className='border-2 border-indigo-400 rounded p-3 w-full md:w-48 lg:w-96 bg-gray-200/20' />

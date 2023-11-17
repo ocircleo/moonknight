@@ -1,16 +1,14 @@
-import { faArrowRight, faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { useContext } from 'react';
 import { dataContext } from '../../../private/provider/Data_Provider';
 import { useNavigate } from 'react-router-dom';
-
 const Cities = () => {
-    let cities = [{ city: "Dhaka", properties: '700', image: "/images/city/dhaka.jpeg" }, { city: "Barishal", properties: '200', image: "/images/city/barishal.jpg" }, { city: "Jessore", properties: '220', image: "/images/city/jessore_result.png" }, { city: "Kummila", properties: '170', image: "/images/city/cumilla.jpg" }, { city: "Bogura", properties: '70', image: "/images/city/bogura.jpg" }, { city: "Rongpur", properties: "40", image: "/images/city/rangpur.jpg" }]
+    let cities = [{ city: "Dhaka", properties: '5', image: "/images/city/dhaka.jpeg" }, { city: "Barisal", properties: '7', image: "/images/city/barishal.jpg" }, { city: "Jessore", properties: '4', image: "/images/city/jessore_result.png" }, { city: "Cumilla", properties: '6', image: "/images/city/cumilla.jpg" }, { city: "Bogura", properties: '5', image: "/images/city/bogura.jpg" }, { city: "Rongpur", properties: "6", image: "/images/city/rangpur.jpg" }]
     const { setSearchData } = useContext(dataContext)
     const navigate = useNavigate()
     const goto = (text) => {
-        setSearchData('', text)
+        setSearchData(text)
         navigate('/search')
     }
     return (
