@@ -6,7 +6,7 @@ import { dataContext } from '../../../private/provider/Data_Provider';
 import { useNavigate } from 'react-router-dom';
 
 const Cities = () => {
-    let cities = [{ city: "Dhaka", properties: '700' }, { city: "Barishal", properties: '200' }, { city: "Jessore", properties: '220' }, { city: "Kummila", properties: '170' }, { city: "Bogura", properties: '70' }, { city: "Rongpur", properties: "40" }]
+    let cities = [{ city: "Dhaka", properties: '700', image: "/images/city/dhaka.jpeg" }, { city: "Barishal", properties: '200', image: "/images/city/barishal.jpg" }, { city: "Jessore", properties: '220', image: "/images/city/jessore_result.png" }, { city: "Kummila", properties: '170', image: "/images/city/cumilla.jpg" }, { city: "Bogura", properties: '70', image: "/images/city/bogura.jpg" }, { city: "Rongpur", properties: "40", image: "/images/city/rangpur.jpg" }]
     const { setSearchData } = useContext(dataContext)
     const navigate = useNavigate()
     const goto = (text) => {
@@ -32,7 +32,7 @@ const Cities = () => {
                             return (
                                 <div key={ele.properties} className="w-auto shadow-xl h-60 bg-gray-300 relative overflow-hidden">
                                     <div className='hover:scale-110 h-full w-full duration-200'>
-                                        <img src="https://dreamsestate.dreamstechnologies.com/html/assets/img/city/city-3.jpg" alt="" className='duration-100 absolute hover:scale-105 h-full w-full object-cover rounded z-10 to' />
+                                        <img src={ele.image} alt="" className='duration-100 absolute hover:scale-105 h-full w-full object-cover rounded z-10 to' />
                                         <div className='h-full w-full rounded bg-gray-900/50 absolute z-20'></div>
                                     </div>
                                     <div className='absolute bottom-5 left-8 z-30'>

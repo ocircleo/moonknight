@@ -74,7 +74,7 @@ const Property = () => {
 
                         <div className="p-3">
                             <div className="card h-[280px] bg-base-100 shadow-xl">
-                                <figure className="px-10 pt-10">
+                                <figure className="px-10 pt-16">
                                     <img
                                         src={img}
                                         alt="Shoes"
@@ -83,13 +83,13 @@ const Property = () => {
                                 </figure>
                                 <div className="card-body items-center text-center">
                                     <h2 className="card-title">Houses</h2>
-                                    <p>30 Properties</p>
+                                    
                                 </div>
                             </div>
                         </div>
                         <div className="p-3">
                             <div className="card h-[280px] bg-base-100 shadow-xl">
-                                <figure className="px-10 pt-10">
+                                <figure className="px-10 pt-16">
                                     <img
                                         src={img2}
                                         alt="Shoes"
@@ -98,13 +98,13 @@ const Property = () => {
                                 </figure>
                                 <div className="card-body items-center text-center">
                                     <h2 className="card-title">Offices</h2>
-                                    <p>30 Properties</p>
+                                   
                                 </div>
                             </div>
                         </div>
                         <div className="p-3">
                             <div className="card h-[280px] bg-base-100 shadow-xl">
-                                <figure className="px-10 pt-10">
+                                <figure className="px-10 pt-16">
                                     <img
                                         src={img3}
                                         alt="Shoes"
@@ -113,13 +113,13 @@ const Property = () => {
                                 </figure>
                                 <div className="card-body items-center text-center">
                                     <h2 className="card-title">Apartment</h2>
-                                    <p>30 Properties</p>
+                                   
                                 </div>
                             </div>
                         </div>
                         <div className="p-3">
                             <div className="card h-[280px] max:max:w-[250px] bg-base-100 shadow-xl">
-                                <figure className="px-10 pt-10">
+                                <figure className="px-10 pt-16">
                                     <img
                                         src={img4}
                                         alt="Shoes"
@@ -128,7 +128,7 @@ const Property = () => {
                                 </figure>
                                 <div className="card-body items-center text-center">
                                     <h2 className="card-title">Villas</h2>
-                                    <p>30 Properties</p>
+                                    
                                 </div>
                             </div>
                         </div>
