@@ -23,6 +23,10 @@ const Dashboard = () => {
             title: '/notifications',
             text: "notifications"
         },
+        {
+            title: '/mypayments',
+            text: 'My Payments'
+        }
     ];
     const { user, userDB } = useContext(Authcontext)
     if (userDB?.role == 'admin') {
@@ -42,6 +46,15 @@ const Dashboard = () => {
                 title: '/mails',
                 text: 'mails'
             }
+            
+            ,{
+                title: '/update_house_admin',
+                text: 'Update Posts'
+            },{
+                title:"edit_blog",
+                text: "edit blogs"
+            }
+           
 
 
         ]
@@ -57,6 +70,13 @@ const Dashboard = () => {
                 title: '/postHouseInfo',
                 text: 'Add houses'
             },
+            {
+                title: '/update_house',
+                text: 'Update Posts'
+            },{
+                title: "/payments",
+                text: "house Booking"
+            }
         ]
         hostDatas.map(ele => links.push(ele))
     }
@@ -75,9 +95,9 @@ const Dashboard = () => {
 
 
                 </div>
-                <div className="drawer-side">
+                <div className="drawer-side overflow-y-scroll">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-base-200 flex gap-2 text-base-content text-center">
+                    <ul className="menu p-4 w-80 h-full bg-base-200 gap-2 text-base-content text-center flex-nowrap overflow-y-scroll">
                         {/* Sidebar content here */}
                         {
                             links.map(ele => <ActiveLink key={ele.title} to={ele.title}><p className="py-1 capitalize font-semibold">{ele.text}</p></ActiveLink>)

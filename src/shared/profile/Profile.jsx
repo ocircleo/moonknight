@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Profile = () => {
     const { userDB } = useContext(Authcontext)
-    console.log(userDB)
+
     return (
         <div className=" w-full font-semibold">
             <div className='grid grid-cols-3'>

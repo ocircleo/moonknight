@@ -7,7 +7,6 @@ const BlogDetails = () => {
   usePageTitle('Too late | blog details');
 
   const data = useLoaderData();
-  console.log(data)
   return (
     <section className="text-gray-600 body-font bg-gray-200 overflow-hidden">
       <div className="container px-5 py-24 mx-auto">

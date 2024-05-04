@@ -54,6 +54,7 @@ const Provider = ({ children }) => {
   // https://moonknight-backend.vercel.app/
   // ===== jwt sign =====
   const signJwt = async (email) => {
+
     return fetch("https://moonknight-backend.vercel.app/jwt", {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -65,10 +66,9 @@ const Provider = ({ children }) => {
       });
   };
   useEffect(() => {
-    console.log(userDB)
     const unSubscribe = onAuthStateChanged(auth, (newUser) => {
       setUser(newUser);
-      if (newUser) {
+      if (newUser.email) {
         signJwt(newUser.email);
         fetch(`https://moonknight-backend.vercel.app/user/getUser/${newUser.email}`).then(res => res.json()).then(data => { setUserDB(data); setLoading(false); });
 

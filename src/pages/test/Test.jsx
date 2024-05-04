@@ -19,7 +19,7 @@ const Test = () => {
         "content-type": "application/json",
         authorization: `bearer ${localStorage.getItem("acces_token")}`,
       }
-    }).then(res => res.json()).then(data => console.log(data));
+    }).then(res => res.json()).then(data => console.log("ola"));
   }
 
   return <div className="container mx-auto">

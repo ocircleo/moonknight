@@ -34,6 +34,14 @@ import Whishlist from "./src/dashboard/compo/Whishlist";
 import SeeDetails from "./src/pages/seeDetails/SeeDetails";
 import BlogDetails from "./src/pages/blog/BlogDetails";
 import BlogViewDetails from "./src/pages/blog/BlogViewDetails";
+import Paysucces from "./src/pages/paysucces/Paysucces";
+import Paymens from "./src/pages/payment/Paymens";
+import MyPayments from "./src/pages/payment/MyPayments";
+import EditBlog from "./src/dashboard/admin/EditBlog";
+import Editpost from "./src/dashboard/sharedpage/Editpost";
+import UpdatePost from "./src/dashboard/sharedpage/UpdatePost";
+import EditBlogs from "./src/dashboard/admin/EditBlogs";
+import Payments from "./src/pages/payment/Paymens";
 
 export const routes = createBrowserRouter([
   {
@@ -93,14 +101,13 @@ export const routes = createBrowserRouter([
         // element: <BlogDetails></BlogDetails>,
         element: <BlogViewDetails></BlogViewDetails>,
         loader: ({ params }) => fetch(`https://moonknight-backend.vercel.app/user/singleBlog/${params.id}`)
-      }, {
+      },
+      {
         path: "seeDetaill/:id",
         element: <SeeDetails></SeeDetails>,
         loader: ({ params }) => fetch(`https://moonknight-backend.vercel.app/user/card/${params.id}`)
 
-      }
-
-      ,
+      },
       {
         path: "wishlist",
         element: <Whishlist></Whishlist>,
@@ -120,6 +127,10 @@ export const routes = createBrowserRouter([
         path: "seeDetails",
         element: <SeeDetails></SeeDetails>,
       },
+      {
+        path: "paysucces",
+        element: <Paysucces></Paysucces>,
+      },
     ],
 
   }, {
@@ -137,6 +148,10 @@ export const routes = createBrowserRouter([
       {
         path: 'notifications',
         element: <Notifications></Notifications>
+      }, {
+        path: "updatePost/:id",
+        element: <UpdatePost></UpdatePost>,
+        loader: ({ params }) => fetch(`https://moonknight-backend.vercel.app/user/card/${params.id}`)
       },
       {
         path: '/myhouses',
@@ -145,6 +160,10 @@ export const routes = createBrowserRouter([
       {
         path: '/addHouses',
         element: <Private_Host><BeAHost></BeAHost></Private_Host>
+      },
+      {
+        path: '/update_house',
+        element: <Private_Host><Editpost></Editpost></Private_Host>
       },
       {
         path: '/users',
@@ -161,6 +180,27 @@ export const routes = createBrowserRouter([
       {
         path: '/mails',
         element: <Private_Admin><Mails></Mails></Private_Admin>
+      },
+      {
+        path: '/payments',
+        element: <Private_Host><Payments></Payments></Private_Host>
+      },
+      {
+        path: 'mypayments',
+        element: <MyPayments></MyPayments>
+      },
+      {
+        path: 'edit_blog',
+        element: <Private_Admin><EditBlogs></EditBlogs></Private_Admin>
+      },
+      {
+        path: 'edit_blog/:id',
+        element: <Private_Admin><EditBlog></EditBlog></Private_Admin>,
+        loader: ({ params }) => fetch(`https://moonknight-backend.vercel.app/user/singleBlog/${params.id}`)
+      },
+      {
+        path: '/update_house_admin',
+        element: <Private_Admin><Editpost></Editpost></Private_Admin>
       },
     ]
   }

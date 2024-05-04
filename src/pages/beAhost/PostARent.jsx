@@ -74,9 +74,9 @@ const PostARent = () => {
             .then(data => {
                 toast(`Please wait uploading images`)
                 if (data.insertedId) {
-                    uploadImg(data.insertedId, images.files[0]).then(data => console.log(data)).catch(error => console.log(error))
-                    uploadImg(data.insertedId, images.files[1]).then(data => console.log(data)).catch(error => console.log(error))
-                    uploadImg(data.insertedId, images.files[2]).then(data => console.log(data)).catch(error => console.log(error))
+                    uploadImg(data.insertedId, images.files[0]).then(data => console.log("uploaded img 1")).catch(error => console.log(error))
+                    uploadImg(data.insertedId, images.files[1]).then(data => console.log("uploaded img 2")).catch(error => console.log(error))
+                    uploadImg(data.insertedId, images.files[2]).then(data => console.log("uploaded img 3")).catch(error => console.log(error))
                     uploadImg(data.insertedId, images.files[3]).then(data => toast(`done, data uploaded`, form.reset())).catch(error => console.log(error))
 
                 }

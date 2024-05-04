@@ -16,7 +16,7 @@ const Statistics = () => {
 
                     <div className='mt-5'>
                         <h1 className='text-white text-5xl mb-2 font-bold'>
-                            {counterOn && <CountUp start={0} end={stat.totalListing} duration={2} delay={0}></CountUp>}
+                            {counterOn && <CountUp start={0} end={stat.housesCount} duration={2} delay={0}></CountUp>}
 
                         </h1>
                         <p className='text-white text-xl font-bold'>Listings Added</p>
@@ -28,7 +28,7 @@ const Statistics = () => {
 
                     <div className='mt-5'>
                         <h1 className='text-white text-5xl mb-2 font-bold'>
-                            {counterOn && <CountUp start={0} end={stat.toalHosts} duration={2} delay={0}></CountUp>}
+                            {counterOn && <CountUp start={0} end={stat.agentCount} duration={2} delay={0}></CountUp>}
                             +
                         </h1>
                         <p className='text-white text-xl font-bold'>Agents Listed</p>
@@ -51,7 +51,7 @@ const Statistics = () => {
 
                     <div className='mt-5'>
                         <h1 className='text-white text-5xl mb-2 font-bold'>
-                            {counterOn && <CountUp start={0} end={stat.totalUser} duration={2} delay={0}></CountUp>}
+                            {counterOn && <CountUp start={0} end={stat.usersCount} duration={2} delay={0}></CountUp>}
                             +
                         </h1>
                         <p className='text-white text-xl font-bold'>Users</p>

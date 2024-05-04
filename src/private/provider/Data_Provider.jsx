@@ -23,7 +23,7 @@ const Data_Provider = ({ children }) => {
         setInitaialData(d)
         setSpinner(false)
       })
-    fetch('https://moonknight-backend.vercel.app/user/getEstimate').then(res => res.json()).then(data => { console.log(data); setStat(data) })
+    fetch('https://moonknight-backend.vercel.app/user/getEstimate').then(res => res.json()).then(data => {  setStat(data) })
   }, [])
 
   const data = { navState, setNavState, searchData, setSearchData, initialData, spinner, stat };
