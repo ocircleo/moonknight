@@ -13,7 +13,7 @@ const ContactAbout = () => {
             <p className="pt-6 text-lg text-gray-500">
 Connect with our expert sales team to explore options, answer queries, and guide you seamlessly through your property journey.</p>
             <div className="pt-4">
-              <Link className="btn btn-primary hover:bg-transparent hover:text-black" to={'#contact'}>Contact Sales</Link>
+              <Link  className="btn btn-primary hover:bg-transparent hover:text-black" to={'#contact'}>Contact Sales</Link>
             </div>
           </div>
          <div className="pt-8">

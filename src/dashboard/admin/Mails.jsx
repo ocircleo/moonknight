@@ -13,7 +13,7 @@ const Mails = () => {
       .then(res => res.json())
       .then(data => {
         setMails(data)
-        console.log(data)
+    
       });
   }, [])
 

@@ -11,7 +11,7 @@ const AddBlog = () => {
     if (file) {
       const reader = new FileReader();
       reader.onload = (event) => {
-        console.log(event)
+       
         setSelectedImage(event.target.result);
       };
       reader.readAsDataURL(file);
@@ -24,7 +24,7 @@ const AddBlog = () => {
     name = form.title.value;
     description = form.description.value;
     image = form.image.files[0];
-    console.log(name, description, image)
+   
     const formData = new FormData();
     formData.append('image', image);
     formData.append('title', name);

@@ -13,7 +13,7 @@ const Notifications = () => {
     fetch(`https://moonknight-backend.vercel.app/user/myMessage/${userDB.email}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
+   
         setNoti(data)
       });
   }, [userDB])

@@ -1,7 +1,5 @@
 import Work from "./Work";
-import card1 from "./../../../assets/images/WorkSectionImg/icons8-shop-location-64.png"
-import card2 from "./../../../assets/images/WorkSectionImg/icons8-shop-location-64.png"
-import card3 from "./../../../assets/images/WorkSectionImg/icons8-shop-location-64.png"
+
 
 const WorkSection = () => {
     return (
@@ -11,7 +9,7 @@ const WorkSection = () => {
             <div className="shadow-2xl card bg-base-100  pt-8 w-11/12">
                 <div className='flex justify-center items-center'>
                     <span className='h-24 w-24 rounded-full bg-indigo-500'>
-                    <img className='h-20 w-20 pt-6 pl-4 text-white' src={card1} alt="" />
+                    <img className='h-20 w-20 pt-6 pl-4 text-white' src="/images/icon/WorkSectionImg/icons8-shop-location-64.png" alt="" />
                     </span>
                 </div>
                 <div className='text-center p-3'>
@@ -23,7 +21,7 @@ const WorkSection = () => {
             <div className="shadow-2xl card bg-base-100  pt-8 w-11/12">
                 <div className='flex justify-center items-center'>
                     <span className='h-24 w-24 rounded-full bg-[#FD3358]'>
-                    <img className='h-20 w-20 pt-6 pl-4 text-white' src={card2} alt="" />
+                    <img className='h-20 w-20 pt-6 pl-4 text-white' src="/images/icon/WorkSectionImg/icons8-property-80.png" alt="" />
                     </span>
                 </div>
                 <div className='text-center p-3'>
@@ -35,7 +33,7 @@ const WorkSection = () => {
             <div className="shadow-2xl card bg-base-100  pt-8 w-11/12">
                 <div className='flex justify-center items-center'>
                     <span className='h-24 w-24 rounded-full bg-sky-500'>
-                    <img className='h-20 w-20 pt-6 pl-4 text-white' src={card3} alt="" />
+                    <img className='h-20 w-20 pt-6 pl-4 text-white' src="/images/icon/WorkSectionImg/icons8-booking-80.png" alt="" />
                     </span>
                 </div>
                 <div className='text-center p-3'>

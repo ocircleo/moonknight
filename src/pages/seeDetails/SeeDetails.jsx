@@ -13,34 +13,41 @@ import { useState } from "react";
 const SeeDetails = () => {
   const { addToWishList, userDB } = useContext(Authcontext)
   const [wish, setWish] = useState(false)
+  const [days, setDays] = useState(1);
+  const calc = (num) => {
+    if (num == "inc") setDays(days + 1);
+    else {
+      if (days == 1 || days < 1) setDays(1);
+      else setDays(days - 1);
+    }
+  }
   const loader = useLoaderData()
   const bookProperty = (e) => {
     e.preventDefault();
     let form = e.target;
-    let name, email, date, message;
+    let name, email, date, days;
     name = form.name.value;
     email = form.email.value;
     date = form.date.value;
-    message = form.message.value;
+    days = form.message.value;
     const data = {
-      userName: name,
-      userEmail: email,
+      name: name,
+      email: email,
+      price: Number(days) * 100,
       hostEmail: loader?.hostEmail,
-      text: message,
       date: date,
+      days: days,
+      house_id: loader._id,
     }
-    toast('sending please, wait')
-    fetch('https://moonknight-backend.vercel.app/user/sendMessage', {
+    fetch("https://moonknight-backend.vercel.app/pay/paymentinit", {
       method: "POST",
       headers: { 'content-type': "application/json" },
       body: JSON.stringify(data)
     }).then(res => res.json()).then(data => {
-      if (data.insertedId) {
-        toast('Message Sent');
-      }
+      window.location.replace(data.url);
     }).catch(err => toast(err.message))
-
   }
+
   const wishList = () => {
     if (loader._id) {
       addToWishList(loader._id)
@@ -109,7 +116,7 @@ const SeeDetails = () => {
                   <div>
                     <div className="mt-5 md:mt-0 ">
                       <form onSubmit={bookProperty}>
-                        <p className="text-xl font-semibold p-4">Request info</p>
+                        <p className="text-xl font-semibold p-4">Book the Property</p>
                         <hr className="pl-6 pe-6" />
                         <div>
                           <div className="px-4 py-5 sm:p-6">
@@ -147,12 +154,19 @@ const SeeDetails = () => {
                                 <input type="date" name="date" required />
                               </div>
                               <div className="col-span-12">
-                                <label className="text-gray-600">Description</label>
-                                <textarea
-                                  name="message"
-                                  className="mt-1 focus:bg-white bg-slate-100 p-2 focus:border-indigo-200 block w-full shadow-sm sm:text-sm border-slate-200 rounded-md h-40 focus:outline-none"
-                                  placeholder="Comments" required
-                                ></textarea>
+                                <label className="text-gray-600">How many days?</label>
+                                <div className="flex gap-2 items-center justify-center py-4">
+                                  <button className=" text-2xl font-bold bg-blue-500 px-2 rounded text-white pb-1 active:scale-90 duration-100" type="button" onClick={() => calc("inc")}>+</button>
+                                  <input
+                                    type="number"
+                                    name="message"
+                                    disabled
+                                    className="mt-1 focus:bg-white bg-slate-100 p-2 focus:border-indigo-200 shadow-sm sm:text-sm border-slate-200 rounded-md focus:outline-none w-24"
+                                    value={days}
+                                    placeholder="Comments" required
+                                  ></input>
+                                  <button className=" text-2xl font-bold bg-blue-500 px-3 rounded text-white pb-1 active:scale-90 duration-100" type="button" onClick={() => calc("dec")}>-</button>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -162,7 +176,7 @@ const SeeDetails = () => {
                               type="submit"
                               className="w-full py-2 px-4 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
-                              Send Email
+                              Proceed to payment
                             </button>
                           </div>
                         </div>

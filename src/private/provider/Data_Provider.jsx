@@ -7,24 +7,26 @@ export const dataContext = createContext(null);
 const Data_Provider = ({ children }) => {
   const [navState, setNavState] = useState(false);
   const [initialData, setInitaialData] = useState([])
-  const [spinner, setSpinner]= useState(true)
-  let searchData = {};
-  const setSearchData = (a, b) => {
-    searchData.region = a;
-    searchData.city = b;
+  const [spinner, setSpinner] = useState(true)
+  const [stat, setStat] = useState({})
+  let searchData = { city: '' };
+  const setSearchData = (city) => {
+    searchData.city = city;
     setTimeout(() => {
-      searchData = {}
-    }, 10000)
+      searchData.city = '';
+    }, 3000)
   }
   useEffect(() => {
     fetch(`https://moonknight-backend.vercel.app/user/productSearch?city=&region=&price=0&skip=0`)
-    .then(res => res.json())
-    .then(d => { setInitaialData(d)
-      setSpinner(false)
-    })
+      .then(res => res.json())
+      .then(d => {
+        setInitaialData(d)
+        setSpinner(false)
+      })
+    fetch('https://moonknight-backend.vercel.app/user/getEstimate').then(res => res.json()).then(data => {  setStat(data) })
   }, [])
 
-  const data = { navState, setNavState, searchData, setSearchData, initialData, spinner };
+  const data = { navState, setNavState, searchData, setSearchData, initialData, spinner, stat };
 
 
   return <dataContext.Provider value={data}>{children}</dataContext.Provider>;
