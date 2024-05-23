@@ -48,7 +48,7 @@ const Navbar = () => {
         <div className="flex gap-10  w-auto items-center justify-center">
           <span className="font-bold text-black text-2xl md:text-3xl select-none cursor-pointer">
             <Link to={"/"}>
-              TOO<span className="text-indigo-400 ">LATE</span>
+              TO<span className="text-indigo-400 ">-LET</span>
             </Link>
           </span>
           <span className="font-semibold lg:flex gap-4 hidden">
